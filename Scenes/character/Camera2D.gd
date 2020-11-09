@@ -1,10 +1,16 @@
 extends Camera2D
 
 var last_screen_size = Vector2()
+
+func resetOffset(screen_size = null):
+	if screen_size == null:
+		screen_size = get_viewport_rect().size * zoom
+	offset.y = -screen_size.y/5
+
 func _process(delta):
 	var screen_size = get_viewport_rect().size * zoom
 	if screen_size != last_screen_size:
-		offset.y = -screen_size.y/5
+		resetOffset(screen_size)
 	last_screen_size = screen_size
 export (bool) var enable_scroll_zoom = true
 export (float) var zoom_addition_scalar = 0.01
