@@ -1,85 +1,17 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/character/character.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/moon1/layers/fotka_Layer 0.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/moon1/layers/fotka_Layer 1.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/moon1/layers/fotka_3.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/moon1/layers/fotka_1.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/moon1/layers/fotka_hvezsdy.png" type="Texture" id=6]
-[ext_resource path="res://Scenes/moon1/layers/fotka_2.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/moon1/moon-background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/moon1/moon.tres" type="TileSet" id=8]
 [ext_resource path="res://Scenes/lab1/kachle.png" type="Texture" id=9]
 [ext_resource path="res://Scenes/light2.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/moon1/Sunlight.gd" type="Script" id=11]
-[ext_resource path="res://Scenes/light.png" type="Texture" id=12]
 [ext_resource path="res://Scenes/moon1/Show.gd" type="Script" id=13]
 [ext_resource path="res://Scenes/moon1/TileMap.gd" type="Script" id=14]
-[ext_resource path="res://Scenes/moon1/ParallaxLayer.gd" type="Script" id=22]
-[ext_resource path="res://Scenes/moon1/layers/fotka_3_no_flag.png" type="Texture" id=23]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-z_index = -3
-motion_scale = Vector2( 0.4, 0.5 )
-script = ExtResource( 22 )
-
-[node name="fotka_3" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
-scale = Vector2( 4, 4 )
-texture = ExtResource( 23 )
-centered = false
-
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
-z_index = -2
-motion_scale = Vector2( 0.4, 0.5 )
-
-[node name="fotka_3_flag" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
-scale = Vector2( 4, 4 )
-texture = ExtResource( 4 )
-centered = false
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( 1, 0 )
-z_index = -1
-motion_scale = Vector2( 0.5, 0.6 )
-script = ExtResource( 22 )
-
-[node name="fotka_2" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-scale = Vector2( 4, 4 )
-texture = ExtResource( 7 )
-centered = false
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-z_as_relative = false
-motion_scale = Vector2( 0.7, 0.7 )
-script = ExtResource( 22 )
-
-[node name="fotka_1" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-scale = Vector2( 4, 4 )
-z_index = 3
-texture = ExtResource( 5 )
-centered = false
-
-[node name="lab_dungeon_background" type="ParallaxLayer" parent="ParallaxBackground"]
-z_index = 2
-motion_scale = Vector2( 0.9, 0.9 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/lab_dungeon_background"]
-position = Vector2( -0.840912, 580 )
-scale = Vector2( 4, 4 )
-texture = ExtResource( 9 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 0, 0, 512, 256 )
-
-[node name="CanvasModulate2" type="CanvasModulate" parent="ParallaxBackground"]
-visible = false
-color = Color( 0, 0, 0, 1 )
-script = ExtResource( 13 )
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( -2, -3 )
@@ -95,68 +27,6 @@ script = ExtResource( 14 )
 position = Vector2( 0.5, 0.75 )
 scale = Vector2( 0.25, 0.25 )
 
-[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
-layer = -102
-scroll_base_offset = Vector2( 0, -25000 )
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
-motion_scale = Vector2( 0.01, 0.01 )
-motion_mirroring = Vector2( 0, 1152 )
-script = ExtResource( 22 )
-
-[node name="nebe" type="Sprite" parent="ParallaxBackground2/ParallaxLayer"]
-position = Vector2( 2.66968, 3.36353 )
-scale = Vector2( 4, 4 )
-z_index = -1
-texture = ExtResource( 2 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 0, 0, 256, 288 )
-
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground2"]
-z_index = 2
-motion_scale = Vector2( 0.01, 0.01 )
-motion_mirroring = Vector2( 0, 816 )
-script = ExtResource( 22 )
-
-[node name="hvezdy" type="Sprite" parent="ParallaxBackground2/ParallaxLayer3"]
-scale = Vector2( 4, 4 )
-z_index = -3
-texture = ExtResource( 6 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 0, 0, 256, 204 )
-
-[node name="CanvasModulate2" type="CanvasModulate" parent="ParallaxBackground2"]
-visible = false
-color = Color( 0.152941, 0.152941, 0.152941, 1 )
-script = ExtResource( 13 )
-
-[node name="ParallaxBackground3" type="ParallaxBackground" parent="."]
-layer = -101
-scroll_base_offset = Vector2( -55000, -30000 )
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground3"]
-motion_scale = Vector2( 0.01, 0.01 )
-
-[node name="zeme" type="Sprite" parent="ParallaxBackground3/ParallaxLayer"]
-scale = Vector2( 4, 4 )
-z_index = 1
-texture = ExtResource( 3 )
-centered = false
-region_rect = Rect2( 0, 0, 512, 288 )
-
-[node name="Light2D2" type="Light2D" parent="ParallaxBackground3/ParallaxLayer"]
-position = Vector2( 303, 93 )
-scale = Vector2( 0.303795, 0.303795 )
-texture = ExtResource( 12 )
-texture_scale = 2.94
-energy = 1.23
-range_z_min = -8
-range_z_max = 1
-range_layer_min = -250
-range_layer_max = 100
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
 color = Color( 0, 0, 0, 1 )
@@ -170,3 +40,24 @@ energy = 2.16
 range_layer_min = -250
 range_layer_max = 100
 script = ExtResource( 11 )
+
+[node name="MoonBackground" parent="." instance=ExtResource( 2 )]
+
+[node name="DungeonBackground" type="ParallaxBackground" parent="."]
+
+[node name="lab_dungeon_background" type="ParallaxLayer" parent="DungeonBackground"]
+z_index = 2
+motion_scale = Vector2( 0.9, 0.9 )
+
+[node name="Sprite" type="Sprite" parent="DungeonBackground/lab_dungeon_background"]
+position = Vector2( -0.840912, 580 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 9 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 512, 256 )
+
+[node name="CanvasModulate2" type="CanvasModulate" parent="DungeonBackground"]
+visible = false
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 13 )

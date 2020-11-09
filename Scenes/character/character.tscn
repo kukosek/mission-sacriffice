@@ -23,6 +23,7 @@ height = 36.3829
 [node name="Node2D" type="Node2D"]
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 0, 460 )
 script = ExtResource( 5 )
 jump_speed = -200
 gravity = 400
@@ -31,7 +32,7 @@ gravity = 400
 scale = Vector2( 5, 5 )
 z_index = 512
 frames = SubResource( 1 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
