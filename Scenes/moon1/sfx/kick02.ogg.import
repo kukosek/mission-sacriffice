@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/kick02.ogg-b5ade09808cf7c5d95faf1af758e0b61.oggstr"
+
+[deps]
+
+source_file="res://Scenes/moon1/sfx/kick02.ogg"
+dest_files=[ "res://.import/kick02.ogg-b5ade09808cf7c5d95faf1af758e0b61.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

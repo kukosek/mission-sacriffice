@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scenes/character/kosmo/chozeni/walking3.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/character/kosmo/chozeni/walking2.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/character/kosmo/chozeni/walking1.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/character/kosmo/chozeni/walking4.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/character/KinematicBody2D.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/light.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/character/Camera2D.gd" type="Script" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 30.4706
+height = 36.3829
+
+[node name="Node2D" type="Node2D"]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+script = ExtResource( 5 )
+jump_speed = -200
+gravity = 400
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
+scale = Vector2( 5, 5 )
+z_index = 512
+frames = SubResource( 1 )
+frame = 2
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+current = true
+smoothing_enabled = true
+script = ExtResource( 7 )
+
+[node name="Light2D" type="Light2D" parent="KinematicBody2D"]
+texture = ExtResource( 6 )
+texture_scale = 0.25
+energy = 0.65
+range_z_max = 511
+range_layer_min = -300
+range_layer_max = 300
+
+[node name="Light2D2" type="Light2D" parent="KinematicBody2D"]
+texture = ExtResource( 6 )
+texture_scale = 0.25
+energy = 0.83
+range_z_min = 511
+range_z_max = 512
+range_layer_min = -300
+range_layer_max = 300
