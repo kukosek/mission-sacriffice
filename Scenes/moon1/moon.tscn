@@ -67,7 +67,7 @@ color = Color( 0, 0, 0, 1 )
 script = ExtResource( 13 )
 
 [node name="LunarLander" type="KinematicBody2D" parent="."]
-position = Vector2( 0, -500 )
+position = Vector2( 0, -2000 )
 collision_layer = 0
 script = ExtResource( 3 )
 

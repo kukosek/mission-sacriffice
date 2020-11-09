@@ -19,7 +19,6 @@ func _process(delta):
 	var playerpos = get_parent().get_node("Player/KinematicBody2D").position
 	position.x = playerpos.x
 	if playerpos.y < base_position_y:
-		print(playerpos.y)
 		position.y = playerpos.y
 	else:
 		position.y = base_position_y
