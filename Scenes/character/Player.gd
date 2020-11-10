@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-export (int) var run_speed = 300
-export (int) var jump_speed = -400
-export (int) var gravity = 1200
+export (int) var run_speed = 400
+export (int) var jump_speed = -350
+export (int) var gravity = 1000
 
 var velocity = Vector2()
 var jumping = false
@@ -24,7 +24,8 @@ func get_input():
 	if jump and is_on_floor() and move_state != WALL_SLIDE: 
 		jumping = true
 		velocity.y = jump_speed
-	
+	var slash = Input.is_action_just_pressed("ui_down")
+	var knockback = Input.is_action_just_released("ui_down")
 	
 	if move_state == WALL_SLIDE:
 		if jump:
@@ -78,6 +79,12 @@ func get_input():
 				$AnimatedSprite.speed_scale = 2.0
 			jumping = false
 			post_jumping = true
+	
+	if slash:
+		if is_on_floor() and $AnimatedSprite.animation != "swordswing":
+			$AnimatedSprite.play("swordswing")
+			
+		
 		
 		
 export (int) var wall_slide_acce = -10
