@@ -117,7 +117,7 @@ export (int) var wall_slide_acce = -10
 export (int) var max_wall_speed = -200
 
 func _physics_process(delta):
-	if not in_lander:
+	if not in_lander:  
 		get_input()
 		
 		if not wallsliding:
