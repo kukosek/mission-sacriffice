@@ -6,19 +6,14 @@ export (int) var gravity = 1000
 
 var velocity = Vector2()
 
+var in_lander = true
 var jumping = false
 var slashing = false
 var gunfiring = false
+var wallsliding = false
 
 var wall_slide_elaped_time = 0.5
 
-var IN_LANDER = 0
-var FREE = 1
-var state = IN_LANDER
-
-var MOVING = 1
-var WALL_SLIDE = 3
-var move_state = MOVING
 
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
@@ -38,7 +33,7 @@ func get_input():
 	var right = Input.is_action_pressed('ui_right')
 	var left = Input.is_action_pressed('ui_left')
 	var jump = Input.is_action_just_pressed('ui_select' )
-	if jump and is_on_floor() and move_state != WALL_SLIDE: 
+	if jump and is_on_floor() and not wallsliding: 
 		jumping = true
 		velocity.y = jump_speed
 	var slash = Input.is_action_just_pressed("ui_down")
@@ -48,9 +43,9 @@ func get_input():
 			$AnimatedSprite.play("swordswing")
 	var knockback = Input.is_action_just_released("ui_down")
 	
-	if move_state == WALL_SLIDE:
+	if wallsliding:
 		if jump:
-			move_state = MOVING
+			wallsliding = false
 			$AnimatedSprite.play("jump")
 			wall_slide_elaped_time = 0
 			jumping = true
@@ -58,22 +53,22 @@ func get_input():
 			velocity.y = min(velocity.y + wall_slide_acce, max_wall_speed)
 		if $AnimatedSprite.flip_h == true:
 			if not right_colliding():
-				move_state = MOVING
+				wallsliding = false
 				jumping = true
 				wall_slide_elaped_time = 0
 				$AnimatedSprite.play("jumping")
 			elif left:
-				move_state = MOVING
+				wallsliding = false
 				wall_slide_elaped_time = 0
 				if not jumping and not post_jumping: $AnimatedSprite.play("walking")
 		if $AnimatedSprite.flip_h == false:
 			if not left_colliding():
-				move_state = MOVING
+				wallsliding = false
 				jumping = true
 				wall_slide_elaped_time = 0
 				$AnimatedSprite.play("jumping")
 			elif right:
-				move_state = MOVING
+				wallsliding = false
 				wall_slide_elaped_time = 0
 				if not jumping and not post_jumping: $AnimatedSprite.play("walking")
 	if wall_slide_elaped_time > 0.25:
@@ -81,15 +76,15 @@ func get_input():
 			$AnimatedSprite.play("wallslide")
 			$AnimatedSprite.flip_h = true
 			$Laser.update_positions(true)
-			move_state = WALL_SLIDE
+			wallsliding = true
 			jumping = false
 		if left_colliding():
 			$AnimatedSprite.play("wallslide")
 			$AnimatedSprite.flip_h = false
 			$Laser.update_positions(false)
-			move_state = WALL_SLIDE
+			wallsliding = true
 			jumping = false
-	if move_state == MOVING:
+	if not wallsliding:
 		velocity.x = 0
 		if not jumping and not post_jumping and not slashing and not gunfiring:
 			if right or left:
@@ -122,20 +117,20 @@ export (int) var wall_slide_acce = -10
 export (int) var max_wall_speed = -200
 
 func _physics_process(delta):
-	if state == FREE:
+	if not in_lander:
 		get_input()
 		
-		if move_state != WALL_SLIDE:
+		if not wallsliding:
 			wall_slide_elaped_time += delta
 		velocity.y += gravity * delta
 		
 		velocity = move_and_slide(velocity, Vector2(0, -1))
 
-	elif state == IN_LANDER:
+	else:
 		position = get_parent().get_parent().get_node("LunarLander").position
 		position.y -= 100
 		if Input.is_action_pressed('ui_accept'):
-			state = FREE
+			in_lander = false
 			$Camera2D.reset_offset()
 			$Camera2D.target_zoom = Vector2(1.0, 1.0)
 
