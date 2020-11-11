@@ -5,8 +5,10 @@ export (int) var jump_speed = -350
 export (int) var gravity = 1000
 
 var velocity = Vector2()
+
 var jumping = false
 var slashing = false
+var gunfiring = false
 
 var wall_slide_elaped_time = 0.5
 
@@ -17,6 +19,14 @@ var state = IN_LANDER
 var MOVING = 1
 var WALL_SLIDE = 3
 var move_state = MOVING
+
+func _input(event):
+	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
+		if event.pressed:
+			$Laser.fire()
+			$AnimatedSprite.frame = 0
+			gunfiring = true
+			$AnimatedSprite.play("gunshot")
 
 func get_input():
 	var right = Input.is_action_pressed('ui_right')
@@ -52,16 +62,18 @@ func get_input():
 		if $wall_right.is_colliding():
 			$AnimatedSprite.play("wallslide")
 			$AnimatedSprite.flip_h = true
+			$Laser.update_positions(true)
 			move_state = WALL_SLIDE
 			jumping = false
 		if $wall_left.is_colliding():
 			$AnimatedSprite.play("wallslide")
 			$AnimatedSprite.flip_h = false
+			$Laser.update_positions(false)
 			move_state = WALL_SLIDE
 			jumping = false
 	if move_state == MOVING:
 		velocity.x = 0
-		if not jumping and not post_jumping and not slashing:
+		if not jumping and not post_jumping and not slashing and not gunfiring:
 			if right or left:
 				if $AnimatedSprite.animation != "walking":
 					$AnimatedSprite.play("walking")
@@ -70,9 +82,11 @@ func get_input():
 		
 		if right:
 			$AnimatedSprite.flip_h = false
+			$Laser.update_positions(false)
 			velocity.x = run_speed
 		if left:
 			$AnimatedSprite.flip_h = true
+			$Laser.update_positions(true)
 			velocity.x = -run_speed
 		
 	if jumping:
@@ -85,25 +99,17 @@ func get_input():
 			jumping = false
 			post_jumping = true
 		
-			
-		
-		
-		
+	
 export (int) var wall_slide_acce = -10
 export (int) var max_wall_speed = -200
 
 func _physics_process(delta):
 	if state == FREE:
-		
-		
-			
 		get_input()
 		
 		if move_state != WALL_SLIDE:
 			wall_slide_elaped_time += delta
 		velocity.y += gravity * delta
-		
-		
 		
 		velocity = move_and_slide(velocity, Vector2(0, -1))
 
@@ -123,3 +129,5 @@ func _on_AnimatedSprite_animation_finished():
 		post_jumping = false
 	if slashing:
 		slashing = false
+	if gunfiring:
+		gunfiring = false
