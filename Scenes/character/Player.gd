@@ -28,6 +28,12 @@ func _input(event):
 			gunfiring = true
 			$AnimatedSprite.play("gunshot")
 
+func right_colliding():
+	return $wall_right_up.is_colliding() and $wall_right_down.is_colliding()
+
+func left_colliding():
+	return $wall_left_up.is_colliding() and $wall_left_down.is_colliding()
+
 func get_input():
 	var right = Input.is_action_pressed('ui_right')
 	var left = Input.is_action_pressed('ui_left')
@@ -50,22 +56,34 @@ func get_input():
 			jumping = true
 			post_jumping = false
 			velocity.y = min(velocity.y + wall_slide_acce, max_wall_speed)
-		if left and $AnimatedSprite.flip_h == true:
-			move_state = MOVING
-			wall_slide_elaped_time = 0
-			if not jumping and not post_jumping: $AnimatedSprite.play("walking")
-		if right and $AnimatedSprite.flip_h == false:
-			move_state = MOVING
-			wall_slide_elaped_time = 0
-			if not jumping and not post_jumping: $AnimatedSprite.play("walking")
+		if $AnimatedSprite.flip_h == true:
+			if not right_colliding():
+				move_state = MOVING
+				jumping = true
+				wall_slide_elaped_time = 0
+				$AnimatedSprite.play("jumping")
+			elif left:
+				move_state = MOVING
+				wall_slide_elaped_time = 0
+				if not jumping and not post_jumping: $AnimatedSprite.play("walking")
+		if $AnimatedSprite.flip_h == false:
+			if not left_colliding():
+				move_state = MOVING
+				jumping = true
+				wall_slide_elaped_time = 0
+				$AnimatedSprite.play("jumping")
+			elif right:
+				move_state = MOVING
+				wall_slide_elaped_time = 0
+				if not jumping and not post_jumping: $AnimatedSprite.play("walking")
 	if wall_slide_elaped_time > 0.25:
-		if $wall_right.is_colliding():
+		if right_colliding():
 			$AnimatedSprite.play("wallslide")
 			$AnimatedSprite.flip_h = true
 			$Laser.update_positions(true)
 			move_state = WALL_SLIDE
 			jumping = false
-		if $wall_left.is_colliding():
+		if left_colliding():
 			$AnimatedSprite.play("wallslide")
 			$AnimatedSprite.flip_h = false
 			$Laser.update_positions(false)
