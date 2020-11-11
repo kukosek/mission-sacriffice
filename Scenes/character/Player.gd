@@ -56,7 +56,7 @@ func get_input():
 				wallsliding = false
 				jumping = true
 				wall_slide_elaped_time = 0
-				$AnimatedSprite.play("jumping")
+				$AnimatedSprite.play("jump")
 			elif left:
 				wallsliding = false
 				wall_slide_elaped_time = 0
@@ -66,7 +66,7 @@ func get_input():
 				wallsliding = false
 				jumping = true
 				wall_slide_elaped_time = 0
-				$AnimatedSprite.play("jumping")
+				$AnimatedSprite.play("jump")
 			elif right:
 				wallsliding = false
 				wall_slide_elaped_time = 0

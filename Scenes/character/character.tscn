@@ -302,6 +302,7 @@ shape = SubResource( 53 )
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
 current = true
 zoom = Vector2( 2, 2 )
+smoothing_speed = 10.0
 script = ExtResource( 7 )
 
 [node name="Light2D" type="Light2D" parent="KinematicBody2D"]
