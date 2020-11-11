@@ -6,6 +6,7 @@ export (int) var gravity = 1000
 
 var velocity = Vector2()
 var jumping = false
+var slashing = false
 
 var wall_slide_elaped_time = 0.5
 
@@ -25,6 +26,10 @@ func get_input():
 		jumping = true
 		velocity.y = jump_speed
 	var slash = Input.is_action_just_pressed("ui_down")
+	if slash:
+		slashing = true
+		if is_on_floor():
+			$AnimatedSprite.play("swordswing")
 	var knockback = Input.is_action_just_released("ui_down")
 	
 	if move_state == WALL_SLIDE:
@@ -56,7 +61,7 @@ func get_input():
 			jumping = false
 	if move_state == MOVING:
 		velocity.x = 0
-		if not jumping and not post_jumping:
+		if not jumping and not post_jumping and not slashing:
 			if right or left:
 				if $AnimatedSprite.animation != "walking":
 					$AnimatedSprite.play("walking")
@@ -79,10 +84,7 @@ func get_input():
 				$AnimatedSprite.speed_scale = 2.0
 			jumping = false
 			post_jumping = true
-	
-	if slash:
-		if is_on_floor() and $AnimatedSprite.animation != "swordswing":
-			$AnimatedSprite.play("swordswing")
+		
 			
 		
 		
@@ -119,3 +121,5 @@ func _on_AnimatedSprite_animation_finished():
 		$AnimatedSprite.speed_scale = 1.0
 		$AnimatedSprite.play("default")
 		post_jumping = false
+	if slashing:
+		slashing = false
