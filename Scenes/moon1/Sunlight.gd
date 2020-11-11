@@ -1,13 +1,20 @@
 extends Light2D
 
-export (int) var light_cells_outreach = 1.0
+export (int) var light_cells_outreach = 1.0 #Make it bigger and the light will be at more cells down
+
 var texture_size
 var tilemap_top_y
+
 func _ready():
 	visible = true
 	texture_size = texture.get_size()
 	var tilemap = get_parent().get_node("TileMap")
 	tilemap_top_y = (8+light_cells_outreach)*tilemap.cell_size.y*tilemap.scale.y
+
+
+#The light is just a texture, and we must determine how big it should be and where should it be placed.
+#If we forced the values, it will be right just at a parteticular screen size
+#So when screen size changes, this all is automatically calculated again 
 var last_screen_size = Vector2()
 var base_position_y
 func _process(delta):
