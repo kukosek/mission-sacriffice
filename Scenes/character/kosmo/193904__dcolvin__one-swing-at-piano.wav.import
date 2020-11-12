@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/193904__dcolvin__one-swing-at-piano.wav-a41d62fb33bdae5954a0f96f9c01f344.sample"
+
+[deps]
+
+source_file="res://Scenes/character/kosmo/193904__dcolvin__one-swing-at-piano.wav"
+dest_files=[ "res://.import/193904__dcolvin__one-swing-at-piano.wav-a41d62fb33bdae5954a0f96f9c01f344.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

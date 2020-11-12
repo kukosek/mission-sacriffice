@@ -3,6 +3,7 @@ extends KinematicBody2D
 export (int) var run_speed = 400
 export (int) var jump_speed = -350
 export (int) var gravity = 1000
+const FIREBALL = preload("res://Scenes/character/fireball/fireball.tscn")
 
 var velocity = Vector2()
 
@@ -26,6 +27,9 @@ func _input(event):
 		OS.window_fullscreen = !OS.window_fullscreen
 
 
+
+	
+
 func right_colliding():
 	return $wall_right_up.is_colliding() and $wall_right_down.is_colliding()
 
@@ -44,7 +48,26 @@ func get_input():
 		slashing = true
 		if is_on_floor():
 			$AnimatedSprite.play("swordswing")
+			$AudioStreamPlayer2D.play()
 	var knockback = Input.is_action_just_released("ui_down")
+	
+	if Input.is_action_just_pressed("ui_focus_next"):
+		var fireball = FIREBALL.instance()
+		if sign($Position2D.position.x) == 1:
+			fireball.set_fireball_direction(1)
+		else:
+			fireball.set_fireball_direction(-1)
+		get_parent().add_child(fireball)
+		fireball.position = $Position2D.global_position
+		
+		
+	if right:
+		if sign($Position2D.position.x) == -1:
+			$Position2D.position.x *= -1
+	if left:
+		if sign($Position2D.position.x) == 1:
+			$Position2D.position.x *= -1
+		
 	
 	if wallsliding:
 		if jump:
