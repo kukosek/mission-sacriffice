@@ -139,3 +139,11 @@ __meta__ = {
 }
 speed = 15.0
 acceleration = 10.0
+message = ""
+skip_action = ""
+accelerate_action = ""
+voice = [  ]
+player = NodePath("")
+transitions = [  ]
+autoscroll = true
+use_alt_scroll = false
