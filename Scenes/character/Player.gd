@@ -23,6 +23,9 @@ func _input(event):
 			$AnimatedSprite.frame = 0
 			gunfiring = true
 			$AnimatedSprite.play("gunshot")
+	if event.is_action_pressed("toggle_fullscreen"):
+		OS.window_fullscreen = !OS.window_fullscreen
+
 
 
 	
@@ -79,7 +82,7 @@ func get_input():
 				wallsliding = false
 				jumping = true
 				wall_slide_elaped_time = 0
-				$AnimatedSprite.play("jumping")
+				$AnimatedSprite.play("jump")
 			elif left:
 				wallsliding = false
 				wall_slide_elaped_time = 0
@@ -89,7 +92,7 @@ func get_input():
 				wallsliding = false
 				jumping = true
 				wall_slide_elaped_time = 0
-				$AnimatedSprite.play("jumping")
+				$AnimatedSprite.play("jump")
 			elif right:
 				wallsliding = false
 				wall_slide_elaped_time = 0
