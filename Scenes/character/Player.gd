@@ -22,6 +22,9 @@ func _input(event):
 			$AnimatedSprite.frame = 0
 			gunfiring = true
 			$AnimatedSprite.play("gunshot")
+	if event.is_action_pressed("toggle_fullscreen"):
+		OS.window_fullscreen = !OS.window_fullscreen
+
 
 func right_colliding():
 	return $wall_right_up.is_colliding() and $wall_right_down.is_colliding()
