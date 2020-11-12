@@ -6,7 +6,7 @@ export (int) var gravity = 1000
 
 var velocity = Vector2()
 
-var in_lander = true
+var in_lander = false
 var jumping = false
 var slashing = false
 var gunfiring = false
@@ -129,13 +129,7 @@ func _physics_process(delta):
 		
 		velocity = move_and_slide(velocity, Vector2(0, -1))
 
-	else:
-		position = get_parent().get_parent().get_node("LunarLander").position
-		position.y -= 100
-		if Input.is_action_pressed('ui_accept'):
-			in_lander = false
-			$Camera2D.reset_offset()
-			$Camera2D.target_zoom = Vector2(1.0, 1.0)
+	
 
 var post_jumping = false
 func _on_AnimatedSprite_animation_finished():
