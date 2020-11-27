@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Scenes/moon1/moon.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/character/character.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Scenes/enemy/enemy1/walking/enemy panáček4.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/enemy/enemy1/walking/enemy panáček7.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/enemy/enemy1/walking/enemy panáček6.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/enemy/enemy1/death/enemy panáček30.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/enemy/enemy1/gunshot/enemy panáček11.png" type="Texture" id=14]
 [ext_resource path="res://Scenes/enemy/enemy1/gunshot/enemy panáček10.png" type="Texture" id=15]
 [ext_resource path="res://Scenes/enemy/enemy1/gunshot/enemy panáček12.png" type="Texture" id=16]
@@ -23,6 +24,14 @@
 [ext_resource path="res://Scenes/enemy/enemy1/gunshot/enemy panáček13.png" type="Texture" id=22]
 [ext_resource path="res://Scenes/enemy/enemy1/gunshot/enemy panáček16.png" type="Texture" id=23]
 [ext_resource path="res://Scenes/enemy/Projectile.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/enemy/enemy1/death/enemy panáček28.png" type="Texture" id=25]
+[ext_resource path="res://Scenes/enemy/enemy1/death/enemy panáček26.png" type="Texture" id=26]
+[ext_resource path="res://Scenes/enemy/enemy1/death/enemy panáček32.png" type="Texture" id=27]
+[ext_resource path="res://Scenes/enemy/enemy1/death/enemy panáček25.png" type="Texture" id=28]
+[ext_resource path="res://Scenes/enemy/enemy1/death/enemy panáček24.png" type="Texture" id=29]
+[ext_resource path="res://Scenes/enemy/enemy1/death/enemy panáček29.png" type="Texture" id=30]
+[ext_resource path="res://Scenes/enemy/enemy1/death/enemy panáček27.png" type="Texture" id=31]
+[ext_resource path="res://Scenes/enemy/enemy1/death/enemy panáček31.png" type="Texture" id=32]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -39,6 +48,11 @@ animations = [ {
 "frames": [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "walking",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 29 ), ExtResource( 28 ), ExtResource( 26 ), ExtResource( 31 ), ExtResource( 25 ), ExtResource( 30 ), ExtResource( 13 ), ExtResource( 32 ), ExtResource( 27 ) ],
+"loop": false,
+"name": "death",
 "speed": 10.0
 } ]
 
@@ -99,8 +113,6 @@ projectile_res = ExtResource( 24 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="HandlingEnemy1/Enemy"]
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 1 )
-animation = "walking"
-frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HandlingEnemy1/Enemy"]
@@ -132,8 +144,6 @@ script = ExtResource( 8 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="HandlingEnemy2/Enemy"]
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 1 )
-animation = "walking"
-frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HandlingEnemy2/Enemy"]
@@ -165,8 +175,7 @@ script = ExtResource( 8 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="HandlingEnemy3/Enemy"]
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 1 )
-animation = "walking"
-frame = 2
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HandlingEnemy3/Enemy"]

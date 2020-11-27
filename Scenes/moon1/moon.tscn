@@ -18,6 +18,7 @@
 extents = Vector2( 244.232, 186.631 )
 
 [node name="Node2D" type="Node2D"]
+position = Vector2( 977.853, 56.6325 )
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( -2, -3 )

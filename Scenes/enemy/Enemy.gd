@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+onready var collision = $CollisionShape2D
 onready var sprite = $AnimatedSprite
 var player_detection
 var velocity = Vector2.ZERO
@@ -13,11 +14,14 @@ var pos_iter = 0
 
 var hp = 3
 
+var dead = false
 func damage(damage_hp):
-	hp -= damage_hp
+	if hp > 0:
+		hp -= damage_hp
 	if hp == 0:
-		get_parent().queue_free()
-
+		dead = true
+		sprite.play("death")
+		collision.disabled = true
 func _ready():
 	player_detection = load("res://Scenes/enemy/PlayerDetection.tscn").instance()
 	player_detection.enemy_vision = enemy_vision
@@ -60,39 +64,43 @@ func pre_fire():
 	tween.start()
 
 func fire_projectile():
-	var projectile = projectile_res.instance()
-	get_parent().add_child(projectile)
-	var projectile_body = projectile.get_node("Projectile")
-	projectile_body.position = position
-	projectile_body.fire(!sprite.flip_h)
+	if !dead:
+		var projectile = projectile_res.instance()
+		get_parent().add_child(projectile)
+		var projectile_body = projectile.get_node("Projectile")
+		projectile_body.position = position
+		projectile_body.fire(!sprite.flip_h)
+	else:
+		firing = false
 
 var standing_timer = 0
 func _physics_process(delta):
-	if player_detection.detected:
-		if player_detection.right:
-			sprite.flip_h = false
-		else:
-			sprite.flip_h = true
-		velocity.x = 0
-		if !firing: pre_fire()
-	elif !firing:
-		if positions != null:
-			var target = positions[pos_iter]
-			var target_pos = target.position
-			
-			
-			if velocity.x == 0:
-				standing_timer += delta
-			if (velocity.x > 0 and target_pos.x <= position.x) or (velocity.x < 0 and target_pos.x >= position.x):
-				velocity.x = 0
-				if sprite.animation != "default": sprite.play("default")
-			if standing_timer >= target.stay_time:
-				standing_timer = 0
-				pos_iter += 1
-				if pos_iter >= positions_count:
-					pos_iter = 0
-				set_veloc_by_target_point(positions[pos_iter].position)
-				if sprite.animation != "walking": sprite.play("walking")
+	if not dead:
+		if player_detection.detected:
+			if player_detection.right:
+				sprite.flip_h = false
+			else:
+				sprite.flip_h = true
+			velocity.x = 0
+			if !firing: pre_fire()
+		elif !firing:
+			if positions != null:
+				var target = positions[pos_iter]
+				var target_pos = target.position
+				
+				
+				if velocity.x == 0:
+					standing_timer += delta
+				if (velocity.x > 0 and target_pos.x <= position.x) or (velocity.x < 0 and target_pos.x >= position.x):
+					velocity.x = 0
+					if sprite.animation != "default": sprite.play("default")
+				if standing_timer >= target.stay_time:
+					standing_timer = 0
+					pos_iter += 1
+					if pos_iter >= positions_count:
+						pos_iter = 0
+					set_veloc_by_target_point(positions[pos_iter].position)
+					if sprite.animation != "walking": sprite.play("walking")
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 
