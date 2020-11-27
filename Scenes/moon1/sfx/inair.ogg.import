@@ -11,5 +11,5 @@ dest_files=[ "res://.import/inair.ogg-5f6790acd334f5cbef5f493e7fe61749.oggstr" ]
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

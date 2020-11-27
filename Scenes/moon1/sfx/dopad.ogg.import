@@ -11,5 +11,5 @@ dest_files=[ "res://.import/dopad.ogg-8a35ec553003b2997750b9064adbdba9.oggstr" ]
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

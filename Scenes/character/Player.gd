@@ -15,6 +15,7 @@ var wallsliding = false
 
 var wall_slide_elaped_time = 0.5
 
+onready var sprite = $AnimatedSprite
 onready var hearts = $HUD/MarginContainer/Hearts
 onready var death_screen = $HUD/DeathScreen
 onready var pause_screen = $HUD/PauseScreen
@@ -22,15 +23,15 @@ func _input(event):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and !dead:
 		if event.pressed:
 			$Laser.fire()
-			$AnimatedSprite.frame = 0
+			sprite.frame = 0
 			gunfiring = true
-			$AnimatedSprite.play("gunshot")
+			sprite.play("gunshot")
 	if event.is_action_pressed("toggle_fullscreen"):
 		OS.window_fullscreen = !OS.window_fullscreen
 var dead = false
 func die():
 	velocity.x = 0
-	$AnimatedSprite.play("death")
+	sprite.play("death")
 	death_screen.visible = true
 	dead = true
 	set_collision_layer_bit(1, false)
@@ -53,36 +54,41 @@ func right_colliding():
 func left_colliding():
 	return $wall_left_up.is_colliding() and $wall_left_down.is_colliding()
 
+func start_walking():
+	jump_sfx.playing = false
+	sprite.play("walking")
+	walk_sfx.play()
+
+func stop_walking():
+	sprite.play("default")
+	walk_sfx.playing = false
+	jump_sfx.playing = false
+
+func start_jump():
+	jumping = true
+	walk_sfx.playing = false
+	jump_sfx.play()
+
+onready var sword_sfx = $SwordSFX
+onready var walk_sfx = $WalkSFX
+onready var fall_sfx = $FallSFX
+onready var jump_sfx = $JumpSFX
 func get_input():
 	if !dead:
 		var right = Input.is_action_pressed('ui_right')
 		var left = Input.is_action_pressed('ui_left')
 		var jump = Input.is_action_just_pressed('ui_select' )
 		if jump and is_on_floor() and not wallsliding: 
-			jumping = true
+			start_jump()
 			velocity.y = jump_speed
 		var slash = Input.is_action_just_pressed("ui_down")
 		
-		var RIGHT = Input.is_action_just_pressed('ui_right')
-		var LEFT = Input.is_action_just_pressed('ui_left')
-		var RIGHT_RELEASE = Input.is_action_just_released('ui_right')
-		var LEFT_RELEASE = Input.is_action_just_released('ui_left')
-		if !jumping:
-			if !jumping:
-				if LEFT or RIGHT:
-					$walksound.play()
-					$inair.stop()
-					$dopad.stop()
-				if RIGHT_RELEASE or LEFT_RELEASE:
-					$walksound.stop()
-		#if jumping:
-			#$inair.play()
 		
 		if slash:
 			slashing = true
 			if is_on_floor():
-				$AnimatedSprite.play("swordswing")
-				$AudioStreamPlayer2D.play()
+				sprite.play("swordswing")
+				sword_sfx.play()
 		var knockback = Input.is_action_just_released("ui_down")
 		
 		if Input.is_action_just_pressed("ui_focus_next"):
@@ -106,41 +112,42 @@ func get_input():
 		if wallsliding:
 			if jump:
 				wallsliding = false
-				$AnimatedSprite.play("jump")
+				sprite.play("jump")
 				wall_slide_elaped_time = 0
-				jumping = true
+				start_jump()
 				post_jumping = false
 				velocity.y = min(velocity.y + wall_slide_acce, max_wall_speed)
-			if $AnimatedSprite.flip_h == true:
+			if sprite.flip_h == true:
 				if not right_colliding():
 					wallsliding = false
-					jumping = true
+					start_jump()
 					wall_slide_elaped_time = 0
-					$AnimatedSprite.play("jump")
+					sprite.play("jump")
 				elif left:
 					wallsliding = false
 					wall_slide_elaped_time = 0
-					if not jumping and not post_jumping: $AnimatedSprite.play("walking")
-			if $AnimatedSprite.flip_h == false:
+					if not jumping and not post_jumping:
+						start_walking()
+			if sprite.flip_h == false:
 				if not left_colliding():
 					wallsliding = false
-					jumping = true
+					start_jump()
 					wall_slide_elaped_time = 0
-					$AnimatedSprite.play("jump")
+					sprite.play("jump")
 				elif right:
 					wallsliding = false
 					wall_slide_elaped_time = 0
-					if not jumping and not post_jumping: $AnimatedSprite.play("walking")
+					if not jumping and not post_jumping: start_walking()
 		if wall_slide_elaped_time > 0.25:
 			if right_colliding():
-				$AnimatedSprite.play("wallslide")
-				$AnimatedSprite.flip_h = true
+				sprite.play("wallslide")
+				sprite.flip_h = true
 				$Laser.update_positions(true)
 				wallsliding = true
 				jumping = false
 			if left_colliding():
-				$AnimatedSprite.play("wallslide")
-				$AnimatedSprite.flip_h = false
+				sprite.play("wallslide")
+				sprite.flip_h = false
 				$Laser.update_positions(false)
 				wallsliding = true
 				jumping = false
@@ -148,30 +155,29 @@ func get_input():
 			velocity.x = 0
 			if not jumping and not post_jumping and not slashing and not gunfiring:
 				if right or left:
-					if $AnimatedSprite.animation != "walking":
-						$AnimatedSprite.play("walking")
-				elif $AnimatedSprite.animation != "default":
-					$AnimatedSprite.play("default")
+					if sprite.animation != "walking":
+						start_walking()
+				elif sprite.animation != "default":
+					stop_walking()
 			
 			if right:
-				$AnimatedSprite.flip_h = false
+				sprite.flip_h = false
 				$Laser.update_positions(false)
 				velocity.x = run_speed
 			if left:
-				$AnimatedSprite.flip_h = true
+				sprite.flip_h = true
 				$Laser.update_positions(true)
 				velocity.x = -run_speed
 			
 		if jumping:
-			$walksound.stop()
-			if !is_on_floor() and velocity.y > -1 and $AnimatedSprite.animation != "jump":
-				$inair.play()
-				$AnimatedSprite.play("jump")
-			if is_on_floor() and velocity.y == 0 and $AnimatedSprite.animation == "jump":
-				$AnimatedSprite.play("post_jump")
-				$dopad.play()
+			if !is_on_floor() and velocity.y > -1 and sprite.animation != "jump":
+				sprite.play("jump")
+			if is_on_floor() and velocity.y == 0 and sprite.animation == "jump":
+				sprite.play("post_jump")
+				fall_sfx.play()
+				jump_sfx.playing = false
 				if right or left:
-					$AnimatedSprite.speed_scale = 2.0
+					sprite.speed_scale = 2.0
 				jumping = false
 				post_jumping = true
 		
@@ -193,9 +199,9 @@ func _physics_process(delta):
 
 var post_jumping = false
 func _on_AnimatedSprite_animation_finished():
-	if $AnimatedSprite.animation == "post_jump":
-		$AnimatedSprite.speed_scale = 1.0
-		$AnimatedSprite.play("default")
+	if sprite.animation == "post_jump":
+		sprite.speed_scale = 1.0
+		stop_walking()
 		post_jumping = false
 	if slashing:
 		slashing = false
