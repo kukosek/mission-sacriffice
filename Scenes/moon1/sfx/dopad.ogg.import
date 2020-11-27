@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dopad.ogg-8a35ec553003b2997750b9064adbdba9.oggstr"
+
+[deps]
+
+source_file="res://Scenes/moon1/sfx/dopad.ogg"
+dest_files=[ "res://.import/dopad.ogg-8a35ec553003b2997750b9064adbdba9.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

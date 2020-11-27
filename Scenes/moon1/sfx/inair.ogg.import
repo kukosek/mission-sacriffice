@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/inair.ogg-5f6790acd334f5cbef5f493e7fe61749.oggstr"
+
+[deps]
+
+source_file="res://Scenes/moon1/sfx/inair.ogg"
+dest_files=[ "res://.import/inair.ogg-5f6790acd334f5cbef5f493e7fe61749.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
