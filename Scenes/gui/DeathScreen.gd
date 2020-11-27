@@ -1,7 +1,9 @@
 extends CenterContainer
 
 onready var tween = $Tween
+var showed
 func show():
+	showed = true
 	tween.interpolate_property(self, "modulate:a", 0.0, 1.0, 1.5, Tween.TRANS_QUAD, Tween.EASE_OUT)
 	tween.start()
 var last_screen_size = Vector2.ZERO
@@ -17,8 +19,8 @@ func _process(delta):
 
 
 func _on_Quit_pressed():
-	get_tree().change_scene("res://Scenes/gui/MainMenu.tscn")
+	if showed: get_tree().change_scene("res://Scenes/gui/MainMenu.tscn")
 
 
 func _on_Restart_pressed():
-	get_tree().change_scene("res://Scenes/moon1/moon.tscn")
+	if showed:get_tree().change_scene("res://Scenes/moon1/moon.tscn")
