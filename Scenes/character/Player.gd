@@ -27,8 +27,6 @@ func _input(event):
 			sprite.frame = 0
 			gunfiring = true
 			sprite.play("gunshot")
-	if event.is_action_pressed("toggle_fullscreen"):
-		OS.window_fullscreen = !OS.window_fullscreen
 var dead = false
 func die():
 	velocity.x = 0
