@@ -30,8 +30,8 @@ func _input(event):
 var dead = false
 func die():
 	velocity.x = 0
+	$Camera2D.target_zoom = Vector2(0.8, 0.8)
 	sprite.play("death")
-	death_screen.visible = true
 	dead = true
 	set_collision_layer_bit(1, false)
 	set_collision_mask_bit(1, false)
@@ -218,3 +218,6 @@ func _on_AnimatedSprite_animation_finished():
 		slashing = false
 	if gunfiring:
 		gunfiring = false
+	if sprite.animation == "death":
+		death_screen.show()
+		

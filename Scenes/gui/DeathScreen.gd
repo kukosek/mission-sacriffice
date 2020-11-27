@@ -1,6 +1,9 @@
 extends CenterContainer
 
-
+onready var tween = $Tween
+func show():
+	tween.interpolate_property(self, "modulate:a", 0.0, 1.0, 1.5, Tween.TRANS_QUAD, Tween.EASE_OUT)
+	tween.start()
 var last_screen_size = Vector2.ZERO
 
 onready var darkening_sprite = $DarkeningSprite

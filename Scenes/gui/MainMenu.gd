@@ -2,6 +2,7 @@ extends Control
 
 var background_sprite
 var background_size
+
 func _ready():
 	background_sprite = $fotka
 	background_size = background_sprite.get_rect().size
