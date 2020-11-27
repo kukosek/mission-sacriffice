@@ -9,6 +9,7 @@ var velocity = Vector2()
 
 var in_lander = false
 var jumping = false
+var jumping_sliding = false
 var slashing = false
 var gunfiring = false
 var wallsliding = false
@@ -73,6 +74,7 @@ onready var sword_sfx = $SwordSFX
 onready var walk_sfx = $WalkSFX
 onready var fall_sfx = $FallSFX
 onready var jump_sfx = $JumpSFX
+var can_jump_from_wall = false
 func get_input():
 	if !dead:
 		var right = Input.is_action_pressed('ui_right')
@@ -110,13 +112,20 @@ func get_input():
 			
 		
 		if wallsliding:
-			if jump:
-				wallsliding = false
-				sprite.play("jump")
-				wall_slide_elaped_time = 0
-				start_jump()
-				post_jumping = false
+			if jump and can_jump_from_wall:
+				can_jump_from_wall = false
+				jumping_sliding = true
+				
 				velocity.y = min(velocity.y + wall_slide_acce, max_wall_speed)
+			if jumping_sliding and ((!sprite.flip_h and right) or (sprite.flip_h and left)):
+				jumping_sliding = false
+				wallsliding = false
+				wall_slide_elaped_time = 0
+				if not is_on_floor():
+					sprite.play("jump")
+					
+					start_jump()
+					post_jumping = false
 			if sprite.flip_h == true:
 				if not right_colliding():
 					wallsliding = false
@@ -138,18 +147,20 @@ func get_input():
 					wallsliding = false
 					wall_slide_elaped_time = 0
 					if not jumping and not post_jumping: start_walking()
-		if wall_slide_elaped_time > 0.25:
+		elif wall_slide_elaped_time > 0.25:
 			if right_colliding():
 				sprite.play("wallslide")
 				sprite.flip_h = true
 				$Laser.update_positions(true)
 				wallsliding = true
+				can_jump_from_wall = true
 				jumping = false
 			if left_colliding():
 				sprite.play("wallslide")
 				sprite.flip_h = false
 				$Laser.update_positions(false)
 				wallsliding = true
+				can_jump_from_wall = true
 				jumping = false
 		if not wallsliding:
 			velocity.x = 0
