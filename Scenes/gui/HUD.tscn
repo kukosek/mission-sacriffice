@@ -8,6 +8,7 @@
 
 [node name="HUD" type="CanvasLayer"]
 pause_mode = 2
+layer = 101
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 margin_left = 10.0
