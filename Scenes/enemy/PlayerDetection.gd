@@ -11,6 +11,7 @@ onready var player_detector_right2 = $PlayerDetectorRight2
 
 var detected = false
 var detected_position = null
+var right = null
 func _ready():
 	wall_detector_left.cast_to.x = -enemy_vision
 	wall_detector_right.cast_to.x = enemy_vision
@@ -32,15 +33,19 @@ func _process(delta):
 		player_detector_left.cast_to.x = -enemy_vision
 		player_detector_left2.cast_to.x = -enemy_vision
 	if player_detector_left.is_colliding():
+		right = false
 		detected = true
 		detected_position = player_detector_left.get_collision_point()
 	elif player_detector_left2.is_colliding():
+		right = false
 		detected = true
 		detected_position = player_detector_left2.get_collision_point()
 	elif player_detector_right.is_colliding():
+		right = true
 		detected = true
 		detected_position = player_detector_right.get_collision_point()
 	elif player_detector_right2.is_colliding():
+		right = true
 		detected = true
 		detected_position = player_detector_right2.get_collision_point()
 	else:

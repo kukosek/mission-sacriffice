@@ -18,12 +18,12 @@ func _ready():
 var last_screen_size = Vector2()
 var base_position_y
 func _process(delta):
-	var screen_size = get_viewport_rect().size * get_parent().get_node("Player/KinematicBody2D/Camera2D").zoom
+	var screen_size = get_viewport_rect().size * get_parent().get_node("Player/Player/Camera2D").zoom
 	if screen_size != last_screen_size:
 		var light_size = screen_size*1.2
 		scale = light_size/texture_size
 		base_position_y = (tilemap_top_y-light_size.y) + light_size.y / 2
-	var playerpos = get_parent().get_node("Player/KinematicBody2D").position
+	var playerpos = get_parent().get_node("Player/Player").position
 	position.x = playerpos.x
 	if playerpos.y < base_position_y:
 		position.y = playerpos.y

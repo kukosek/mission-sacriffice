@@ -9,7 +9,7 @@ var player
 var camera
 
 func _ready():
-	player = get_parent().get_node("Player/KinematicBody2D")
+	player = get_parent().get_node("Player/Player")
 	player.in_lander = true
 	camera = player.get_node("Camera2D")
 func _physics_process(delta):
