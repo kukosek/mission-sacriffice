@@ -31,16 +31,19 @@ var dead = false
 func die():
 	death_screen.visible = true
 	dead = true
+	set_collision_layer_bit(1, false)
+	set_collision_mask_bit(1, false)
 
 onready var damage_audio_player = $DamageSFX
 func damage(damage_hp):
-	damage_audio_player.play()
-	var hearts_elems = hearts.get_children()
-	if len(hearts_elems) > 0:
-		hearts.remove_child(hearts_elems[-1])
-	hearts_elems = hearts.get_children()
-	if len(hearts_elems) == 0:
-		die()
+	if !dead:
+		damage_audio_player.play()
+		var hearts_elems = hearts.get_children()
+		if len(hearts_elems) > 0:
+			hearts.remove_child(hearts_elems[-1])
+		hearts_elems = hearts.get_children()
+		if len(hearts_elems) == 0:
+			die()
 
 func right_colliding():
 	return $wall_right_up.is_colliding() and $wall_right_down.is_colliding()

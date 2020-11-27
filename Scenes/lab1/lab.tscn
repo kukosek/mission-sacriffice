@@ -113,6 +113,7 @@ projectile_res = ExtResource( 24 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="HandlingEnemy1/Enemy"]
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HandlingEnemy1/Enemy"]
