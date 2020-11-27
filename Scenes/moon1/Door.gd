@@ -27,5 +27,5 @@ func _input(event):
 	if event is InputEventKey:
 		if event.is_action_pressed("ui_use"):
 			var delta_pos = Vector2(abs(player.position.x - position.x), abs(player.position.y - position.y))
-			if delta_pos.x < 100 and delta_pos.y < 100:
+			if delta_pos.x < 200 and delta_pos.y < 100:
 				toggleOpen()

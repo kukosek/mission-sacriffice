@@ -37,6 +37,8 @@ func die():
 	dead = true
 	set_collision_layer_bit(1, false)
 	set_collision_mask_bit(1, false)
+	jump_sfx.playing = false
+	walk_sfx.playing = false
 
 onready var damage_audio_player = $DamageSFX
 func damage(damage_hp):

@@ -353,8 +353,7 @@ max_wall_speed = -400
 scale = Vector2( 4, 4 )
 z_index = 512
 frames = SubResource( 64 )
-animation = "death"
-frame = 12
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
