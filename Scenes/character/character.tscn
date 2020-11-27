@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=80 format=2]
 
 [ext_resource path="res://Scenes/character/kosmosheet.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/character/kosmo/opraveny s mecem.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scenes/character/kosmo/193904__dcolvin__one-swing-at-piano.wav" type="AudioStream" id=9]
 [ext_resource path="res://Scenes/character/damage.ogg" type="AudioStream" id=10]
 [ext_resource path="res://Scenes/gui/HUD.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/character/death.png" type="Texture" id=12]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -216,7 +217,59 @@ region = Rect2( 32, 96, 32, 32 )
 atlas = ExtResource( 1 )
 region = Rect2( 64, 96, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=52]
+[sub_resource type="AtlasTexture" id=52]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=53]
+atlas = ExtResource( 12 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=54]
+atlas = ExtResource( 12 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=55]
+atlas = ExtResource( 12 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=56]
+atlas = ExtResource( 12 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 12 )
+region = Rect2( 160, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=58]
+atlas = ExtResource( 12 )
+region = Rect2( 192, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=59]
+atlas = ExtResource( 12 )
+region = Rect2( 224, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=60]
+atlas = ExtResource( 12 )
+region = Rect2( 256, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=61]
+atlas = ExtResource( 12 )
+region = Rect2( 288, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=62]
+atlas = ExtResource( 12 )
+region = Rect2( 320, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=63]
+atlas = ExtResource( 12 )
+region = Rect2( 352, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=64]
+atlas = ExtResource( 12 )
+region = Rect2( 384, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=65]
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
@@ -262,13 +315,17 @@ animations = [ {
 "loop": true,
 "name": "pre_jump",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ) ],
+"loop": false,
+"name": "death",
+"speed": 10.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=53]
+[sub_resource type="RectangleShape2D" id=66]
 extents = Vector2( 26.6819, 54.5584 )
 
-[sub_resource type="Animation" id=54]
-resource_name = "shoot"
+[sub_resource type="Animation" id=67]
 length = 1.6
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -296,12 +353,14 @@ max_wall_speed = -400
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
 scale = Vector2( 4, 4 )
 z_index = 512
-frames = SubResource( 52 )
+frames = SubResource( 65 )
+animation = "death"
+frame = 12
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2( 0, 6 )
-shape = SubResource( 53 )
+shape = SubResource( 66 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
@@ -387,7 +446,7 @@ collide_with_areas = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player/Laser"]
 playback_speed = 2.0
-anims/shoot = SubResource( 54 )
+anims/shoot = SubResource( 67 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player/Laser"]
 stream = ExtResource( 8 )

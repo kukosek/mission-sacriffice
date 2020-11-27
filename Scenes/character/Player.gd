@@ -29,6 +29,8 @@ func _input(event):
 		OS.window_fullscreen = !OS.window_fullscreen
 var dead = false
 func die():
+	velocity.x = 0
+	$AnimatedSprite.play("death")
 	death_screen.visible = true
 	dead = true
 	set_collision_layer_bit(1, false)
