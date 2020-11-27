@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-onready var collision = $CollisionShape2D
 onready var sprite = $AnimatedSprite
 var player_detection
 var velocity = Vector2.ZERO
@@ -21,7 +20,8 @@ func damage(damage_hp):
 	if hp == 0:
 		dead = true
 		sprite.play("death")
-		collision.disabled = true
+		set_collision_layer_bit(3, false)
+		set_collision_mask_bit(3, false)
 func _ready():
 	player_detection = load("res://Scenes/enemy/PlayerDetection.tscn").instance()
 	player_detection.enemy_vision = enemy_vision
