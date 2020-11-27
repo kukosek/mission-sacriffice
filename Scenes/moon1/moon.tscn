@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scenes/character/character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/moon1/moon-background.tscn" type="PackedScene" id=2]
@@ -11,11 +11,43 @@
 [ext_resource path="res://Scenes/lab1/kachle.png" type="Texture" id=9]
 [ext_resource path="res://Scenes/light2.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/moon1/Sunlight.gd" type="Script" id=11]
+[ext_resource path="res://Scenes/moon1/LabEntranceDetection.gd" type="Script" id=12]
 [ext_resource path="res://Scenes/moon1/Show.gd" type="Script" id=13]
 [ext_resource path="res://Scenes/moon1/TileMap.gd" type="Script" id=14]
+[ext_resource path="res://Scenes/door.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/moon1/Door.gd" type="Script" id=16]
+[ext_resource path="res://Scenes/moon1/sfx/door_open.ogg" type="AudioStream" id=17]
+[ext_resource path="res://Scenes/moon1/sfx/door_close.ogg" type="AudioStream" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 244.232, 186.631 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 21.9987, 100 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 15 )
+region = Rect2( 16, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 15 )
+region = Rect2( 0, 0, 16, 32 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 3 ) ],
+"loop": true,
+"name": "open",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 4 ) ],
+"loop": false,
+"name": "closed",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 10, 97.4519 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -110,7 +142,7 @@ shadow_color = Color( 0.0901961, 0.054902, 0.054902, 0 )
 shadow_buffer_size = 1000
 
 [node name="CaveLight2D3" type="Light2D" parent="."]
-position = Vector2( -25.6838, 861.369 )
+position = Vector2( -25.6838, 862.26 )
 texture = ExtResource( 7 )
 texture_scale = 0.6
 color = Color( 0.909804, 0.505882, 0.0784314, 1 )
@@ -139,3 +171,32 @@ __meta__ = {
 }
 speed = 15.0
 acceleration = 10.0
+
+[node name="LabEntranceDetection" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LabEntranceDetection"]
+position = Vector2( 450, 929.334 )
+shape = SubResource( 2 )
+
+[node name="Door" type="StaticBody2D" parent="."]
+position = Vector2( 372.645, 927.093 )
+script = ExtResource( 16 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Door"]
+scale = Vector2( 6, 6 )
+frames = SubResource( 5 )
+animation = "closed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2( -21.2372, 0 )
+shape = SubResource( 6 )
+
+[node name="OpenSFX" type="AudioStreamPlayer2D" parent="Door"]
+stream = ExtResource( 17 )
+
+[node name="CloseSFX" type="AudioStreamPlayer2D" parent="Door"]
+stream = ExtResource( 18 )
+[connection signal="body_entered" from="LabEntranceDetection" to="LabEntranceDetection" method="_on_LabEntranceDetection_body_entered"]

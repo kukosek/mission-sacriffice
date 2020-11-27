@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/door_open.ogg-38e499a8ec8bd6d15a78528cb7b92e5e.oggstr"
+
+[deps]
+
+source_file="res://Scenes/moon1/sfx/door_open.ogg"
+dest_files=[ "res://.import/door_open.ogg-38e499a8ec8bd6d15a78528cb7b92e5e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
