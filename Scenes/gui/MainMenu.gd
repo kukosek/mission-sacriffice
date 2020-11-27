@@ -12,7 +12,7 @@ func _input(event):
 		OS.window_fullscreen = !OS.window_fullscreen
 		
 var last_screen_size = Vector2.ZERO
-func _process(delta):
+func _process(_delta):
 	var screen_size = get_viewport_rect().size
 	if screen_size != last_screen_size:
 		background_sprite.scale = screen_size / background_size

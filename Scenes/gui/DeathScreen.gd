@@ -9,7 +9,7 @@ func show():
 var last_screen_size = Vector2.ZERO
 
 onready var darkening_sprite = $DarkeningSprite
-func _process(delta):
+func _process(_delta):
 	if visible:
 		var screen_size = get_viewport_rect().size
 		if screen_size != last_screen_size:

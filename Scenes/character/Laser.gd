@@ -33,7 +33,7 @@ func fire():
 	$AnimationPlayer.play("shoot")
 	$AudioStreamPlayer2D.play()
 
-func _process(delta):
+func _process(_delta):
 	if raycast.is_colliding():
 		var collide_point_glob = raycast.get_collision_point()
 		var collide_point = Vector2(abs(raycast.global_position.x - collide_point_glob.x), collide_point_glob.y)

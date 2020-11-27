@@ -42,12 +42,13 @@ onready var damage_audio_player = $DamageSFX
 func damage(damage_hp):
 	if !dead:
 		damage_audio_player.play()
-		var hearts_elems = hearts.get_children()
-		if len(hearts_elems) > 0:
-			hearts.remove_child(hearts_elems[-1])
-		hearts_elems = hearts.get_children()
-		if len(hearts_elems) == 0:
-			die()
+		for _i in range(damage_hp):
+			var hearts_elems = hearts.get_children()
+			if len(hearts_elems) > 0:
+				hearts.remove_child(hearts_elems[-1])
+			hearts_elems = hearts.get_children()
+			if len(hearts_elems) == 0:
+				die()
 
 func right_colliding():
 	return $wall_right_up.is_colliding() and $wall_right_down.is_colliding()
@@ -91,7 +92,6 @@ func get_input():
 			if is_on_floor():
 				sprite.play("swordswing")
 				sword_sfx.play()
-		var knockback = Input.is_action_just_released("ui_down")
 		
 		if Input.is_action_just_pressed("ui_focus_next"):
 			var fireball = FIREBALL.instance()

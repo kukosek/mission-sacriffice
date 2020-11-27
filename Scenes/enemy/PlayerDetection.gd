@@ -17,7 +17,7 @@ func _ready():
 	wall_detector_right.cast_to.x = enemy_vision
 
 const cast_limit_offset = -15
-func _process(delta):
+func _process(_delta):
 	if wall_detector_right.is_colliding():
 		var castpoint = wall_detector_right.get_collision_point().x- global_position.x + cast_limit_offset
 		player_detector_right.cast_to.x = castpoint

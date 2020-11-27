@@ -17,7 +17,7 @@ func _ready():
 #So when screen size changes, this all is automatically calculated again 
 var last_screen_size = Vector2()
 var base_position_y
-func _process(delta):
+func _process(_delta):
 	var screen_size = get_viewport_rect().size * get_parent().get_node("Player/Player/Camera2D").zoom
 	if screen_size != last_screen_size:
 		var light_size = screen_size*1.2

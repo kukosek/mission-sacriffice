@@ -19,8 +19,7 @@ func set_fireball_direction(dir):
 		$AnimatedSprite.flip_h = true
 func get_input():
 	if Input.is_action_just_pressed("ui_focus_next"):
-		var leti = true
-		$AudioStreamPlayer2D.play()	
+		$AudioStreamPlayer2D.play()
 		
 	else:
 		pass
@@ -42,5 +41,5 @@ func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
 
 
-func _on_fireball_body_entered(body):
+func _on_fireball_body_entered(_body):
 	queue_free()

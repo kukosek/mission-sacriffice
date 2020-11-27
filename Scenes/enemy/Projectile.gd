@@ -10,7 +10,7 @@ func fire(side):
 export (Vector2) var speed = Vector2(650, 0)
 var velocity = Vector2.ZERO
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 
 
