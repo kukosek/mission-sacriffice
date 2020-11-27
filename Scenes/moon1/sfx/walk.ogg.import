@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/walk.ogg-6ae7a4dcba22e61de3ae7d9f7e1247b6.oggstr"
+
+[deps]
+
+source_file="res://Scenes/moon1/sfx/walk.ogg"
+dest_files=[ "res://.import/walk.ogg-6ae7a4dcba22e61de3ae7d9f7e1247b6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

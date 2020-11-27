@@ -62,6 +62,22 @@ func get_input():
 			jumping = true
 			velocity.y = jump_speed
 		var slash = Input.is_action_just_pressed("ui_down")
+		
+		var RIGHT = Input.is_action_just_pressed('ui_right')
+		var LEFT = Input.is_action_just_pressed('ui_left')
+		var RIGHT_RELEASE = Input.is_action_just_released('ui_right')
+		var LEFT_RELEASE = Input.is_action_just_released('ui_left')
+		if !jumping:
+			if !jumping:
+				if LEFT or RIGHT:
+					$walksound.play()
+					$inair.stop()
+					$dopad.stop()
+				if RIGHT_RELEASE or LEFT_RELEASE:
+					$walksound.stop()
+		#if jumping:
+			#$inair.play()
+		
 		if slash:
 			slashing = true
 			if is_on_floor():
@@ -147,10 +163,13 @@ func get_input():
 				velocity.x = -run_speed
 			
 		if jumping:
-			if !is_on_floor() and velocity.y > -100 and $AnimatedSprite.animation != "jump":
+			$walksound.stop()
+			if !is_on_floor() and velocity.y > -1 and $AnimatedSprite.animation != "jump":
+				$inair.play()
 				$AnimatedSprite.play("jump")
 			if is_on_floor() and velocity.y == 0 and $AnimatedSprite.animation == "jump":
 				$AnimatedSprite.play("post_jump")
+				$dopad.play()
 				if right or left:
 					$AnimatedSprite.speed_scale = 2.0
 				jumping = false
