@@ -3,9 +3,11 @@ extends CenterContainer
 func toggle_pause():
 	get_tree().paused = !get_tree().paused
 	visible = !visible
-var last_screen_size = Vector2.ZERO
+
 
 onready var darkening_sprite = $DarkeningSprite
+
+var last_screen_size = Vector2.ZERO
 func _process(_delta):
 	
 	if visible:

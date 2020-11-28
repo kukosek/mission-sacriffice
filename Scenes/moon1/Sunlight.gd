@@ -20,7 +20,7 @@ var base_position_y
 func _process(_delta):
 	var screen_size = get_viewport_rect().size * get_parent().get_node("Player/Player/Camera2D").zoom
 	if screen_size != last_screen_size:
-		var light_size = screen_size*1.2
+		var light_size = screen_size*1.4
 		scale = light_size/texture_size
 		base_position_y = (tilemap_top_y-light_size.y) + light_size.y / 2
 	var playerpos = get_parent().get_node("Player/Player").position
