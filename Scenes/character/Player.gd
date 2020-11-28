@@ -80,6 +80,7 @@ onready var sword_sfx = $SwordSFX
 onready var walk_sfx = $WalkSFX
 onready var fall_sfx = $FallSFX
 onready var jump_sfx = $JumpSFX
+onready var sword_enemy_detector = $SwordEnemyDetect
 var can_jump_from_wall = false
 func get_input():
 	if !dead:
@@ -92,11 +93,12 @@ func get_input():
 		var slash = Input.is_action_just_pressed("ui_down")
 		
 		
-		if slash:
+		if slash and not slashing:
 			slashing = true
 			if is_on_floor():
 				sprite.play("swordswing")
 				sword_sfx.play()
+				sword_enemy_detector.damage_enemies()
 		if Input.is_action_just_pressed("ui_focus_next"):
 			var fireball = FIREBALL.instance()
 			fireball.set_fireball_direction(sprite.flip_h)
@@ -147,6 +149,7 @@ func get_input():
 			if right_colliding():
 				sprite.play("wallslide")
 				sprite.flip_h = true
+				sword_enemy_detector.side_right = false
 				$Laser.update_positions(true)
 				wallsliding = true
 				can_jump_from_wall = true
@@ -154,6 +157,7 @@ func get_input():
 			if left_colliding():
 				sprite.play("wallslide")
 				sprite.flip_h = false
+				sword_enemy_detector.side_right = true
 				$Laser.update_positions(false)
 				wallsliding = true
 				can_jump_from_wall = true
@@ -171,10 +175,12 @@ func get_input():
 					start_jump()
 			if right:
 				sprite.flip_h = false
+				sword_enemy_detector.side_right = true
 				$Laser.update_positions(false)
 				velocity.x = run_speed
 			if left:
 				sprite.flip_h = true
+				sword_enemy_detector.side_right = false
 				$Laser.update_positions(true)
 				velocity.x = -run_speed
 			
@@ -214,16 +220,21 @@ func _physics_process(delta):
 
 var post_jumping = false
 func _on_AnimatedSprite_animation_finished():
-	if sprite.animation == "post_jump":
-		sprite.speed_scale = 1.0
-		stop_walking()
-		post_jumping = false
-	if slashing:
-		slashing = false
-	if gunfiring:
-		gunfiring = false
-		if wallsliding:
-			sprite.play("wallslide")
+	if not dead:
+		if sprite.animation == "post_jump":
+			sprite.speed_scale = 1.0
+			stop_walking()
+			post_jumping = false
+		if slashing:
+			slashing = false
+			if abs(velocity.x) > 0:
+				start_walking()
+			else:
+				stop_walking() 
+		if gunfiring:
+			gunfiring = false
+			if wallsliding:
+				sprite.play("wallslide")
 	if sprite.animation == "death":
 		death_screen.show()
 		

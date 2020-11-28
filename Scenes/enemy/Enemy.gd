@@ -17,7 +17,7 @@ var dead = false
 func damage(damage_hp):
 	if hp > 0:
 		hp -= damage_hp
-	if hp == 0:
+	if hp <= 0:
 		dead = true
 		sprite.play("death")
 		set_collision_layer_bit(3, false)
