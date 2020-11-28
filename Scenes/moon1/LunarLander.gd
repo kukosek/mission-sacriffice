@@ -12,7 +12,7 @@ var camera
 
 onready var fire_sprite = $FireSprite
 var landed = false
-
+onready var rocket_noise = $RocketNoise
 func _ready():
 	velocity.y = 2000
 	player = get_parent().get_node("Player/Player")
@@ -28,9 +28,11 @@ func _physics_process(delta):
 	if position.y > -350 and velocity.y > 0:
 		if velocity.y > 200 and position.y < 5000:
 			velocity.y -= gravity * delta * 2.7
+		rocket_noise.volume_db -= 0.05
 		fire_sprite.play("land")
 	if velocity.y == 0 and not landed:
 		landed = true
+		rocket_noise.playing = false
 		hint.text = "press enter to exit"
 	if player_in_lander:
 		if not landed:

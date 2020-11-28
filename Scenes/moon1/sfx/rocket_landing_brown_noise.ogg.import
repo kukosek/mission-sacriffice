@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/rocket_landing_brown_noise.ogg-24ef6ba5fdd5c200420833f5e6a7722b.oggstr"
+
+[deps]
+
+source_file="res://Scenes/moon1/sfx/rocket_landing_brown_noise.ogg"
+dest_files=[ "res://.import/rocket_landing_brown_noise.ogg-24ef6ba5fdd5c200420833f5e6a7722b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
