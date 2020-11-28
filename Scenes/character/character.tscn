@@ -405,10 +405,6 @@ position = Vector2( 0, 30 )
 enabled = true
 cast_to = Vector2( -50, 0 )
 
-[node name="Position2D" type="Position2D" parent="Player"]
-position = Vector2( 84.8356, 0.555859 )
-scale = Vector2( 4, 4 )
-
 [node name="SwordSFX" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource( 9 )
 pitch_scale = 1.21

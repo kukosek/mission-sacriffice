@@ -97,23 +97,11 @@ func get_input():
 			if is_on_floor():
 				sprite.play("swordswing")
 				sword_sfx.play()
-		
 		if Input.is_action_just_pressed("ui_focus_next"):
 			var fireball = FIREBALL.instance()
-			if sign($Position2D.position.x) == 1:
-				fireball.set_fireball_direction(1)
-			else:
-				fireball.set_fireball_direction(-1)
+			fireball.set_fireball_direction(sprite.flip_h)
 			get_parent().add_child(fireball)
-			fireball.position = $Position2D.global_position
-			
-			
-		if right:
-			if sign($Position2D.position.x) == -1:
-				$Position2D.position.x *= -1
-		if left:
-			if sign($Position2D.position.x) == 1:
-				$Position2D.position.x *= -1
+			fireball.position = position
 			
 		
 		if wallsliding:
@@ -202,7 +190,6 @@ func get_input():
 				if fall_sfx.volume_db > fall_sfx_max_volume:
 					fall_sfx.volume_db = fall_sfx_max_volume
 				fall_sfx.play()
-				print(fall_sfx.volume_db)
 				jump_sfx.playing = false
 				if right or left:
 					sprite.speed_scale = 2.0
