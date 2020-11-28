@@ -7,6 +7,7 @@ var player_in_lander = true
 
 var player
 var hint
+var attitude
 var camera
 
 onready var fire_sprite = $FireSprite
@@ -16,6 +17,8 @@ func _ready():
 	velocity.y = 2000
 	player = get_parent().get_node("Player/Player")
 	hint = player.get_node("HUD/Hint")
+	attitude = player.get_node("HUD/LanderAttitude")
+	attitude.visible = true
 	player.in_lander = true
 	player.visible = false
 	camera = player.get_node("Camera2D")
@@ -30,9 +33,12 @@ func _physics_process(delta):
 		landed = true
 		hint.text = "press enter to exit"
 	if player_in_lander:
+		if not landed:
+			attitude.text = "attitude: " + str(abs((int(position.y)-324)/100)) + "m"
 		player.position = position
 		player.position.y -= 100
 		if Input.is_action_pressed('ui_accept'):
+			attitude.visible = false
 			player.in_lander = false
 			player_in_lander = false
 			player.visible = true

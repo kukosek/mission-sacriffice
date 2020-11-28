@@ -212,7 +212,7 @@ shape = SubResource( 1 )
 position = Vector2( 0.484283, 299.699 )
 scale = Vector2( 5.7, 6 )
 frames = SubResource( 2 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="RadioAudio" type="AudioStreamPlayer2D" parent="LunarLander"]
@@ -280,7 +280,7 @@ position = Vector2( 3356.97, 818.011 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 12 )
 animation = "New Anim"
-frame = 4
+frame = 3
 playing = true
 offset = Vector2( 3.5166, 0.568039 )
 

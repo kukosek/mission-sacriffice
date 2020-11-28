@@ -156,6 +156,26 @@ script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+x_subtraction = 0
+
+[node name="LanderAttitude" type="Label" parent="."]
+visible = false
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 39.0
+margin_bottom = 24.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "attitude approx: 1000m"
+align = 2
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+dynamic_y = false
+y_subtraction = false
 [connection signal="pressed" from="DeathScreen/VBoxContainer/HBoxContainer/Restart" to="DeathScreen" method="_on_Restart_pressed"]
 [connection signal="pressed" from="DeathScreen/VBoxContainer/HBoxContainer/Quit" to="DeathScreen" method="_on_Quit_pressed"]
 [connection signal="pressed" from="PauseScreen/VBoxContainer/HBoxContainer/Resume" to="PauseScreen" method="_on_Resume_pressed"]
