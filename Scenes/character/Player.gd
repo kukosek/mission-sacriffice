@@ -3,6 +3,9 @@ extends KinematicBody2D
 export (int) var run_speed = 400
 export (int) var jump_speed = -350
 export (int) var gravity = 1000
+
+export (int) var fall_sfx_base_volume = -10
+export (int) var fall_sfx_max_volume = 1
 const FIREBALL = preload("res://Scenes/character/fireball/fireball.tscn")
 
 var velocity = Vector2()
@@ -66,10 +69,12 @@ func stop_walking():
 	walk_sfx.playing = false
 	jump_sfx.playing = false
 
+var jump_max_fall_speed = 0
 func start_jump():
 	jumping = true
 	walk_sfx.playing = false
 	jump_sfx.play()
+	jump_max_fall_speed = 0
 
 onready var sword_sfx = $SwordSFX
 onready var walk_sfx = $WalkSFX
@@ -136,7 +141,8 @@ func get_input():
 					wallsliding = false
 					wall_slide_elaped_time = 0
 					if not jumping and not post_jumping:
-						start_walking()
+						sprite.play("jump")
+						start_jump()
 			if sprite.flip_h == false:
 				if not left_colliding():
 					wallsliding = false
@@ -146,7 +152,9 @@ func get_input():
 				elif right:
 					wallsliding = false
 					wall_slide_elaped_time = 0
-					if not jumping and not post_jumping: start_walking()
+					if not jumping and not post_jumping:
+						sprite.play("jump")
+						start_jump()
 		elif wall_slide_elaped_time > 0.25:
 			if right_colliding():
 				sprite.play("wallslide")
@@ -165,12 +173,14 @@ func get_input():
 		if not wallsliding:
 			velocity.x = 0
 			if not jumping and not post_jumping and not slashing and not gunfiring:
-				if right or left:
-					if sprite.animation != "walking":
-						start_walking()
-				elif sprite.animation != "default":
-					stop_walking()
-			
+				if velocity.y < 10:
+					if right or left:
+						if sprite.animation != "walking":
+							start_walking()
+					elif sprite.animation != "default":
+						stop_walking()
+				else:
+					start_jump()
 			if right:
 				sprite.flip_h = false
 				$Laser.update_positions(false)
@@ -181,11 +191,18 @@ func get_input():
 				velocity.x = -run_speed
 			
 		if jumping:
+			if velocity.y > jump_max_fall_speed:
+				jump_max_fall_speed = velocity.y
 			if !is_on_floor() and velocity.y > -1 and sprite.animation != "jump":
 				sprite.play("jump")
 			if is_on_floor() and velocity.y == 0 and sprite.animation == "jump":
 				sprite.play("post_jump")
+				
+				fall_sfx.volume_db = fall_sfx_base_volume + (jump_max_fall_speed-200)/25
+				if fall_sfx.volume_db > fall_sfx_max_volume:
+					fall_sfx.volume_db = fall_sfx_max_volume
 				fall_sfx.play()
+				print(fall_sfx.volume_db)
 				jump_sfx.playing = false
 				if right or left:
 					sprite.speed_scale = 2.0
@@ -218,6 +235,8 @@ func _on_AnimatedSprite_animation_finished():
 		slashing = false
 	if gunfiring:
 		gunfiring = false
+		if wallsliding:
+			sprite.play("wallslide")
 	if sprite.animation == "death":
 		death_screen.show()
 		
