@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/landing.ogg-71f7c0d7e86259a5fcc1a9c90f1a4465.oggstr"
+
+[deps]
+
+source_file="res://Scenes/moon1/sfx/landing.ogg"
+dest_files=[ "res://.import/landing.ogg-71f7c0d7e86259a5fcc1a9c90f1a4465.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://Scenes/character/character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/moon1/moon-background.tscn" type="PackedScene" id=2]
@@ -20,88 +20,126 @@
 [ext_resource path="res://Scenes/moon1/sfx/door_close.ogg" type="AudioStream" id=18]
 [ext_resource path="res://Scenes/moon1/sfx/wildmusic.ogg" type="AudioStream" id=19]
 [ext_resource path="res://Scenes/moon1/klic.png" type="Texture" id=20]
+[ext_resource path="res://Scenes/moon1/lander_fire/frame0002.png" type="Texture" id=21]
+[ext_resource path="res://Scenes/moon1/lander_fire/frame0003.png" type="Texture" id=22]
+[ext_resource path="res://Scenes/moon1/lander_fire/frame0001.png" type="Texture" id=23]
+[ext_resource path="res://Scenes/moon1/lander_fire/frame0000.png" type="Texture" id=24]
+[ext_resource path="res://Scenes/moon1/lander_fire_land/frame0011.png" type="Texture" id=25]
+[ext_resource path="res://Scenes/moon1/lander_fire_land/frame0010.png" type="Texture" id=26]
+[ext_resource path="res://Scenes/moon1/lander_fire_land/frame0013.png" type="Texture" id=27]
+[ext_resource path="res://Scenes/moon1/lander_fire_land/frame0014.png" type="Texture" id=28]
+[ext_resource path="res://Scenes/moon1/lander_fire_land/frame0016.png" type="Texture" id=29]
+[ext_resource path="res://Scenes/moon1/lander_fire_land/frame0012.png" type="Texture" id=30]
+[ext_resource path="res://Scenes/moon1/lander_fire_land/frame0015.png" type="Texture" id=31]
+[ext_resource path="res://Scenes/moon1/lander_fire_land/frame0003.png" type="Texture" id=32]
+[ext_resource path="res://Scenes/moon1/lander_fire_land/frame0005.png" type="Texture" id=33]
+[ext_resource path="res://Scenes/moon1/lander_fire_land/frame0009.png" type="Texture" id=34]
+[ext_resource path="res://Scenes/moon1/lander_fire_land/frame0004.png" type="Texture" id=35]
+[ext_resource path="res://Scenes/moon1/lander_fire_land/frame0017.png" type="Texture" id=36]
+[ext_resource path="res://Scenes/moon1/lander_fire_land/frame0007.png" type="Texture" id=37]
+[ext_resource path="res://Scenes/moon1/lander_fire_land/frame0008.png" type="Texture" id=38]
+[ext_resource path="res://Scenes/moon1/lander_fire_land/frame0006.png" type="Texture" id=39]
+[ext_resource path="res://Scenes/moon1/lander_fire_land/frame0022.png" type="Texture" id=40]
+[ext_resource path="res://Scenes/moon1/lander_fire_land/frame0020.png" type="Texture" id=41]
+[ext_resource path="res://Scenes/moon1/lander_fire_land/frame0019.png" type="Texture" id=42]
+[ext_resource path="res://Scenes/moon1/lander_fire_land/frame0018.png" type="Texture" id=43]
+[ext_resource path="res://Scenes/moon1/lander_fire_land/frame0021.png" type="Texture" id=44]
+[ext_resource path="res://Scenes/moon1/sfx/landing.ogg" type="AudioStream" id=45]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 244.232, 186.631 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 24 ), ExtResource( 23 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "default",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 35 ), ExtResource( 33 ), ExtResource( 39 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 34 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 30 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 31 ), ExtResource( 29 ), ExtResource( 36 ), ExtResource( 43 ), ExtResource( 42 ), ExtResource( 41 ), ExtResource( 44 ), ExtResource( 40 ) ],
+"loop": false,
+"name": "land",
+"speed": 25.0
+} ]
+
+[sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 20 )
 region = Rect2( 0, 0, 24, 24 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 20 )
 region = Rect2( 24, 0, 24, 24 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 20 )
 region = Rect2( 48, 0, 24, 24 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 20 )
 region = Rect2( 72, 0, 24, 24 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 20 )
 region = Rect2( 96, 0, 24, 24 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 20 )
 region = Rect2( 120, 0, 24, 24 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=9]
 flags = 4
 atlas = ExtResource( 20 )
 region = Rect2( 144, 0, 24, 24 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=10]
 flags = 4
 atlas = ExtResource( 20 )
 region = Rect2( 168, 0, 24, 24 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=11]
 flags = 4
 atlas = ExtResource( 20 )
 region = Rect2( 192, 0, 24, 24 )
 
-[sub_resource type="SpriteFrames" id=16]
+[sub_resource type="SpriteFrames" id=12]
 animations = [ {
-"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
 "loop": true,
 "name": "New Anim",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 21.9987, 100 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 15 )
 region = Rect2( 16, 0, 16, 32 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 15 )
 region = Rect2( 0, 0, 16, 32 )
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=16]
 animations = [ {
-"frames": [ SubResource( 3 ) ],
+"frames": [ SubResource( 14 ) ],
 "loop": true,
 "name": "open",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 4 ) ],
+"frames": [ SubResource( 15 ) ],
 "loop": false,
 "name": "closed",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 10, 97.4519 )
 
 [node name="Node2D" type="Node2D"]
@@ -159,7 +197,7 @@ color = Color( 0, 0, 0, 1 )
 script = ExtResource( 13 )
 
 [node name="LunarLander" type="KinematicBody2D" parent="."]
-position = Vector2( 0, 200 )
+position = Vector2( 0, -25000 )
 collision_layer = 0
 script = ExtResource( 3 )
 
@@ -169,6 +207,17 @@ texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LunarLander"]
 shape = SubResource( 1 )
+
+[node name="FireSprite" type="AnimatedSprite" parent="LunarLander"]
+position = Vector2( 0.484283, 299.699 )
+scale = Vector2( 5.7, 6 )
+frames = SubResource( 2 )
+frame = 1
+playing = true
+
+[node name="RadioAudio" type="AudioStreamPlayer2D" parent="LunarLander"]
+stream = ExtResource( 45 )
+autoplay = true
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 
@@ -229,9 +278,9 @@ shadow_buffer_size = 1000
 [node name="klic" type="AnimatedSprite" parent="."]
 position = Vector2( 3356.97, 818.011 )
 scale = Vector2( 4, 4 )
-frames = SubResource( 16 )
+frames = SubResource( 12 )
 animation = "New Anim"
-frame = 8
+frame = 6
 playing = true
 offset = Vector2( 3.5166, 0.568039 )
 
@@ -252,14 +301,6 @@ __meta__ = {
 }
 speed = 15.0
 acceleration = 10.0
-message = ""
-skip_action = ""
-accelerate_action = ""
-voice = [  ]
-player = NodePath("")
-transitions = [  ]
-autoscroll = true
-use_alt_scroll = false
 
 [node name="LabEntranceDetection" type="Area2D" parent="."]
 collision_layer = 2
@@ -268,7 +309,7 @@ script = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LabEntranceDetection"]
 position = Vector2( 450, 929.334 )
-shape = SubResource( 2 )
+shape = SubResource( 13 )
 
 [node name="Door" type="StaticBody2D" parent="."]
 position = Vector2( 372.645, 927.093 )
@@ -276,12 +317,12 @@ script = ExtResource( 16 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Door"]
 scale = Vector2( 6, 6 )
-frames = SubResource( 5 )
+frames = SubResource( 16 )
 animation = "closed"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
 position = Vector2( -21.2372, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 17 )
 
 [node name="OpenSFX" type="AudioStreamPlayer2D" parent="Door"]
 stream = ExtResource( 17 )
@@ -292,4 +333,5 @@ stream = ExtResource( 18 )
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 19 )
 autoplay = true
+[connection signal="animation_finished" from="LunarLander/FireSprite" to="LunarLander" method="_on_FireSprite_animation_finished"]
 [connection signal="body_entered" from="LabEntranceDetection" to="LabEntranceDetection" method="_on_LabEntranceDetection_body_entered"]
