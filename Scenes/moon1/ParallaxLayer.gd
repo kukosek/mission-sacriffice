@@ -3,7 +3,7 @@ extends ParallaxLayer
 
 var last_screen_size = Vector2()
 func _process(_delta):
-	var screen_size = get_viewport_rect().size * get_tree().get_root().get_node("Moon/Player/Player/Camera2D").zoom
+	var screen_size = get_viewport_rect().size * get_tree().current_scene.get_node("Player/Player/Camera2D").zoom
 	if screen_size != last_screen_size:
 		var sprite_scale = 4
 		var sprite = get_children()[0]
