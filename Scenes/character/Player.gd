@@ -20,6 +20,7 @@ var gunfiring = false
 var wallsliding = false
 var crouching = false
 
+onready var scene_name = get_tree().get_current_scene().get_name()
 
 var wall_slide_elaped_time = 0.5
 
@@ -72,10 +73,16 @@ func damage(damage_hp):
 				die()
 
 func right_colliding():
-	return $wall_right_up.is_colliding() and $wall_right_down.is_colliding()
+	if scene_name == "Moon":
+		return $wall_right_up.is_colliding() and $wall_right_down.is_colliding()
+	else:
+		return $wall_right_up.is_colliding() or $wall_right_down.is_colliding()
 
 func left_colliding():
-	return $wall_left_up.is_colliding() and $wall_left_down.is_colliding()
+	if scene_name == "Moon":
+		return $wall_left_up.is_colliding() and $wall_left_down.is_colliding()
+	else:
+		return $wall_left_up.is_colliding() or $wall_left_down.is_colliding()
 
 func start_walking():
 	jump_sfx.playing = false

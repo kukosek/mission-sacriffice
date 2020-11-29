@@ -111,7 +111,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Node2D" type="Node2D"]
+[node name="Moon" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
@@ -173,7 +173,6 @@ visible = false
 position = Vector2( 0.484283, 299.699 )
 scale = Vector2( 5.7, 6 )
 frames = SubResource( 2 )
-frame = 2
 playing = true
 
 [node name="RadioAudio" type="AudioStreamPlayer2D" parent="LunarLander"]
@@ -244,7 +243,6 @@ position = Vector2( 3356.97, 818.011 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 12 )
 animation = "New Anim"
-frame = 5
 playing = true
 offset = Vector2( 3.5166, 0.568039 )
 
@@ -269,6 +267,7 @@ acceleration = 10.0
 [node name="Door" parent="." instance=ExtResource( 12 )]
 position = Vector2( 370.648, 927.613 )
 target_scene = "res://Scenes/lab1/lab.tscn"
+player_path = NodePath("../../Moon/Player")
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 19 )
