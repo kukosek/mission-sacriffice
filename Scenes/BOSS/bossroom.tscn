@@ -288,8 +288,8 @@ position = Vector2( -160, -64 )
 position = Vector2( 735.391, 407.293 )
 scale = Vector2( 6, 6 )
 frames = SubResource( 23 )
-animation = "aim_moon"
-frame = 12
+animation = "aim_earth"
+frame = 11
 playing = true
 
 [editable path="Door"]
