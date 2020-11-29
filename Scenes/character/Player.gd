@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+# This file is bad. Dont read it . the code is evil and will confuse your mind for your entire life
+
 export (int) var run_speed = 400
 export (int) var jump_speed = -350
 export (int) var gravity = 1000
@@ -16,9 +18,12 @@ var jumping_sliding = false
 var slashing = false
 var gunfiring = false
 var wallsliding = false
+var crouching = false
+
 
 var wall_slide_elaped_time = 0.5
 
+onready var collision = $CollisionShape2D
 onready var sprite = $AnimatedSprite
 onready var hearts = $HUD/MarginContainer/Hearts
 onready var death_screen = $HUD/DeathScreen
@@ -30,6 +35,19 @@ func _input(event):
 			sprite.frame = 0
 			gunfiring = true
 			sprite.play("gunshot")
+	if event is InputEventKey:
+		if event.is_action_pressed("ui_crouch"):
+			if sprite.animation == "walking" or sprite.animation == "default":
+				collision.disabled = true
+				crouching = true
+				walk_sfx.playing = false
+				sprite.play("crouch")
+		if event.is_action_released("ui_crouch"):
+			crouching = false
+			collision.disabled = false
+			if abs(velocity.x) > 0:
+				sprite.play("walking")
+				walk_sfx.play()
 var dead = false
 func die():
 	velocity.x = 0
@@ -61,16 +79,24 @@ func left_colliding():
 
 func start_walking():
 	jump_sfx.playing = false
-	sprite.play("walking")
+	if crouching:
+		sprite.play("crouch")
+	else:
+		sprite.play("walking")
 	walk_sfx.play()
 
 func stop_walking():
-	sprite.play("default")
+	if crouching:
+		sprite.play("crouch")
+	else:
+		sprite.play("default")
 	walk_sfx.playing = false
 	jump_sfx.playing = false
 
 var jump_max_fall_speed = 0
 func start_jump():
+	collision.disabled = false
+	crouching = false
 	jumping = true
 	walk_sfx.playing = false
 	jump_sfx.play()
@@ -90,6 +116,7 @@ func get_input():
 		if jump and is_on_floor() and not wallsliding: 
 			start_jump()
 			velocity.y = jump_speed
+			
 		var slash = Input.is_action_just_pressed("ui_down")
 		
 		
@@ -167,7 +194,7 @@ func get_input():
 			if not jumping and not post_jumping and not slashing and not gunfiring:
 				if velocity.y < 10:
 					if right or left:
-						if sprite.animation != "walking":
+						if sprite.animation != "walking" and sprite.animation != "crouch":
 							start_walking()
 					elif sprite.animation != "default":
 						stop_walking()
@@ -178,12 +205,13 @@ func get_input():
 				sword_enemy_detector.side_right = true
 				$Laser.update_positions(false)
 				velocity.x = run_speed
+				if crouching: velocity.x /= 2
 			if left:
 				sprite.flip_h = true
 				sword_enemy_detector.side_right = false
 				$Laser.update_positions(true)
 				velocity.x = -run_speed
-			
+				if crouching: velocity.x /= 2
 		if jumping:
 			if velocity.y > jump_max_fall_speed:
 				jump_max_fall_speed = velocity.y

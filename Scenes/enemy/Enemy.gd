@@ -69,6 +69,7 @@ func fire_projectile():
 		get_parent().add_child(projectile)
 		var projectile_body = projectile.get_node("Projectile")
 		projectile_body.position = position
+		projectile_body.position.y -= 15
 		projectile_body.fire(!sprite.flip_h)
 	else:
 		firing = false
