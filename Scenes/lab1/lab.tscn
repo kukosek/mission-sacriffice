@@ -47,14 +47,14 @@ animations = [ {
 "name": "death",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 21 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 22 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 23 ) ],
-"loop": true,
-"name": "gunshot",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "walking",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 22 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "gunshot",
 "speed": 10.0
 } ]
 
@@ -465,6 +465,7 @@ position = Vector2( -279.452, -99.0487 )
 range_x = 100
 range_y = 150
 show_hint = false
+target_scene = "res://Scenes/moon1/moon.tscn"
 
 [node name="AnimatedSprite" parent="Door" index="0"]
 z_index = -1

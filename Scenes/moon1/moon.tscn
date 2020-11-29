@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://Scenes/character/character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/moon1/moon-background.tscn" type="PackedScene" id=2]
@@ -9,8 +9,7 @@
 [ext_resource path="res://Scenes/light3.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/moon1/moon.tres" type="TileSet" id=8]
 [ext_resource path="res://Scenes/lab1/kachle.png" type="Texture" id=9]
-[ext_resource path="res://Scenes/light2.png" type="Texture" id=10]
-[ext_resource path="res://Scenes/moon1/Sunlight.gd" type="Script" id=11]
+[ext_resource path="res://Scenes/moon1/Sunlight.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/things/Door.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/moon1/Show.gd" type="Script" id=13]
 [ext_resource path="res://Scenes/moon1/TileMap.gd" type="Script" id=14]
@@ -133,16 +132,7 @@ autoplay = true
 color = Color( 0.188235, 0.184314, 0.184314, 1 )
 script = ExtResource( 13 )
 
-[node name="Sunlight" type="Light2D" parent="."]
-visible = false
-scale = Vector2( 0.53, 0.53 )
-texture = ExtResource( 10 )
-color = Color( 0.72549, 0.917647, 0.992157, 1 )
-energy = 2.16
-mode = 2
-range_layer_min = -250
-range_layer_max = 100
-script = ExtResource( 11 )
+[node name="Sunlight" parent="." instance=ExtResource( 10 )]
 
 [node name="MoonBackground" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 4.48984 )
@@ -183,7 +173,7 @@ visible = false
 position = Vector2( 0.484283, 299.699 )
 scale = Vector2( 5.7, 6 )
 frames = SubResource( 2 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="RadioAudio" type="AudioStreamPlayer2D" parent="LunarLander"]
@@ -254,7 +244,7 @@ position = Vector2( 3356.97, 818.011 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 12 )
 animation = "New Anim"
-frame = 4
+frame = 5
 playing = true
 offset = Vector2( 3.5166, 0.568039 )
 
@@ -278,6 +268,7 @@ acceleration = 10.0
 
 [node name="Door" parent="." instance=ExtResource( 12 )]
 position = Vector2( 370.648, 927.613 )
+target_scene = "res://Scenes/lab1/lab.tscn"
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 19 )

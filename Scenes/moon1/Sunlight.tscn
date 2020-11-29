@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/light2.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/moon1/Sunlight.gd" type="Script" id=2]
+
+[node name="Sunlight" type="Light2D"]
+visible = false
+scale = Vector2( 0.53, 0.53 )
+texture = ExtResource( 1 )
+color = Color( 0.72549, 0.917647, 0.992157, 1 )
+energy = 2.16
+mode = 2
+range_layer_min = -250
+range_layer_max = 100
+script = ExtResource( 2 )
