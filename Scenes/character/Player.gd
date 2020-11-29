@@ -231,10 +231,18 @@ func _on_AnimatedSprite_animation_finished():
 				start_walking()
 			else:
 				stop_walking() 
+			if post_jumping:
+				sprite.speed_scale = 1.0
+				stop_walking()
+				post_jumping = false
 		if gunfiring:
 			gunfiring = false
 			if wallsliding:
 				sprite.play("wallslide")
+			if post_jumping:
+				sprite.speed_scale = 1.0
+				stop_walking()
+				post_jumping = false
 	if sprite.animation == "death":
 		death_screen.show()
 		
