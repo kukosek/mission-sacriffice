@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/die_in_acid.ogg-2738563f4a1128cb210abdee4c70a2dc.oggstr"
+
+[deps]
+
+source_file="res://Scenes/lab1/sfx/die_in_acid.ogg"
+dest_files=[ "res://.import/die_in_acid.ogg-2738563f4a1128cb210abdee4c70a2dc.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
