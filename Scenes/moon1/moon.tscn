@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Scenes/character/character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/moon1/moon-background.tscn" type="PackedScene" id=2]
@@ -11,13 +11,9 @@
 [ext_resource path="res://Scenes/lab1/kachle.png" type="Texture" id=9]
 [ext_resource path="res://Scenes/light2.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/moon1/Sunlight.gd" type="Script" id=11]
-[ext_resource path="res://Scenes/moon1/LabEntranceDetection.gd" type="Script" id=12]
+[ext_resource path="res://Scenes/things/Door.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/moon1/Show.gd" type="Script" id=13]
 [ext_resource path="res://Scenes/moon1/TileMap.gd" type="Script" id=14]
-[ext_resource path="res://Scenes/door.png" type="Texture" id=15]
-[ext_resource path="res://Scenes/moon1/Door.gd" type="Script" id=16]
-[ext_resource path="res://Scenes/moon1/sfx/door_open.ogg" type="AudioStream" id=17]
-[ext_resource path="res://Scenes/moon1/sfx/door_close.ogg" type="AudioStream" id=18]
 [ext_resource path="res://Scenes/moon1/sfx/wildmusic.ogg" type="AudioStream" id=19]
 [ext_resource path="res://Scenes/moon1/klic.png" type="Texture" id=20]
 [ext_resource path="res://Scenes/moon1/lander_fire/frame0002.png" type="Texture" id=21]
@@ -116,33 +112,6 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 21.9987, 100 )
-
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 15 )
-region = Rect2( 16, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 15 )
-region = Rect2( 0, 0, 16, 32 )
-
-[sub_resource type="SpriteFrames" id=16]
-animations = [ {
-"frames": [ SubResource( 14 ) ],
-"loop": true,
-"name": "open",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 15 ) ],
-"loop": false,
-"name": "closed",
-"speed": 5.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=17]
-extents = Vector2( 10, 97.4519 )
-
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -198,7 +167,7 @@ color = Color( 0, 0, 0, 1 )
 script = ExtResource( 13 )
 
 [node name="LunarLander" type="KinematicBody2D" parent="."]
-position = Vector2( 0, -25000 )
+position = Vector2( 0, 340 )
 collision_layer = 0
 script = ExtResource( 3 )
 
@@ -210,21 +179,21 @@ texture = ExtResource( 4 )
 shape = SubResource( 1 )
 
 [node name="FireSprite" type="AnimatedSprite" parent="LunarLander"]
+visible = false
 position = Vector2( 0.484283, 299.699 )
 scale = Vector2( 5.7, 6 )
 frames = SubResource( 2 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="RadioAudio" type="AudioStreamPlayer2D" parent="LunarLander"]
 stream = ExtResource( 45 )
-autoplay = true
 
 [node name="RocketNoise" type="AudioStreamPlayer2D" parent="LunarLander"]
 stream = ExtResource( 46 )
-autoplay = true
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 0 )
 
 [node name="CaveLight2D" type="Light2D" parent="."]
 position = Vector2( -1238.26, 766.548 )
@@ -285,7 +254,7 @@ position = Vector2( 3356.97, 818.011 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 12 )
 animation = "New Anim"
-frame = 7
+frame = 4
 playing = true
 offset = Vector2( 3.5166, 0.568039 )
 
@@ -307,36 +276,10 @@ __meta__ = {
 speed = 15.0
 acceleration = 10.0
 
-[node name="LabEntranceDetection" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-script = ExtResource( 12 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LabEntranceDetection"]
-position = Vector2( 450, 929.334 )
-shape = SubResource( 13 )
-
-[node name="Door" type="StaticBody2D" parent="."]
-position = Vector2( 372.645, 927.093 )
-script = ExtResource( 16 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Door"]
-scale = Vector2( 6, 6 )
-frames = SubResource( 16 )
-animation = "closed"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
-position = Vector2( -21.2372, 0 )
-shape = SubResource( 17 )
-
-[node name="OpenSFX" type="AudioStreamPlayer2D" parent="Door"]
-stream = ExtResource( 17 )
-
-[node name="CloseSFX" type="AudioStreamPlayer2D" parent="Door"]
-stream = ExtResource( 18 )
+[node name="Door" parent="." instance=ExtResource( 12 )]
+position = Vector2( 370.648, 927.613 )
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 19 )
 autoplay = true
 [connection signal="animation_finished" from="LunarLander/FireSprite" to="LunarLander" method="_on_FireSprite_animation_finished"]
-[connection signal="body_entered" from="LabEntranceDetection" to="LabEntranceDetection" method="_on_LabEntranceDetection_body_entered"]

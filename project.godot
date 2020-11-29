@@ -19,6 +19,10 @@ config/name="Moon project"
 run/main_scene="res://Scenes/gui/MainMenu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Global.gd"
+
 [editor_plugins]
 
 enabled=PoolStringArray( "messagebox" )
