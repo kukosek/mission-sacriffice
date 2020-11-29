@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hanglight.png-7d3ee16ee3fa4678bba4e208febe2370.stex"
+path="res://.import/sklo.png-ec2ac3b171a8143aeca55ed1cf184b8f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/BOSS/hanglight.png"
-dest_files=[ "res://.import/hanglight.png-7d3ee16ee3fa4678bba4e208febe2370.stex" ]
+source_file="res://Scenes/BOSS/sklo.png"
+dest_files=[ "res://.import/sklo.png-ec2ac3b171a8143aeca55ed1cf184b8f.stex" ]
 
 [params]
 

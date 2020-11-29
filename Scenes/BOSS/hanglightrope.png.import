@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hanglight.png-7d3ee16ee3fa4678bba4e208febe2370.stex"
+path="res://.import/hanglightrope.png-c308a0729692484c4d21c81d35dd1383.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/BOSS/hanglight.png"
-dest_files=[ "res://.import/hanglight.png-7d3ee16ee3fa4678bba4e208febe2370.stex" ]
+source_file="res://Scenes/BOSS/hanglightrope.png"
+dest_files=[ "res://.import/hanglightrope.png-c308a0729692484c4d21c81d35dd1383.stex" ]
 
 [params]
 
