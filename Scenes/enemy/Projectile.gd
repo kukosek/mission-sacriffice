@@ -7,7 +7,7 @@ func fire(side):
 	else:
 		velocity = -speed
 
-export (Vector2) var speed = Vector2(650, 0)
+export (Vector2) var speed = Vector2(450, 0)
 var velocity = Vector2.ZERO
 
 func _physics_process(_delta):
