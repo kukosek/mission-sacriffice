@@ -172,7 +172,7 @@ func get_input():
 					if not jumping and not post_jumping:
 						sprite.play("jump")
 						start_jump()
-		elif wall_slide_elaped_time > 0.25:
+		elif wall_slide_elaped_time > 0.25 and not post_jumping and not crouching:
 			if right_colliding():
 				sprite.play("wallslide")
 				sprite.flip_h = true
