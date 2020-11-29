@@ -175,7 +175,7 @@ animations = [ {
 "frames": [ ExtResource( 34 ), ExtResource( 18 ), ExtResource( 36 ), ExtResource( 17 ), ExtResource( 40 ), ExtResource( 42 ), ExtResource( 28 ), ExtResource( 35 ), ExtResource( 30 ), ExtResource( 38 ), ExtResource( 31 ), ExtResource( 52 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 50 ), ExtResource( 22 ), ExtResource( 29 ), ExtResource( 41 ) ],
 "loop": true,
 "name": "aim_earth",
-"speed": 24.0
+"speed": 23.95
 } ]
 
 [node name="Node2D" type="Node2D"]
@@ -289,7 +289,7 @@ position = Vector2( 735.391, 407.293 )
 scale = Vector2( 6, 6 )
 frames = SubResource( 23 )
 animation = "aim_earth"
-frame = 11
+frame = 4
 playing = true
 
 [editable path="Door"]
