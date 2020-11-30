@@ -221,7 +221,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 25 )
-frame = 7
+frame = 3
 speed_scale = 2.0
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -239,7 +239,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 25 )
-frame = 3
+frame = 1
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -256,7 +256,6 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 25 )
-frame = 2
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -273,7 +272,6 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 25 )
-frame = 2
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -290,7 +288,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 25 )
-frame = 1
+frame = 7
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -310,7 +308,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 25 )
-frame = 6
+frame = 2
 speed_scale = 2.0
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -328,7 +326,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 25 )
-frame = 3
+frame = 1
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -345,7 +343,6 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 25 )
-frame = 2
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -362,7 +359,6 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 25 )
-frame = 2
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -379,7 +375,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 25 )
-frame = 1
+frame = 7
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -399,7 +395,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 25 )
-frame = 6
+frame = 2
 speed_scale = 2.0
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -417,7 +413,6 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 25 )
-frame = 2
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -434,7 +429,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 25 )
-frame = 1
+frame = 7
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -525,7 +520,7 @@ position = Vector2( 300, 928.334 )
 
 [node name="Sunlight" parent="." instance=ExtResource( 13 )]
 visible = true
-position = Vector2( -294, -589 )
+position = Vector2( -288, -589 )
 scale = Vector2( 20, 2.41211 )
 range_z_max = 5
 range_layer_max = 0
@@ -536,7 +531,7 @@ position = Vector2( 735.391, 407.293 )
 scale = Vector2( 6, 6 )
 frames = SubResource( 13 )
 animation = "aim_earth"
-frame = 9
+frame = 4
 playing = true
 
 [node name="sprites" type="Node2D" parent="."]
