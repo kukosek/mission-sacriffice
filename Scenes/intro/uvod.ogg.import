@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/uvod.ogg-6af8601ae02fcea1c9c73ba0b2f3f10a.oggstr"
+
+[deps]
+
+source_file="res://Scenes/intro/uvod.ogg"
+dest_files=[ "res://.import/uvod.ogg-6af8601ae02fcea1c9c73ba0b2f3f10a.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
