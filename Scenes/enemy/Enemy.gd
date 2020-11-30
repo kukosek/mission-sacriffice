@@ -11,7 +11,8 @@ var positions
 var positions_count
 var pos_iter = 0
 
-var hp = 3
+export (int) var damage = 1
+export (int) var hp = 3
 
 var dead = false
 func damage(damage_hp):
@@ -68,6 +69,7 @@ func fire_projectile():
 		var projectile = projectile_res.instance()
 		get_parent().add_child(projectile)
 		var projectile_body = projectile.get_node("Projectile")
+		projectile_body.damage = damage
 		projectile_body.position = position
 		projectile_body.position.y -= 15
 		projectile_body.fire(!sprite.flip_h)

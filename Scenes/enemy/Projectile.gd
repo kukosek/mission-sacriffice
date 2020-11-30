@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+var damage = 1
+
 func fire(side):
 	$Sprite.flip_h = side
 	if side:
@@ -17,5 +19,5 @@ func _physics_process(_delta):
 func _on_Area2D_body_entered(body):
 	if body != self and body.name != "Enemy":
 		if body.name == "Player":
-			body.damage(1)
+			body.damage(damage)
 		queue_free()
