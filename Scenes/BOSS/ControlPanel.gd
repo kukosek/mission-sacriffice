@@ -21,7 +21,7 @@ func player_is_in_range():
 	return delta_pos.x < range_x and delta_pos.y < range_y
 
 func _input(event):
-	if not destroyer.counting_down:
+	if not Global.counting_down:
 		if event is InputEventKey:
 			if event.is_action_pressed("ui_use"):
 				if player_is_in_range():
@@ -41,7 +41,7 @@ func _input(event):
 						self_destroy = false
 var showing_hint = false
 func _process(_delta):
-	if player_is_in_range() and show_hint and not destroyer.counting_down:
+	if player_is_in_range() and show_hint and not Global.counting_down:
 		if show_hint:
 			showing_hint = true
 			hint.text = "press e to use"

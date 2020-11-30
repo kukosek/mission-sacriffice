@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://Scenes/moon1/moon.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/character/character.tscn" type="PackedScene" id=2]
@@ -39,6 +39,10 @@
 [ext_resource path="res://Scenes/things/hanglight.tscn" type="PackedScene" id=37]
 [ext_resource path="res://Scenes/things/poison.tscn" type="PackedScene" id=38]
 [ext_resource path="res://Scenes/lab1/lab1.tres" type="TileSet" id=39]
+[ext_resource path="res://Scenes/lab1/lab.gd" type="Script" id=40]
+[ext_resource path="res://Scenes/moon1/EarthExploder.gd" type="Script" id=41]
+[ext_resource path="res://Scenes/lab1/Siren.gd" type="Script" id=42]
+[ext_resource path="res://Scenes/lab1/sfx/siren.ogg" type="AudioStream" id=43]
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 33 )
@@ -102,6 +106,7 @@ animations = [ {
 extents = Vector2( 23.5234, 55.5175 )
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 40 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 130.071, -68.5492 )
@@ -192,37 +197,37 @@ scale = Vector2( 4, 30 )
 position = Vector2( 1504, 632 )
 
 [node name="Sprite" parent="poison/Spikes" index="1"]
-frame = 7
+frame = 1
 
 [node name="Sprite" parent="poison/Spikes2" index="1"]
-frame = 0
+frame = 4
 
 [node name="Sprite" parent="poison/Spikes3" index="1"]
-frame = 7
+frame = 3
 
 [node name="Sprite" parent="poison/Spikes4" index="1"]
-frame = 7
+frame = 3
 
 [node name="Sprite" parent="poison/Spikes5" index="1"]
-frame = 6
+frame = 2
 
 [node name="poison2" parent="." instance=ExtResource( 38 )]
 position = Vector2( 3385.78, 1223.56 )
 
 [node name="Sprite" parent="poison2/Spikes" index="1"]
-frame = 2
+frame = 4
 
 [node name="Sprite" parent="poison2/Spikes2" index="1"]
-frame = 0
+frame = 4
 
 [node name="Sprite" parent="poison2/Spikes3" index="1"]
-frame = 7
+frame = 3
 
 [node name="Sprite" parent="poison2/Spikes4" index="1"]
-frame = 7
+frame = 3
 
 [node name="Sprite" parent="poison2/Spikes5" index="1"]
-frame = 6
+frame = 2
 
 [node name="poison3" parent="." instance=ExtResource( 38 )]
 position = Vector2( 3375.11, 1218.15 )
@@ -231,31 +236,31 @@ position = Vector2( 3375.11, 1218.15 )
 position = Vector2( 1269.88, -657.849 )
 
 [node name="Sprite" parent="poison3/Spikes" index="1"]
-frame = 0
+frame = 2
 
 [node name="Spikes2" parent="poison3" index="1"]
 position = Vector2( 1333.88, -657.849 )
 
 [node name="Sprite" parent="poison3/Spikes2" index="1"]
-frame = 6
+frame = 5
 
 [node name="Spikes3" parent="poison3" index="2"]
 position = Vector2( 1397.88, -657.849 )
 
 [node name="Sprite" parent="poison3/Spikes3" index="1"]
-frame = 5
+frame = 4
 
 [node name="Spikes4" parent="poison3" index="3"]
 position = Vector2( 1461.88, -657.849 )
 
 [node name="Sprite" parent="poison3/Spikes4" index="1"]
-frame = 5
+frame = 4
 
 [node name="Spikes5" parent="poison3" index="4"]
 position = Vector2( 1525.88, -657.849 )
 
 [node name="Sprite" parent="poison3/Spikes5" index="1"]
-frame = 4
+frame = 3
 
 [node name="poison4" parent="." instance=ExtResource( 38 )]
 position = Vector2( 4351.01, 1704.92 )
@@ -267,31 +272,31 @@ position = Vector2( 4015.85, 1218.85 )
 position = Vector2( 1269.88, -657.849 )
 
 [node name="Sprite" parent="poison5/Spikes" index="1"]
-frame = 7
+frame = 1
 
 [node name="Spikes2" parent="poison5" index="1"]
 position = Vector2( 1333.88, -657.849 )
 
 [node name="Sprite" parent="poison5/Spikes2" index="1"]
-frame = 6
+frame = 5
 
 [node name="Spikes3" parent="poison5" index="2"]
 position = Vector2( 1397.88, -657.849 )
 
 [node name="Sprite" parent="poison5/Spikes3" index="1"]
-frame = 5
+frame = 4
 
 [node name="Spikes4" parent="poison5" index="3"]
 position = Vector2( 1461.88, -657.849 )
 
 [node name="Sprite" parent="poison5/Spikes4" index="1"]
-frame = 5
+frame = 4
 
 [node name="Spikes5" parent="poison5" index="4"]
 position = Vector2( 1525.88, -657.849 )
 
 [node name="Sprite" parent="poison5/Spikes5" index="1"]
-frame = 4
+frame = 3
 
 [node name="poison6" parent="." instance=ExtResource( 38 )]
 position = Vector2( 5623.38, 1704.87 )
@@ -300,31 +305,31 @@ position = Vector2( 5623.38, 1704.87 )
 position = Vector2( -18.4854, -1144.74 )
 
 [node name="Sprite" parent="poison6/Spikes" index="1"]
-frame = 7
+frame = 1
 
 [node name="Spikes2" parent="poison6" index="1"]
 position = Vector2( 45.5146, -1144.74 )
 
 [node name="Sprite" parent="poison6/Spikes2" index="1"]
-frame = 6
+frame = 5
 
 [node name="Spikes3" parent="poison6" index="2"]
 position = Vector2( 109.515, -1144.74 )
 
 [node name="Sprite" parent="poison6/Spikes3" index="1"]
-frame = 5
+frame = 4
 
 [node name="Spikes4" parent="poison6" index="3"]
 position = Vector2( 173.515, -1144.74 )
 
 [node name="Sprite" parent="poison6/Spikes4" index="1"]
-frame = 5
+frame = 4
 
 [node name="Spikes5" parent="poison6" index="4"]
 position = Vector2( 237.515, -1144.74 )
 
 [node name="Sprite" parent="poison6/Spikes5" index="1"]
-frame = 4
+frame = 3
 
 [node name="poison4" parent="poison6" instance=ExtResource( 38 )]
 position = Vector2( -630.787, -1.49829 )
@@ -336,31 +341,31 @@ position = Vector2( 4645.48, 1222.83 )
 position = Vector2( 1269.88, -657.849 )
 
 [node name="Sprite" parent="poison7/Spikes" index="1"]
-frame = 7
+frame = 1
 
 [node name="Spikes2" parent="poison7" index="1"]
 position = Vector2( 1333.88, -657.849 )
 
 [node name="Sprite" parent="poison7/Spikes2" index="1"]
-frame = 6
+frame = 5
 
 [node name="Spikes3" parent="poison7" index="2"]
 position = Vector2( 1397.88, -657.849 )
 
 [node name="Sprite" parent="poison7/Spikes3" index="1"]
-frame = 5
+frame = 4
 
 [node name="Spikes4" parent="poison7" index="3"]
 position = Vector2( 1461.88, -657.849 )
 
 [node name="Sprite" parent="poison7/Spikes4" index="1"]
-frame = 5
+frame = 4
 
 [node name="Spikes5" parent="poison7" index="4"]
 position = Vector2( 1525.88, -657.849 )
 
 [node name="Sprite" parent="poison7/Spikes5" index="1"]
-frame = 4
+frame = 3
 
 [node name="poison8" parent="." instance=ExtResource( 38 )]
 position = Vector2( 4960.73, 1222.61 )
@@ -369,31 +374,31 @@ position = Vector2( 4960.73, 1222.61 )
 position = Vector2( 1269.88, -657.849 )
 
 [node name="Sprite" parent="poison8/Spikes" index="1"]
-frame = 7
+frame = 1
 
 [node name="Spikes2" parent="poison8" index="1"]
 position = Vector2( 1333.88, -657.849 )
 
 [node name="Sprite" parent="poison8/Spikes2" index="1"]
-frame = 6
+frame = 5
 
 [node name="Spikes3" parent="poison8" index="2"]
 position = Vector2( 1397.88, -657.849 )
 
 [node name="Sprite" parent="poison8/Spikes3" index="1"]
-frame = 5
+frame = 4
 
 [node name="Spikes4" parent="poison8" index="3"]
 position = Vector2( 1461.88, -657.849 )
 
 [node name="Sprite" parent="poison8/Spikes4" index="1"]
-frame = 5
+frame = 4
 
 [node name="Spikes5" parent="poison8" index="4"]
 position = Vector2( 1525.88, -657.849 )
 
 [node name="Sprite" parent="poison8/Spikes5" index="1"]
-frame = 4
+frame = 3
 
 [node name="poison9" parent="." instance=ExtResource( 38 )]
 position = Vector2( 5281.31, 1224.33 )
@@ -402,31 +407,31 @@ position = Vector2( 5281.31, 1224.33 )
 position = Vector2( 1269.88, -657.849 )
 
 [node name="Sprite" parent="poison9/Spikes" index="1"]
-frame = 6
+frame = 0
 
 [node name="Spikes2" parent="poison9" index="1"]
 position = Vector2( 1333.88, -657.849 )
 
 [node name="Sprite" parent="poison9/Spikes2" index="1"]
-frame = 5
+frame = 4
 
 [node name="Spikes3" parent="poison9" index="2"]
 position = Vector2( 1397.88, -657.849 )
 
 [node name="Sprite" parent="poison9/Spikes3" index="1"]
-frame = 4
+frame = 3
 
 [node name="Spikes4" parent="poison9" index="3"]
 position = Vector2( 1461.88, -657.849 )
 
 [node name="Sprite" parent="poison9/Spikes4" index="1"]
-frame = 4
+frame = 3
 
 [node name="Spikes5" parent="poison9" index="4"]
 position = Vector2( 1525.88, -657.849 )
 
 [node name="Sprite" parent="poison9/Spikes5" index="1"]
-frame = 3
+frame = 2
 
 [node name="poison10" parent="." instance=ExtResource( 38 )]
 position = Vector2( 5601.61, 1225.79 )
@@ -435,31 +440,31 @@ position = Vector2( 5601.61, 1225.79 )
 position = Vector2( 1269.88, -657.849 )
 
 [node name="Sprite" parent="poison10/Spikes" index="1"]
-frame = 6
+frame = 0
 
 [node name="Spikes2" parent="poison10" index="1"]
 position = Vector2( 1333.88, -657.849 )
 
 [node name="Sprite" parent="poison10/Spikes2" index="1"]
-frame = 5
+frame = 4
 
 [node name="Spikes3" parent="poison10" index="2"]
 position = Vector2( 1397.88, -657.849 )
 
 [node name="Sprite" parent="poison10/Spikes3" index="1"]
-frame = 4
+frame = 3
 
 [node name="Spikes4" parent="poison10" index="3"]
 position = Vector2( 1461.88, -657.849 )
 
 [node name="Sprite" parent="poison10/Spikes4" index="1"]
-frame = 4
+frame = 3
 
 [node name="Spikes5" parent="poison10" index="4"]
 position = Vector2( 1525.88, -657.849 )
 
 [node name="Sprite" parent="poison10/Spikes5" index="1"]
-frame = 3
+frame = 2
 
 [node name="TileMapPlatforms" type="TileMap" parent="."]
 position = Vector2( 2, 0 )
@@ -529,7 +534,7 @@ script = ExtResource( 35 )
 position = Vector2( 949.207, 481.271 )
 scale = Vector2( 14.2812, 14.4687 )
 frames = SubResource( 10 )
-frame = 2
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trap1/Trap"]
@@ -568,6 +573,7 @@ projectile_res = ExtResource( 24 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemáci/HandlingEnemy1/Enemy"]
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 2 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy1/Enemy"]
@@ -602,7 +608,6 @@ projectile_res = ExtResource( 24 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemáci/HandlingEnemy12/Enemy"]
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 2 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy12/Enemy"]
@@ -637,7 +642,6 @@ projectile_res = ExtResource( 24 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemáci/HandlingEnemy13/Enemy"]
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 2 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy13/Enemy"]
@@ -671,7 +675,6 @@ script = ExtResource( 8 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemáci/HandlingEnemy2/Enemy"]
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 2 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy2/Enemy"]
@@ -703,6 +706,7 @@ script = ExtResource( 8 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemáci/HandlingEnemy3/Enemy"]
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 2 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy3/Enemy"]
@@ -734,6 +738,7 @@ script = ExtResource( 8 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemáci/HandlingEnemy4/Enemy"]
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 2 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy4/Enemy"]
@@ -767,6 +772,7 @@ script = ExtResource( 8 )
 position = Vector2( 6.26953, -2.81665 )
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 2 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy5/Enemy"]
@@ -800,7 +806,6 @@ script = ExtResource( 8 )
 position = Vector2( 6.26953, -2.81665 )
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 2 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy6/Enemy"]
@@ -836,7 +841,6 @@ script = ExtResource( 8 )
 position = Vector2( 6.26953, -2.81665 )
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 2 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy7/Enemy"]
@@ -870,6 +874,7 @@ script = ExtResource( 8 )
 position = Vector2( 6.26953, -2.81665 )
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 2 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy8/Enemy"]
@@ -903,6 +908,7 @@ script = ExtResource( 8 )
 position = Vector2( 6.26953, -2.81665 )
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 2 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy9/Enemy"]
@@ -936,7 +942,6 @@ script = ExtResource( 8 )
 position = Vector2( 6.26953, -2.81665 )
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 2 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy10/Enemy"]
@@ -970,11 +975,23 @@ script = ExtResource( 8 )
 position = Vector2( 6.26953, -2.81665 )
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 2 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy11/Enemy"]
 position = Vector2( 2.33301, 2.86779 )
 shape = SubResource( 3 )
+
+[node name="Exploder" type="Node2D" parent="."]
+script = ExtResource( 41 )
+explosion_scale = 4.0
+player_path = NodePath("../Player")
+
+[node name="Siren" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 43 )
+max_distance = 10000.0
+attenuation = 0.225313
+script = ExtResource( 42 )
 [connection signal="body_entered" from="Trap1/Trap" to="Trap1/Trap" method="_on_Trap1_body_entered"]
 
 [editable path="Player"]

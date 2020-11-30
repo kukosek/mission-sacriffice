@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=2]
+[gd_scene load_steps=100 format=2]
 
 [ext_resource path="res://Scenes/BOSS/sprites23.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/BOSS/sprites16.png" type="Texture" id=2]
@@ -70,6 +70,7 @@
 [ext_resource path="res://Scenes/BOSS/sprites18.png" type="Texture" id=68]
 [ext_resource path="res://Scenes/BOSS/glassholder.png" type="Texture" id=69]
 [ext_resource path="res://Scenes/BOSS/vent.png" type="Texture" id=70]
+[ext_resource path="res://Scenes/moon1/EarthExploder.gd" type="Script" id=71]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9.28952, 8.63519 )
@@ -451,15 +452,15 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=16]
 animations = [ {
-"frames": [ ExtResource( 34 ), ExtResource( 18 ), ExtResource( 36 ), ExtResource( 17 ), ExtResource( 40 ), ExtResource( 42 ), ExtResource( 28 ), ExtResource( 35 ), ExtResource( 30 ), ExtResource( 38 ), ExtResource( 31 ), ExtResource( 52 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 50 ), ExtResource( 22 ), ExtResource( 29 ), ExtResource( 41 ) ],
-"loop": true,
-"name": "aim_earth",
-"speed": 23.95
-}, {
 "frames": [ ExtResource( 20 ), ExtResource( 48 ), ExtResource( 43 ), ExtResource( 23 ), ExtResource( 47 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 19 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 39 ), ExtResource( 33 ), ExtResource( 25 ), ExtResource( 21 ), ExtResource( 27 ), ExtResource( 51 ), ExtResource( 37 ), ExtResource( 32 ) ],
 "loop": true,
 "name": "aim_moon",
 "speed": 24.0
+}, {
+"frames": [ ExtResource( 34 ), ExtResource( 18 ), ExtResource( 36 ), ExtResource( 17 ), ExtResource( 40 ), ExtResource( 42 ), ExtResource( 28 ), ExtResource( 35 ), ExtResource( 30 ), ExtResource( 38 ), ExtResource( 31 ), ExtResource( 52 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 50 ), ExtResource( 22 ), ExtResource( 29 ), ExtResource( 41 ) ],
+"loop": true,
+"name": "aim_earth",
+"speed": 23.95
 } ]
 
 [sub_resource type="RectangleShape2D" id=17]
@@ -551,7 +552,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 2
+frame = 6
 speed_scale = 2.0
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -569,7 +570,7 @@ shape = SubResource( 1 )
 position = Vector2( -31.5, -23.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 2
+frame = 6
 speed_scale = 1.554
 playing = true
 offset = Vector2( 14.25, -1 )
@@ -587,7 +588,6 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 7
 speed_scale = 2.287
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -605,7 +605,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 6
+frame = 5
 speed_scale = 1.49
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -623,7 +623,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 2
+frame = 6
 speed_scale = 1.835
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -644,7 +644,7 @@ shape = SubResource( 1 )
 position = Vector2( -31.5, -23.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 2
+frame = 6
 speed_scale = 1.554
 playing = true
 offset = Vector2( 14.25, -1 )
@@ -662,7 +662,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 6
+frame = 7
 speed_scale = 2.287
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -680,7 +680,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 5
+frame = 4
 speed_scale = 1.49
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -701,7 +701,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 2
+frame = 6
 speed_scale = 2.0
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -719,7 +719,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 1
+frame = 7
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -736,6 +736,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
+frame = 6
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -752,7 +753,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 7
+frame = 5
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -769,7 +770,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 7
+frame = 5
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -826,7 +827,7 @@ position = Vector2( 107.848, 41.8232 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 16 )
 animation = "aim_earth"
-frame = 2
+frame = 9
 playing = true
 script = ExtResource( 61 )
 
@@ -983,26 +984,36 @@ frames = SubResource( 27 )
 [node name="kamerakopule" type="AnimatedSprite" parent="sprites"]
 position = Vector2( -742, -876 )
 frames = SubResource( 28 )
-frame = 4
 playing = true
 
 [node name="kamerakopule3" type="AnimatedSprite" parent="sprites"]
 position = Vector2( -352, -1516 )
 frames = SubResource( 28 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="kamerakopule4" type="AnimatedSprite" parent="sprites"]
 position = Vector2( -380, -44 )
 frames = SubResource( 28 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="kamerakopule2" type="AnimatedSprite" parent="sprites"]
 position = Vector2( -39, -1068 )
 frames = SubResource( 28 )
-frame = 4
 playing = true
+
+[node name="Exploder" type="Node2D" parent="."]
+z_index = 512
+script = ExtResource( 71 )
+pos_x_min = -3000
+pox_x_max = 1500
+pox_y_min = -2000
+pox_y_max = 1000
+raninterval_min_s = 0.1
+raninterval_max_s = 0.2
+explosion_scale = 8.0
+player_path = NodePath("../Player")
 [connection signal="body_entered" from="poison/Spikes" to="poison/Spikes" method="_on_Spikes_body_entered"]
 [connection signal="body_entered" from="poison/Spikes2" to="poison/Spikes2" method="_on_Spikes_body_entered"]
 [connection signal="body_entered" from="poison/Spikes3" to="poison/Spikes3" method="_on_Spikes_body_entered"]

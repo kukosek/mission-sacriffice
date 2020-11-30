@@ -4,7 +4,7 @@ extends AnimatedSprite
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-export (int) var range_x = 100
+export (int) var range_x = 200
 export (int) var range_y = 100
 export (bool) var show_hint = true
 export (NodePath) var player_path = "../Player"
