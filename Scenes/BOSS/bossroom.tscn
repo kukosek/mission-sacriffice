@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=2]
+[gd_scene load_steps=88 format=2]
 
 [ext_resource path="res://Scenes/BOSS/sprites23.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/BOSS/sprites16.png" type="Texture" id=2]
@@ -61,6 +61,7 @@
 [ext_resource path="res://Scenes/BOSS/danger/danger8.png" type="Texture" id=59]
 [ext_resource path="res://Scenes/BOSS/danger/danger5.png" type="Texture" id=60]
 [ext_resource path="res://Scenes/BOSS/hanglightrope.png" type="Texture" id=61]
+[ext_resource path="res://Scenes/things/poison.tscn" type="PackedScene" id=62]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15, 14.5 )
@@ -206,91 +207,7 @@ position = Vector2( -264, 311 )
 [node name="MoonBackground" parent="." instance=ExtResource( 12 )]
 position = Vector2( -1.12244, 0 )
 
-[node name="poison" type="Node2D" parent="."]
-
-[node name="Spikes" type="Area2D" parent="poison"]
-position = Vector2( -27, -1143 )
-scale = Vector2( 2, 2 )
-script = ExtResource( 15 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="poison/Spikes"]
-position = Vector2( -3, -28 )
-shape = SubResource( 1 )
-
-[node name="Sprite" type="AnimatedSprite" parent="poison/Spikes"]
-position = Vector2( -3, -26.5 )
-scale = Vector2( 2, 2 )
-frames = SubResource( 25 )
-frame = 3
-speed_scale = 2.0
-playing = true
-offset = Vector2( 0, 0.25 )
-
-[node name="Spikes2" type="Area2D" parent="poison"]
-position = Vector2( 37, -1143 )
-scale = Vector2( 2, 2 )
-script = ExtResource( 15 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="poison/Spikes2"]
-position = Vector2( -3, -28 )
-shape = SubResource( 1 )
-
-[node name="Sprite" type="AnimatedSprite" parent="poison/Spikes2"]
-position = Vector2( -3, -26.5 )
-scale = Vector2( 2, 2 )
-frames = SubResource( 25 )
-frame = 1
-playing = true
-offset = Vector2( 0, 0.25 )
-
-[node name="Spikes3" type="Area2D" parent="poison"]
-position = Vector2( 101, -1143 )
-scale = Vector2( 2, 2 )
-script = ExtResource( 15 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="poison/Spikes3"]
-position = Vector2( -3, -28 )
-shape = SubResource( 1 )
-
-[node name="Sprite" type="AnimatedSprite" parent="poison/Spikes3"]
-position = Vector2( -3, -26.5 )
-scale = Vector2( 2, 2 )
-frames = SubResource( 25 )
-playing = true
-offset = Vector2( 0, 0.25 )
-
-[node name="Spikes4" type="Area2D" parent="poison"]
-position = Vector2( 165, -1143 )
-scale = Vector2( 2, 2 )
-script = ExtResource( 15 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="poison/Spikes4"]
-position = Vector2( -3, -28 )
-shape = SubResource( 1 )
-
-[node name="Sprite" type="AnimatedSprite" parent="poison/Spikes4"]
-position = Vector2( -3, -26.5 )
-scale = Vector2( 2, 2 )
-frames = SubResource( 25 )
-playing = true
-offset = Vector2( 0, 0.25 )
-
-[node name="Spikes5" type="Area2D" parent="poison"]
-position = Vector2( 229, -1143 )
-scale = Vector2( 2, 2 )
-script = ExtResource( 15 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="poison/Spikes5"]
-position = Vector2( -3, -28 )
-shape = SubResource( 1 )
-
-[node name="Sprite" type="AnimatedSprite" parent="poison/Spikes5"]
-position = Vector2( -3, -26.5 )
-scale = Vector2( 2, 2 )
-frames = SubResource( 25 )
-frame = 7
-playing = true
-offset = Vector2( 0, 0.25 )
+[node name="poison" parent="." instance=ExtResource( 62 )]
 
 [node name="poison2" type="Node2D" parent="."]
 position = Vector2( 1088, 449 )
@@ -308,7 +225,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 25 )
-frame = 2
+frame = 3
 speed_scale = 2.0
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -326,7 +243,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 25 )
-frame = 1
+frame = 5
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -343,6 +260,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 25 )
+frame = 4
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -359,6 +277,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 25 )
+frame = 4
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -375,7 +294,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 25 )
-frame = 7
+frame = 3
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -395,7 +314,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 25 )
-frame = 2
+frame = 3
 speed_scale = 2.0
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -413,6 +332,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 25 )
+frame = 4
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -429,7 +349,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 25 )
-frame = 7
+frame = 3
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -531,7 +451,7 @@ position = Vector2( 735.391, 407.293 )
 scale = Vector2( 6, 6 )
 frames = SubResource( 13 )
 animation = "aim_earth"
-frame = 4
+frame = 10
 playing = true
 
 [node name="sprites" type="Node2D" parent="."]
@@ -565,11 +485,6 @@ one_way_collision = true
 position = Vector2( 992, 84 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 24 )
-[connection signal="body_entered" from="poison/Spikes" to="poison/Spikes" method="_on_Spikes_body_entered"]
-[connection signal="body_entered" from="poison/Spikes2" to="poison/Spikes2" method="_on_Spikes_body_entered"]
-[connection signal="body_entered" from="poison/Spikes3" to="poison/Spikes3" method="_on_Spikes_body_entered"]
-[connection signal="body_entered" from="poison/Spikes4" to="poison/Spikes4" method="_on_Spikes_body_entered"]
-[connection signal="body_entered" from="poison/Spikes5" to="poison/Spikes5" method="_on_Spikes_body_entered"]
 [connection signal="body_entered" from="poison2/Spikes" to="poison2/Spikes" method="_on_Spikes_body_entered"]
 [connection signal="body_entered" from="poison2/Spikes2" to="poison2/Spikes2" method="_on_Spikes_body_entered"]
 [connection signal="body_entered" from="poison2/Spikes3" to="poison2/Spikes3" method="_on_Spikes_body_entered"]

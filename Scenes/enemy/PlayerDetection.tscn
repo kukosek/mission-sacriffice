@@ -17,23 +17,25 @@ cast_to = Vector2( 50, 0 )
 collide_with_areas = true
 
 [node name="PlayerDetectorLeft" type="RayCast2D" parent="."]
+position = Vector2( 0, -60 )
 enabled = true
 cast_to = Vector2( 0, 0 )
 collision_mask = 2
 
 [node name="PlayerDetectorLeft2" type="RayCast2D" parent="."]
-position = Vector2( 0, -100 )
+position = Vector2( 0, -60 )
 enabled = true
 cast_to = Vector2( 0, 0 )
 collision_mask = 2
 
 [node name="PlayerDetectorRight" type="RayCast2D" parent="."]
+position = Vector2( 0, -60 )
 enabled = true
 cast_to = Vector2( 0, 0 )
 collision_mask = 2
 
 [node name="PlayerDetectorRight2" type="RayCast2D" parent="."]
-position = Vector2( 0, -100 )
+position = Vector2( 0, -60 )
 enabled = true
 cast_to = Vector2( 0, 0 )
 collision_mask = 2
