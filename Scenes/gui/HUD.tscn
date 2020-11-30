@@ -25,7 +25,7 @@ __meta__ = {
 }
 
 [node name="Hearts" type="HBoxContainer" parent="MarginContainer"]
-margin_right = 71.0
+margin_right = 168.0
 margin_bottom = 30.0
 custom_constants/separation = 2
 __meta__ = {
@@ -46,6 +46,48 @@ texture = ExtResource( 1 )
 [node name="TextureRect2" type="TextureRect" parent="MarginContainer/Hearts"]
 margin_left = 34.0
 margin_right = 49.0
+margin_bottom = 30.0
+texture = ExtResource( 1 )
+
+[node name="TextureRect4" type="TextureRect" parent="MarginContainer/Hearts"]
+margin_left = 51.0
+margin_right = 66.0
+margin_bottom = 30.0
+texture = ExtResource( 1 )
+
+[node name="TextureRect5" type="TextureRect" parent="MarginContainer/Hearts"]
+margin_left = 68.0
+margin_right = 83.0
+margin_bottom = 30.0
+texture = ExtResource( 1 )
+
+[node name="TextureRect6" type="TextureRect" parent="MarginContainer/Hearts"]
+margin_left = 85.0
+margin_right = 100.0
+margin_bottom = 30.0
+texture = ExtResource( 1 )
+
+[node name="TextureRect7" type="TextureRect" parent="MarginContainer/Hearts"]
+margin_left = 102.0
+margin_right = 117.0
+margin_bottom = 30.0
+texture = ExtResource( 1 )
+
+[node name="TextureRect8" type="TextureRect" parent="MarginContainer/Hearts"]
+margin_left = 119.0
+margin_right = 134.0
+margin_bottom = 30.0
+texture = ExtResource( 1 )
+
+[node name="TextureRect9" type="TextureRect" parent="MarginContainer/Hearts"]
+margin_left = 136.0
+margin_right = 151.0
+margin_bottom = 30.0
+texture = ExtResource( 1 )
+
+[node name="TextureRect10" type="TextureRect" parent="MarginContainer/Hearts"]
+margin_left = 153.0
+margin_right = 168.0
 margin_bottom = 30.0
 texture = ExtResource( 1 )
 
