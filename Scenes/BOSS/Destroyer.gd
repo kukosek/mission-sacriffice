@@ -3,10 +3,12 @@ extends AnimatedSprite
 var counting_down = false
 
 onready var control = $ControlPanel
+onready var earth_layer = get_node("../MoonBackground/ParallaxBackground3/ParallaxLayer")
+
 
 func start_countdown():
 	playing = true
-	time_left = 60.0
+	time_left = 10.0
 	counting_down = true
 	if control.self_destroy:
 		$StartSFX.play()
@@ -20,7 +22,8 @@ func _process(delta):
 		if time_left > 0:
 			time_left -= delta
 		else:
-			print("destroy")
+			if not control.self_destroy:
+				earth_layer.exploding = true
 			counting_down = false
 func _on_StartSFX_finished():
 	$WorkingSFX.play()
