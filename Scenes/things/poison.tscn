@@ -11,9 +11,9 @@
 [ext_resource path="res://Scenes/BOSS/Spikes.gd" type="Script" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 15, 14.5 )
+extents = Vector2( 8.32423, 8.55695 )
 
-[sub_resource type="SpriteFrames" id=25]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
@@ -35,8 +35,8 @@ shape = SubResource( 1 )
 [node name="Sprite" type="AnimatedSprite" parent="Spikes"]
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 25 )
-frame = 5
+frames = SubResource( 2 )
+frame = 2
 speed_scale = 2.0
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -53,8 +53,8 @@ shape = SubResource( 1 )
 [node name="Sprite" type="AnimatedSprite" parent="Spikes2"]
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 25 )
-frame = 1
+frames = SubResource( 2 )
+frame = 3
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -70,7 +70,8 @@ shape = SubResource( 1 )
 [node name="Sprite" type="AnimatedSprite" parent="Spikes3"]
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 25 )
+frames = SubResource( 2 )
+frame = 2
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -86,7 +87,8 @@ shape = SubResource( 1 )
 [node name="Sprite" type="AnimatedSprite" parent="Spikes4"]
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 25 )
+frames = SubResource( 2 )
+frame = 2
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -102,8 +104,8 @@ shape = SubResource( 1 )
 [node name="Sprite" type="AnimatedSprite" parent="Spikes5"]
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 25 )
-frame = 7
+frames = SubResource( 2 )
+frame = 1
 playing = true
 offset = Vector2( 0, 0.25 )
 [connection signal="body_entered" from="Spikes" to="Spikes" method="_on_Spikes_body_entered"]

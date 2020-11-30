@@ -50,11 +50,6 @@ animations = [ {
 "name": "default",
 "speed": 1.0
 }, {
-"frames": [ ExtResource( 29 ), ExtResource( 28 ), ExtResource( 26 ), ExtResource( 31 ), ExtResource( 25 ), ExtResource( 30 ), ExtResource( 13 ), ExtResource( 32 ), ExtResource( 27 ) ],
-"loop": false,
-"name": "death",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 21 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 22 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 23 ) ],
 "loop": true,
 "name": "gunshot",
@@ -63,6 +58,11 @@ animations = [ {
 "frames": [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "walking",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 29 ), ExtResource( 28 ), ExtResource( 26 ), ExtResource( 31 ), ExtResource( 25 ), ExtResource( 30 ), ExtResource( 13 ), ExtResource( 32 ), ExtResource( 27 ) ],
+"loop": false,
+"name": "death",
 "speed": 10.0
 } ]
 
@@ -160,19 +160,19 @@ scale = Vector2( 4, 30 )
 position = Vector2( 1504, 632 )
 
 [node name="Sprite" parent="poison/Spikes" index="1"]
-frame = 1
+frame = 5
 
 [node name="Sprite" parent="poison/Spikes2" index="1"]
-frame = 4
+frame = 3
 
 [node name="Sprite" parent="poison/Spikes3" index="1"]
-frame = 3
+frame = 2
 
 [node name="Sprite" parent="poison/Spikes4" index="1"]
-frame = 3
+frame = 2
 
 [node name="Sprite" parent="poison/Spikes5" index="1"]
-frame = 2
+frame = 1
 
 [node name="poison2" parent="." instance=ExtResource( 38 )]
 position = Vector2( 3385.78, 1223.56 )
@@ -181,16 +181,16 @@ position = Vector2( 3385.78, 1223.56 )
 frame = 0
 
 [node name="Sprite" parent="poison2/Spikes2" index="1"]
-frame = 4
+frame = 3
 
 [node name="Sprite" parent="poison2/Spikes3" index="1"]
-frame = 3
+frame = 2
 
 [node name="Sprite" parent="poison2/Spikes4" index="1"]
-frame = 3
+frame = 2
 
 [node name="Sprite" parent="poison2/Spikes5" index="1"]
-frame = 2
+frame = 1
 
 [node name="poison3" parent="." instance=ExtResource( 38 )]
 position = Vector2( 3375.11, 1218.15 )
@@ -199,31 +199,31 @@ position = Vector2( 3375.11, 1218.15 )
 position = Vector2( 1269.88, -657.849 )
 
 [node name="Sprite" parent="poison3/Spikes" index="1"]
-frame = 7
+frame = 6
 
 [node name="Spikes2" parent="poison3" index="1"]
 position = Vector2( 1333.88, -657.849 )
 
 [node name="Sprite" parent="poison3/Spikes2" index="1"]
-frame = 3
+frame = 1
 
 [node name="Spikes3" parent="poison3" index="2"]
 position = Vector2( 1397.88, -657.849 )
 
 [node name="Sprite" parent="poison3/Spikes3" index="1"]
-frame = 2
+frame = 0
 
 [node name="Spikes4" parent="poison3" index="3"]
 position = Vector2( 1461.88, -657.849 )
 
 [node name="Sprite" parent="poison3/Spikes4" index="1"]
-frame = 2
+frame = 0
 
 [node name="Spikes5" parent="poison3" index="4"]
 position = Vector2( 1525.88, -657.849 )
 
 [node name="Sprite" parent="poison3/Spikes5" index="1"]
-frame = 1
+frame = 7
 
 [node name="poison4" parent="." instance=ExtResource( 38 )]
 position = Vector2( 4351.01, 1704.92 )
@@ -235,31 +235,31 @@ position = Vector2( 4015.85, 1218.85 )
 position = Vector2( 1269.88, -657.849 )
 
 [node name="Sprite" parent="poison5/Spikes" index="1"]
-frame = 6
+frame = 5
 
 [node name="Spikes2" parent="poison5" index="1"]
 position = Vector2( 1333.88, -657.849 )
 
 [node name="Sprite" parent="poison5/Spikes2" index="1"]
-frame = 3
+frame = 1
 
 [node name="Spikes3" parent="poison5" index="2"]
 position = Vector2( 1397.88, -657.849 )
 
 [node name="Sprite" parent="poison5/Spikes3" index="1"]
-frame = 2
+frame = 0
 
 [node name="Spikes4" parent="poison5" index="3"]
 position = Vector2( 1461.88, -657.849 )
 
 [node name="Sprite" parent="poison5/Spikes4" index="1"]
-frame = 2
+frame = 0
 
 [node name="Spikes5" parent="poison5" index="4"]
 position = Vector2( 1525.88, -657.849 )
 
 [node name="Sprite" parent="poison5/Spikes5" index="1"]
-frame = 1
+frame = 7
 
 [node name="poison6" parent="." instance=ExtResource( 38 )]
 position = Vector2( 5623.38, 1704.87 )
@@ -268,31 +268,31 @@ position = Vector2( 5623.38, 1704.87 )
 position = Vector2( -18.4854, -1144.74 )
 
 [node name="Sprite" parent="poison6/Spikes" index="1"]
-frame = 6
+frame = 5
 
 [node name="Spikes2" parent="poison6" index="1"]
 position = Vector2( 45.5146, -1144.74 )
 
 [node name="Sprite" parent="poison6/Spikes2" index="1"]
-frame = 3
+frame = 1
 
 [node name="Spikes3" parent="poison6" index="2"]
 position = Vector2( 109.515, -1144.74 )
 
 [node name="Sprite" parent="poison6/Spikes3" index="1"]
-frame = 2
+frame = 0
 
 [node name="Spikes4" parent="poison6" index="3"]
 position = Vector2( 173.515, -1144.74 )
 
 [node name="Sprite" parent="poison6/Spikes4" index="1"]
-frame = 2
+frame = 0
 
 [node name="Spikes5" parent="poison6" index="4"]
 position = Vector2( 237.515, -1144.74 )
 
 [node name="Sprite" parent="poison6/Spikes5" index="1"]
-frame = 1
+frame = 7
 
 [node name="poison4" parent="poison6" instance=ExtResource( 38 )]
 position = Vector2( -630.787, -1.49829 )
@@ -304,31 +304,31 @@ position = Vector2( 4645.48, 1222.83 )
 position = Vector2( 1269.88, -657.849 )
 
 [node name="Sprite" parent="poison7/Spikes" index="1"]
-frame = 6
+frame = 5
 
 [node name="Spikes2" parent="poison7" index="1"]
 position = Vector2( 1333.88, -657.849 )
 
 [node name="Sprite" parent="poison7/Spikes2" index="1"]
-frame = 3
+frame = 1
 
 [node name="Spikes3" parent="poison7" index="2"]
 position = Vector2( 1397.88, -657.849 )
 
 [node name="Sprite" parent="poison7/Spikes3" index="1"]
-frame = 2
+frame = 0
 
 [node name="Spikes4" parent="poison7" index="3"]
 position = Vector2( 1461.88, -657.849 )
 
 [node name="Sprite" parent="poison7/Spikes4" index="1"]
-frame = 2
+frame = 0
 
 [node name="Spikes5" parent="poison7" index="4"]
 position = Vector2( 1525.88, -657.849 )
 
 [node name="Sprite" parent="poison7/Spikes5" index="1"]
-frame = 1
+frame = 7
 
 [node name="poison8" parent="." instance=ExtResource( 38 )]
 position = Vector2( 4960.73, 1222.61 )
@@ -337,31 +337,31 @@ position = Vector2( 4960.73, 1222.61 )
 position = Vector2( 1269.88, -657.849 )
 
 [node name="Sprite" parent="poison8/Spikes" index="1"]
-frame = 6
+frame = 5
 
 [node name="Spikes2" parent="poison8" index="1"]
 position = Vector2( 1333.88, -657.849 )
 
 [node name="Sprite" parent="poison8/Spikes2" index="1"]
-frame = 3
+frame = 1
 
 [node name="Spikes3" parent="poison8" index="2"]
 position = Vector2( 1397.88, -657.849 )
 
 [node name="Sprite" parent="poison8/Spikes3" index="1"]
-frame = 2
+frame = 0
 
 [node name="Spikes4" parent="poison8" index="3"]
 position = Vector2( 1461.88, -657.849 )
 
 [node name="Sprite" parent="poison8/Spikes4" index="1"]
-frame = 2
+frame = 0
 
 [node name="Spikes5" parent="poison8" index="4"]
 position = Vector2( 1525.88, -657.849 )
 
 [node name="Sprite" parent="poison8/Spikes5" index="1"]
-frame = 1
+frame = 7
 
 [node name="poison9" parent="." instance=ExtResource( 38 )]
 position = Vector2( 5281.31, 1224.33 )
@@ -369,29 +369,32 @@ position = Vector2( 5281.31, 1224.33 )
 [node name="Spikes" parent="poison9" index="0"]
 position = Vector2( 1269.88, -657.849 )
 
+[node name="Sprite" parent="poison9/Spikes" index="1"]
+frame = 4
+
 [node name="Spikes2" parent="poison9" index="1"]
 position = Vector2( 1333.88, -657.849 )
 
 [node name="Sprite" parent="poison9/Spikes2" index="1"]
-frame = 2
+frame = 0
 
 [node name="Spikes3" parent="poison9" index="2"]
 position = Vector2( 1397.88, -657.849 )
 
 [node name="Sprite" parent="poison9/Spikes3" index="1"]
-frame = 1
+frame = 7
 
 [node name="Spikes4" parent="poison9" index="3"]
 position = Vector2( 1461.88, -657.849 )
 
 [node name="Sprite" parent="poison9/Spikes4" index="1"]
-frame = 1
+frame = 7
 
 [node name="Spikes5" parent="poison9" index="4"]
 position = Vector2( 1525.88, -657.849 )
 
 [node name="Sprite" parent="poison9/Spikes5" index="1"]
-frame = 0
+frame = 6
 
 [node name="poison10" parent="." instance=ExtResource( 38 )]
 position = Vector2( 5601.61, 1225.79 )
@@ -399,29 +402,32 @@ position = Vector2( 5601.61, 1225.79 )
 [node name="Spikes" parent="poison10" index="0"]
 position = Vector2( 1269.88, -657.849 )
 
+[node name="Sprite" parent="poison10/Spikes" index="1"]
+frame = 4
+
 [node name="Spikes2" parent="poison10" index="1"]
 position = Vector2( 1333.88, -657.849 )
 
 [node name="Sprite" parent="poison10/Spikes2" index="1"]
-frame = 2
+frame = 0
 
 [node name="Spikes3" parent="poison10" index="2"]
 position = Vector2( 1397.88, -657.849 )
 
 [node name="Sprite" parent="poison10/Spikes3" index="1"]
-frame = 1
+frame = 7
 
 [node name="Spikes4" parent="poison10" index="3"]
 position = Vector2( 1461.88, -657.849 )
 
 [node name="Sprite" parent="poison10/Spikes4" index="1"]
-frame = 1
+frame = 7
 
 [node name="Spikes5" parent="poison10" index="4"]
 position = Vector2( 1525.88, -657.849 )
 
 [node name="Sprite" parent="poison10/Spikes5" index="1"]
-frame = 0
+frame = 6
 
 [node name="TileMapPlatforms" type="TileMap" parent="."]
 position = Vector2( 2, 0 )
