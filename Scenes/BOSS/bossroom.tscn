@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=2]
+[gd_scene load_steps=110 format=2]
 
 [ext_resource path="res://Scenes/BOSS/sprites23.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/BOSS/sprites16.png" type="Texture" id=2]
@@ -463,52 +463,93 @@ animations = [ {
 "speed": 23.95
 } ]
 
-[sub_resource type="RectangleShape2D" id=17]
-extents = Vector2( 64, 7 )
-
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 8 )
 region = Rect2( 0, 0, 48, 80 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 8 )
 region = Rect2( 48, 0, 48, 80 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 8 )
 region = Rect2( 96, 0, 48, 80 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 8 )
 region = Rect2( 144, 0, 48, 80 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 8 )
 region = Rect2( 192, 0, 48, 80 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 8 )
 region = Rect2( 240, 0, 48, 80 )
 
-[sub_resource type="AtlasTexture" id=24]
+[sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 8 )
 region = Rect2( 288, 0, 48, 80 )
 
-[sub_resource type="AtlasTexture" id=25]
+[sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 8 )
 region = Rect2( 336, 0, 48, 80 )
 
-[sub_resource type="AtlasTexture" id=26]
+[sub_resource type="AtlasTexture" id=25]
 atlas = ExtResource( 8 )
 region = Rect2( 384, 0, 48, 80 )
 
-[sub_resource type="SpriteFrames" id=27]
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 8 )
+region = Rect2( 384, 0, 48, 80 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 8 )
+region = Rect2( 336, 0, 48, 80 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 8 )
+region = Rect2( 288, 0, 48, 80 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 8 )
+region = Rect2( 240, 0, 48, 80 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 8 )
+region = Rect2( 192, 0, 48, 80 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 8 )
+region = Rect2( 144, 0, 48, 80 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 8 )
+region = Rect2( 96, 0, 48, 80 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 8 )
+region = Rect2( 48, 0, 48, 80 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 48, 80 )
+
+[sub_resource type="SpriteFrames" id=26]
 animations = [ {
-"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
-"loop": true,
+"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
+"loop": false,
 "name": "default",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
+"loop": false,
+"name": "backwards",
+"speed": 5.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 64, 7 )
 
 [sub_resource type="SpriteFrames" id=28]
 animations = [ {
@@ -517,6 +558,9 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 10, 46.0087 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -552,7 +596,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 6
+frame = 5
 speed_scale = 2.0
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -570,6 +614,7 @@ shape = SubResource( 1 )
 position = Vector2( -31.5, -23.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
+frame = 5
 speed_scale = 1.554
 playing = true
 offset = Vector2( 14.25, -1 )
@@ -587,7 +632,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 6
+frame = 4
 speed_scale = 2.287
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -605,6 +650,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
+frame = 4
 speed_scale = 1.49
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -622,7 +668,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 5
+frame = 2
 speed_scale = 1.835
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -643,6 +689,7 @@ shape = SubResource( 1 )
 position = Vector2( -31.5, -23.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
+frame = 5
 speed_scale = 1.554
 playing = true
 offset = Vector2( 14.25, -1 )
@@ -660,7 +707,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 5
+frame = 3
 speed_scale = 2.287
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -678,7 +725,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 7
+frame = 3
 speed_scale = 1.49
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -699,7 +746,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 6
+frame = 5
 speed_scale = 2.0
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -717,7 +764,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 3
+frame = 2
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -734,7 +781,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 2
+frame = 1
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -751,7 +798,6 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 1
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -768,7 +814,6 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 1
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -825,7 +870,7 @@ position = Vector2( 107.848, 41.8232 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 16 )
 animation = "aim_earth"
-frame = 15
+frame = 13
 playing = true
 script = ExtResource( 61 )
 
@@ -833,6 +878,10 @@ script = ExtResource( 61 )
 position = Vector2( -7.13525, 5.84884 )
 scale = Vector2( 0.166667, 0.166667 )
 stream = ExtResource( 62 )
+
+[node name="GlassDoor" type="AnimatedSprite" parent="Destroyer"]
+position = Vector2( 172, -39 )
+frames = SubResource( 26 )
 
 [node name="lights" type="Node" parent="."]
 
@@ -896,7 +945,7 @@ position = Vector2( 300, 928.334 )
 
 [node name="Sunlight" parent="." instance=ExtResource( 13 )]
 visible = true
-position = Vector2( -297, -689 )
+position = Vector2( -295.112, -689 )
 scale = Vector2( 20, 2.41211 )
 range_z_max = 5
 range_layer_max = 0
@@ -947,7 +996,7 @@ texture = ExtResource( 9 )
 position = Vector2( -1, -57 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sprites/skrinka1/StaticBody2D"]
-shape = SubResource( 17 )
+shape = SubResource( 27 )
 one_way_collision = true
 
 [node name="skrinka2" type="Sprite" parent="sprites"]
@@ -959,7 +1008,7 @@ texture = ExtResource( 9 )
 position = Vector2( -1, -57 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sprites/skrinka2/StaticBody2D"]
-shape = SubResource( 17 )
+shape = SubResource( 27 )
 one_way_collision = true
 
 [node name="skrinka3" type="Sprite" parent="sprites"]
@@ -971,36 +1020,29 @@ texture = ExtResource( 9 )
 position = Vector2( -1, -57 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sprites/skrinka3/StaticBody2D"]
-shape = SubResource( 17 )
+shape = SubResource( 27 )
 one_way_collision = true
-
-[node name="glassdoor" type="AnimatedSprite" parent="sprites"]
-position = Vector2( 992, 84 )
-scale = Vector2( 4, 4 )
-frames = SubResource( 27 )
 
 [node name="kamerakopule" type="AnimatedSprite" parent="sprites"]
 position = Vector2( -742, -876 )
 frames = SubResource( 28 )
-frame = 4
 playing = true
 
 [node name="kamerakopule3" type="AnimatedSprite" parent="sprites"]
 position = Vector2( -352, -1516 )
 frames = SubResource( 28 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="kamerakopule4" type="AnimatedSprite" parent="sprites"]
 position = Vector2( -380, -44 )
 frames = SubResource( 28 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="kamerakopule2" type="AnimatedSprite" parent="sprites"]
 position = Vector2( -39, -1068 )
 frames = SubResource( 28 )
-frame = 4
 playing = true
 
 [node name="Exploder" type="Node2D" parent="."]
@@ -1014,6 +1056,14 @@ raninterval_min_s = 0.1
 raninterval_max_s = 0.2
 explosion_scale = 8.0
 player_path = NodePath("../Player")
+
+[node name="OuterBarrier" type="StaticBody2D" parent="."]
+position = Vector2( -1, 500 )
+scale = Vector2( 4, 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OuterBarrier"]
+position = Vector2( 281.592, -106.778 )
+shape = SubResource( 29 )
 [connection signal="body_entered" from="poison/Spikes" to="poison/Spikes" method="_on_Spikes_body_entered"]
 [connection signal="body_entered" from="poison/Spikes2" to="poison/Spikes2" method="_on_Spikes_body_entered"]
 [connection signal="body_entered" from="poison/Spikes3" to="poison/Spikes3" method="_on_Spikes_body_entered"]

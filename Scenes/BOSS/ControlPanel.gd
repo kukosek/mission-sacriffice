@@ -4,7 +4,7 @@ onready var destroyer = get_parent()
 onready var player = get_node("../../Player/Player")
 onready var hint = get_node("../../Player/Player/HUD/Hint")
 onready var change_sfx = $ChangeSFX
-
+onready var glass_door = get_node("../GlassDoor")
 
 export (int) var range_x = 200
 export (int) var range_y = 100
@@ -14,7 +14,7 @@ var self_destroy = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	glass_door.playing = true
 
 func player_is_in_range():
 	var delta_pos = Vector2(abs(player.global_position.x - global_position.x), abs(player.global_position.y - global_position.y))
@@ -30,11 +30,13 @@ func _input(event):
 						show_hint = false
 					change_sfx.play()
 					if not self_destroy:
+						glass_door.play("backwards")
 						play("aim_moon")
 						destroyer.play("self")
 						destroyer.playing = false
 						self_destroy = true
 					else:
+						glass_door.play("default")
 						play("aim_earth")
 						destroyer.play("kill")
 						destroyer.playing = false
