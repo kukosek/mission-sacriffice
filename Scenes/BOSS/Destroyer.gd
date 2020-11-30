@@ -3,6 +3,7 @@ extends AnimatedSprite
 onready var control = $ControlPanel
 onready var earth_layer = get_node("../MoonBackground/ParallaxBackground3/ParallaxLayer")
 onready var lab_exploder = get_node("../Exploder")
+onready var beam = get_node("beam")
 
 func start_countdown():
 	Global.landed = true
@@ -22,6 +23,7 @@ func _process(delta):
 			Global.explode_time_left -= delta
 		else:
 			if not control.self_destroy:
+				beam.visible = true
 				earth_layer.exploding = true
 			else:
 				lab_exploder.exploding = true

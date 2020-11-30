@@ -1,4 +1,4 @@
-[gd_scene load_steps=115 format=2]
+[gd_scene load_steps=116 format=2]
 
 [ext_resource path="res://Scenes/BOSS/sprites23.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/BOSS/sprites16.png" type="Texture" id=2]
@@ -75,6 +75,7 @@
 [ext_resource path="res://Scenes/enemy/EnemyPosition2D.gd" type="Script" id=73]
 [ext_resource path="res://Scenes/enemy/enemy1/enemy1.tres" type="SpriteFrames" id=74]
 [ext_resource path="res://Scenes/things/led.tscn" type="PackedScene" id=75]
+[ext_resource path="res://Scenes/BOSS/beams.png" type="Texture" id=76]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9.28952, 8.63519 )
@@ -608,7 +609,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 5
+frame = 6
 speed_scale = 2.0
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -626,7 +627,6 @@ shape = SubResource( 1 )
 position = Vector2( -31.5, -23.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 5
 speed_scale = 1.554
 playing = true
 offset = Vector2( 14.25, -1 )
@@ -644,7 +644,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 5
+frame = 1
 speed_scale = 2.287
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -662,7 +662,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 1
+frame = 3
 speed_scale = 1.49
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -680,7 +680,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 4
+frame = 5
 speed_scale = 1.835
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -701,7 +701,6 @@ shape = SubResource( 1 )
 position = Vector2( -31.5, -23.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 5
 speed_scale = 1.554
 playing = true
 offset = Vector2( 14.25, -1 )
@@ -719,7 +718,6 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 4
 speed_scale = 2.287
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -737,6 +735,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
+frame = 2
 speed_scale = 1.49
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -757,7 +756,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 5
+frame = 6
 speed_scale = 2.0
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -775,7 +774,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 6
+frame = 2
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -792,7 +791,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 5
+frame = 1
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -809,7 +808,6 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 4
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -826,7 +824,6 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 4
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -883,7 +880,7 @@ position = Vector2( 107.848, 41.8232 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 16 )
 animation = "aim_earth"
-frame = 3
+frame = 16
 playing = true
 script = ExtResource( 61 )
 
@@ -895,6 +892,13 @@ stream = ExtResource( 62 )
 [node name="GlassDoor" type="AnimatedSprite" parent="Destroyer"]
 position = Vector2( 172, -39 )
 frames = SubResource( 35 )
+
+[node name="beam" type="Sprite" parent="Destroyer"]
+visible = false
+position = Vector2( 605.983, -154.142 )
+rotation = -0.274017
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 76 )
 
 [node name="lights" type="Node" parent="."]
 
@@ -1039,23 +1043,25 @@ one_way_collision = true
 [node name="kamerakopule" type="AnimatedSprite" parent="sprites"]
 position = Vector2( -742, -876 )
 frames = SubResource( 37 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="kamerakopule3" type="AnimatedSprite" parent="sprites"]
 position = Vector2( -352, -1516 )
 frames = SubResource( 37 )
+frame = 1
 playing = true
 
 [node name="kamerakopule4" type="AnimatedSprite" parent="sprites"]
 position = Vector2( -380, -44 )
 frames = SubResource( 37 )
+frame = 1
 playing = true
 
 [node name="kamerakopule2" type="AnimatedSprite" parent="sprites"]
 position = Vector2( -39, -1068 )
 frames = SubResource( 37 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="led" parent="sprites" instance=ExtResource( 75 )]
