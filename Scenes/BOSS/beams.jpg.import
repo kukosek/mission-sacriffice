@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/svetloled.png-e6d7f8782fb49fb382ce93cd2ba805d6.stex"
+path="res://.import/beams.jpg-ec80534dfa255720ae897d126c291294.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/lab1/svetloled.png"
-dest_files=[ "res://.import/svetloled.png-e6d7f8782fb49fb382ce93cd2ba805d6.stex" ]
+source_file="res://Scenes/BOSS/beams.jpg"
+dest_files=[ "res://.import/beams.jpg-ec80534dfa255720ae897d126c291294.stex" ]
 
 [params]
 

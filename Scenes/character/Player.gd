@@ -9,7 +9,7 @@ export (int) var gravity = 1000
 export (int) var fall_sfx_base_volume = -10
 export (int) var fall_sfx_max_volume = 1
 
-export (float) var laser_cooldown_time = 1.0
+export (float) var laser_cooldown_time = 0.6
 export (float) var fireball_cooldown_time = 1.0
 
 var laser_cooldown_remaining = 0.0
