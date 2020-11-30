@@ -24,11 +24,14 @@ onready var scene_name = get_tree().get_current_scene().get_name()
 
 var wall_slide_elaped_time = 0.5
 
+onready var wall_up = $wall_up
 onready var collision = $CollisionShape2D
 onready var sprite = $AnimatedSprite
 onready var hearts = $HUD/MarginContainer/Hearts
 onready var death_screen = $HUD/DeathScreen
 onready var pause_screen = $HUD/PauseScreen
+
+var stop_crouching = false
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and !dead:
 		if event.pressed:
@@ -44,11 +47,8 @@ func _input(event):
 				walk_sfx.playing = false
 				sprite.play("crouch")
 		if event.is_action_released("ui_crouch"):
-			crouching = false
-			collision.disabled = false
-			if abs(velocity.x) > 0:
-				sprite.play("walking")
-				walk_sfx.play()
+			stop_crouching = true
+			
 var dead = false
 func die():
 	velocity.x = 0
@@ -71,6 +71,14 @@ func damage(damage_hp):
 			hearts_elems = hearts.get_children()
 			if len(hearts_elems) == 0:
 				die()
+
+func stop_crouching():
+	stop_crouching = false
+	crouching = false
+	collision.disabled = false
+	if abs(velocity.x) > 0:
+		sprite.play("walking")
+		walk_sfx.play()
 
 func right_colliding():
 	if scene_name == "Moon":
@@ -219,6 +227,8 @@ func get_input():
 				$Laser.update_positions(true)
 				velocity.x = -run_speed
 				if crouching: velocity.x /= 2
+			if stop_crouching and not wall_up.is_colliding():
+				stop_crouching()
 		if jumping:
 			if velocity.y > jump_max_fall_speed:
 				jump_max_fall_speed = velocity.y
