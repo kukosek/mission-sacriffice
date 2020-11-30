@@ -8,6 +8,13 @@ export (int) var gravity = 1000
 
 export (int) var fall_sfx_base_volume = -10
 export (int) var fall_sfx_max_volume = 1
+
+export (float) var laser_cooldown_time = 1.0
+export (float) var fireball_cooldown_time = 1.0
+
+var laser_cooldown_remaining = 0.0
+var fireball_cooldown_remaining = 0.0
+
 const FIREBALL = preload("res://Scenes/character/fireball/fireball.tscn")
 
 var velocity = Vector2()
@@ -34,11 +41,15 @@ onready var pause_screen = $HUD/PauseScreen
 var stop_crouching = false
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and !dead:
-		if event.pressed:
-			$Laser.fire()
-			sprite.frame = 0
-			gunfiring = true
-			sprite.play("gunshot")
+		if event.pressed and (not crouching or (crouching and not wall_up.is_colliding())):
+			if laser_cooldown_remaining <= 0:
+				laser_cooldown_remaining = laser_cooldown_time
+				if crouching:
+					stop_crouching = true
+				$Laser.fire()
+				sprite.frame = 0
+				gunfiring = true
+				sprite.play("gunshot")
 	if event is InputEventKey:
 		if event.is_action_pressed("ui_crouch"):
 			if sprite.animation == "walking" or sprite.animation == "default":
@@ -110,12 +121,12 @@ func stop_walking():
 
 var jump_max_fall_speed = 0
 func start_jump():
-	collision.disabled = false
-	crouching = false
-	jumping = true
-	walk_sfx.playing = false
-	jump_sfx.play()
-	jump_max_fall_speed = 0
+	if not crouching:
+		collision.disabled = false
+		jumping = true
+		walk_sfx.playing = false
+		jump_sfx.play()
+		jump_max_fall_speed = 0
 
 onready var sword_sfx = $SwordSFX
 onready var walk_sfx = $WalkSFX
@@ -137,16 +148,23 @@ func get_input():
 		
 		if slash and not slashing:
 			slashing = true
-			if is_on_floor():
+			if is_on_floor() and (not crouching or (crouching and not wall_up.is_colliding())):
+				if crouching:
+					stop_crouching = true
 				sprite.play("swordswing")
 				sword_sfx.play()
 				sword_enemy_detector.damage_enemies()
-		if Input.is_action_just_pressed("ui_focus_next"):
-			var fireball = FIREBALL.instance()
-			fireball.set_fireball_direction(sprite.flip_h)
-			get_parent().add_child(fireball)
-			fireball.position = position
+		if Input.is_action_just_pressed("ui_focus_next") and (not crouching or (crouching and not wall_up.is_colliding())):
+			if fireball_cooldown_remaining <= 0:
+				fireball_cooldown_remaining = fireball_cooldown_time
+				if crouching:
+					stop_crouching = true
+				var fireball = FIREBALL.instance()
+				fireball.set_fireball_direction(sprite.flip_h)
+				get_parent().add_child(fireball)
+				fireball.position = position
 			
+		
 		
 		if wallsliding:
 			if jump and can_jump_from_wall:
@@ -253,6 +271,10 @@ export (int) var max_wall_speed = -200
 
 func _physics_process(delta):
 	if not in_lander:  
+		if laser_cooldown_remaining > 0:
+			laser_cooldown_remaining -= delta
+		if fireball_cooldown_remaining > 0:
+			fireball_cooldown_remaining -= delta
 		get_input()
 		
 		if not wallsliding:
