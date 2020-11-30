@@ -146,6 +146,7 @@ texture = ExtResource( 4 )
 centered = false
 
 [node name="EndScreen" type="CenterContainer" parent="."]
+visible = false
 margin_right = 256.0
 margin_bottom = 148.0
 rect_scale = Vector2( 4, 4 )
