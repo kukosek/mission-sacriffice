@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/moon1/layers/fotka_Layer 0.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/light.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scenes/moon1/layers/fotka_hvezsdy.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/moon1/layers/fotka_Layer 1.png" type="Texture" id=9]
 [ext_resource path="res://Scenes/moon1/layers/fotka_3.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/moon1/EarthExploder.gd" type="Script" id=11]
 
 [node name="MoonBackground" type="Node2D"]
 
@@ -98,6 +99,7 @@ scroll_base_offset = Vector2( -55000, -30000 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground3"]
 motion_scale = Vector2( 0.01, 0.01 )
+script = ExtResource( 11 )
 
 [node name="zeme" type="Sprite" parent="ParallaxBackground3/ParallaxLayer"]
 scale = Vector2( 4, 4 )
