@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/well done.ogg-f25d27f4e748478b1f69113268fd4bae.oggstr"
+
+[deps]
+
+source_file="res://Scenes/things/well done.ogg"
+dest_files=[ "res://.import/well done.ogg-f25d27f4e748478b1f69113268fd4bae.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

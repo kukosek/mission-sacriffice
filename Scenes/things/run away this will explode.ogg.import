@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/run away this will explode.ogg-ed3b05b3338a3c2eda574afd5de491fb.oggstr"
+
+[deps]
+
+source_file="res://Scenes/things/run away this will explode.ogg"
+dest_files=[ "res://.import/run away this will explode.ogg-ed3b05b3338a3c2eda574afd5de491fb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

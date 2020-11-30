@@ -19,6 +19,7 @@ texture = ExtResource( 3 )
 [node name="hanglightrope" type="Sprite" parent="."]
 position = Vector2( 384, -324 )
 scale = Vector2( 4, 10 )
+z_index = 2
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
