@@ -16,3 +16,6 @@ func _process(delta):
 				end_screen.win()
 				lab_explosion_effects.play()
 			Global.counting_down = false
+func _ready():
+	Music.play_music()
+			

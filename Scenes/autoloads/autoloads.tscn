@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/moon1/sfx/wildmusic.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Scenes/autoloads/Music.gd" type="Script" id=2]
+
+[node name="MusicController" type="Node2D"]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+script = ExtResource( 2 )

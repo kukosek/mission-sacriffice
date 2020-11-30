@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://Global.gd"
+Music="*res://Scenes/autoloads/Music.gd"
 
 [editor_plugins]
 
