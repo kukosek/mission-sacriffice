@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Krabice velká.png-11c49812163d5d8ab8caf55a94b63db7.stex"
+path="res://.import/káď.png-81a8801e8621ab3a603a68fa34efe544.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/lab1/Krabice velká.png"
-dest_files=[ "res://.import/Krabice velká.png-11c49812163d5d8ab8caf55a94b63db7.stex" ]
+source_file="res://Scenes/lab1/káď.png"
+dest_files=[ "res://.import/káď.png-81a8801e8621ab3a603a68fa34efe544.stex" ]
 
 [params]
 
