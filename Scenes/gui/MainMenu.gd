@@ -20,7 +20,7 @@ func _process(_delta):
 
 
 func _on_Play_pressed():
-	get_tree().change_scene("res://Scenes/moon1/moon.tscn")
+	get_tree().change_scene("res://Scenes/intro/intro.tscn")
 
 
 func _on_Quit_pressed():
