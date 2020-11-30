@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/you cancoose    .ogg-6714f08235354c65772440b6d12ed1a4.oggstr"
+
+[deps]
+
+source_file="res://Scenes/things/you cancoose    .ogg"
+dest_files=[ "res://.import/you cancoose    .ogg-6714f08235354c65772440b6d12ed1a4.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
