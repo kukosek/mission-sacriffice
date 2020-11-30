@@ -34,7 +34,6 @@ scale = Vector2( 0.35093, 0.266 )
 z_index = -2
 texture = ExtResource( 1 )
 color = Color( 0.960784, 0.964706, 0.34902, 1 )
-energy = 1.5
 range_z_min = -512
 range_z_max = 1026
 range_layer_min = -512
