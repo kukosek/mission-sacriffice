@@ -23,4 +23,4 @@ func _on_Quit_pressed():
 
 
 func _on_Restart_pressed():
-	if showed:get_tree().change_scene("res://Scenes/moon1/moon.tscn")
+	if showed: get_tree().reload_current_scene()
