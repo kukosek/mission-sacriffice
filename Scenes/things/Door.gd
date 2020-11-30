@@ -4,6 +4,8 @@ extends StaticBody2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+
+export (bool) var comes_from_right = false
 export (int) var range_x = 200
 export (int) var range_y = 100
 export (bool) var show_hint = true

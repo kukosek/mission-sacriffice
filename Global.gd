@@ -10,3 +10,5 @@ var exploding = false
 var lab_destroy = false
 
 var voice_areas_visited_names = []
+
+var coming_from_right = false
