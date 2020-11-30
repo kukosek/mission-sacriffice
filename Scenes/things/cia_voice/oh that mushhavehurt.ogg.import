@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/oh that mushhavehurt.ogg-fa8972a2a8db2e5c96ded2c62411edd1.oggstr"
+
+[deps]
+
+source_file="res://Scenes/things/cia_voice/oh that mushhavehurt.ogg"
+dest_files=[ "res://.import/oh that mushhavehurt.ogg-fa8972a2a8db2e5c96ded2c62411edd1.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

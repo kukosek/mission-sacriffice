@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/run away this will explode.ogg-e528992ee3df7de2c94c2360d919bc29.oggstr"
+
+[deps]
+
+source_file="res://Scenes/things/cia_voice/run away this will explode.ogg"
+dest_files=[ "res://.import/run away this will explode.ogg-e528992ee3df7de2c94c2360d919bc29.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

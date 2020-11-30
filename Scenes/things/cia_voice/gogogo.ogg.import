@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/gogogo.ogg-22ac6756046f4442fcc87b4b6315b2b1.oggstr"
+
+[deps]
+
+source_file="res://Scenes/things/cia_voice/gogogo.ogg"
+dest_files=[ "res://.import/gogogo.ogg-22ac6756046f4442fcc87b4b6315b2b1.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

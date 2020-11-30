@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/wowur a pvp god.ogg-7a92b2fb7d067c1a1916d82467c5b2a7.oggstr"
+
+[deps]
+
+source_file="res://Scenes/things/cia_voice/wowur a pvp god.ogg"
+dest_files=[ "res://.import/wowur a pvp god.ogg-7a92b2fb7d067c1a1916d82467c5b2a7.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/go inside.ogg-894f973e74c767856446d574c3175720.oggstr"
+
+[deps]
+
+source_file="res://Scenes/things/cia_voice/go inside.ogg"
+dest_files=[ "res://.import/go inside.ogg-894f973e74c767856446d574c3175720.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

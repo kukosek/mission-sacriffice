@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hmm its your choice;.ogg-1424837927b1e9ca1046ca91ed024d02.oggstr"
+
+[deps]
+
+source_file="res://Scenes/things/cia_voice/hmm its your choice;.ogg"
+dest_files=[ "res://.import/hmm its your choice;.ogg-1424837927b1e9ca1046ca91ed024d02.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/go ageah and check it.ogg-b2b6ceaea376c2855dc77b34650e23d8.oggstr"
+
+[deps]
+
+source_file="res://Scenes/things/cia_voice/go ageah and check it.ogg"
+dest_files=[ "res://.import/go ageah and check it.ogg-b2b6ceaea376c2855dc77b34650e23d8.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

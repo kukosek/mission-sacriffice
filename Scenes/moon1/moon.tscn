@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=2]
+[gd_scene load_steps=115 format=2]
 
 [ext_resource path="res://Scenes/character/character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/moon1/moon-background.tscn" type="PackedScene" id=2]
@@ -59,6 +59,8 @@
 [ext_resource path="res://Scenes/moon1/torch.png" type="Texture" id=57]
 [ext_resource path="res://Scenes/moon1/moon.gd" type="Script" id=58]
 [ext_resource path="res://Scenes/things/explosions/1.ogg" type="AudioStream" id=59]
+[ext_resource path="res://Scenes/things/VoiceArea.gd" type="Script" id=60]
+[ext_resource path="res://Scenes/things/cia_voice/go ageah and check it.ogg" type="AudioStream" id=61]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -677,6 +679,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=53]
+extents = Vector2( 108.015, 79.4319 )
+
 [node name="Moon" type="Node2D"]
 script = ExtResource( 58 )
 
@@ -749,6 +754,7 @@ visible = false
 position = Vector2( 0.484283, 299.699 )
 scale = Vector2( 5.7, 6 )
 frames = SubResource( 35 )
+frame = 2
 playing = true
 
 [node name="RadioAudio" type="AudioStreamPlayer2D" parent="LunarLander"]
@@ -761,21 +767,21 @@ stream = ExtResource( 46 )
 position = Vector2( -116.4, 870.235 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 42 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Torch2" type="AnimatedSprite" parent="."]
 position = Vector2( -861.171, 788.629 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 42 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Torch3" type="AnimatedSprite" parent="."]
 position = Vector2( -1377.5, 730.261 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 42 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
@@ -843,7 +849,7 @@ position = Vector2( 3356.97, 818.011 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 52 )
 animation = "New Anim"
-frame = 4
+frame = 3
 playing = true
 offset = Vector2( 3.5166, 0.568039 )
 
@@ -876,4 +882,16 @@ autoplay = true
 
 [node name="LabExplosionSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 59 )
+
+[node name="CIAVoices" type="Node2D" parent="."]
+
+[node name="GoAheadCheckIt" type="Area2D" parent="CIAVoices"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 60 )
+stream = ExtResource( 61 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CIAVoices/GoAheadCheckIt"]
+position = Vector2( -439.162, 423.144 )
+shape = SubResource( 53 )
 [connection signal="animation_finished" from="LunarLander/FireSprite" to="LunarLander" method="_on_FireSprite_animation_finished"]

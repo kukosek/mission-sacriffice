@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/its not working.ogg-4dbf505c693542ee3d81c072f9238497.oggstr"
+
+[deps]
+
+source_file="res://Scenes/things/cia_voice/its not working.ogg"
+dest_files=[ "res://.import/its not working.ogg-4dbf505c693542ee3d81c072f9238497.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

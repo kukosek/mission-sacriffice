@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/weird gravitaion.ogg-e5ecdbb87d8efeb7d014b7eb9795bf77.oggstr"
+
+[deps]
+
+source_file="res://Scenes/things/cia_voice/weird gravitaion.ogg"
+dest_files=[ "res://.import/weird gravitaion.ogg-e5ecdbb87d8efeb7d014b7eb9795bf77.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/open the door.ogg-86d77be5dc1e0aef6c8ddfdc61edce97.oggstr"
+
+[deps]
+
+source_file="res://Scenes/things/cia_voice/open the door.ogg"
+dest_files=[ "res://.import/open the door.ogg-86d77be5dc1e0aef6c8ddfdc61edce97.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

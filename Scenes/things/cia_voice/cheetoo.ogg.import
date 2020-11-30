@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/cheetoo.ogg-a43a7228501c81e302200adb56ef1353.oggstr"
+
+[deps]
+
+source_file="res://Scenes/things/cia_voice/cheetoo.ogg"
+dest_files=[ "res://.import/cheetoo.ogg-a43a7228501c81e302200adb56ef1353.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

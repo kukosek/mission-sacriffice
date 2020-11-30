@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/well done.ogg-38d072d2d24e01ed7c741342d379bc51.oggstr"
+
+[deps]
+
+source_file="res://Scenes/things/cia_voice/well done.ogg"
+dest_files=[ "res://.import/well done.ogg-38d072d2d24e01ed7c741342d379bc51.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

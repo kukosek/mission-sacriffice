@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/now find a starting button.ogg-514f41de3ef3a4e9be21ee678cdb609d.oggstr"
+
+[deps]
+
+source_file="res://Scenes/things/cia_voice/now find a starting button.ogg"
+dest_files=[ "res://.import/now find a starting button.ogg-514f41de3ef3a4e9be21ee678cdb609d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

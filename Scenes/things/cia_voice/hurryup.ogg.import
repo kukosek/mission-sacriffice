@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hurryup.ogg-ed1d1722ac502d614298da3f7f4f7f44.oggstr"
+
+[deps]
+
+source_file="res://Scenes/things/cia_voice/hurryup.ogg"
+dest_files=[ "res://.import/hurryup.ogg-ed1d1722ac502d614298da3f7f4f7f44.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
