@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/aim_change.ogg-f0a9d809fc5c8255375d9fb441aaa87e.oggstr"
+
+[deps]
+
+source_file="res://Scenes/BOSS/sfx/aim_change.ogg"
+dest_files=[ "res://.import/aim_change.ogg-f0a9d809fc5c8255375d9fb441aaa87e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/weapon_start.ogg-e242a4dafb8c3bbe8565a86639d2eb5d.oggstr"
+
+[deps]
+
+source_file="res://Scenes/BOSS/sfx/weapon_start.ogg"
+dest_files=[ "res://.import/weapon_start.ogg-e242a4dafb8c3bbe8565a86639d2eb5d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
