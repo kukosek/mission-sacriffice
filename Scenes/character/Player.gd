@@ -34,7 +34,9 @@ onready var pause_screen = $HUD/PauseScreen
 var stop_crouching = false
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and !dead:
-		if event.pressed:
+		if event.pressed and (not crouching or (crouching and not wall_up.is_colliding())):
+			if crouching:
+				stop_crouching = true
 			$Laser.fire()
 			sprite.frame = 0
 			gunfiring = true
@@ -110,12 +112,12 @@ func stop_walking():
 
 var jump_max_fall_speed = 0
 func start_jump():
-	collision.disabled = false
-	crouching = false
-	jumping = true
-	walk_sfx.playing = false
-	jump_sfx.play()
-	jump_max_fall_speed = 0
+	if not crouching:
+		collision.disabled = false
+		jumping = true
+		walk_sfx.playing = false
+		jump_sfx.play()
+		jump_max_fall_speed = 0
 
 onready var sword_sfx = $SwordSFX
 onready var walk_sfx = $WalkSFX
@@ -137,11 +139,15 @@ func get_input():
 		
 		if slash and not slashing:
 			slashing = true
-			if is_on_floor():
+			if is_on_floor() and (not crouching or (crouching and not wall_up.is_colliding())):
+				if crouching:
+					stop_crouching = true
 				sprite.play("swordswing")
 				sword_sfx.play()
 				sword_enemy_detector.damage_enemies()
-		if Input.is_action_just_pressed("ui_focus_next"):
+		if Input.is_action_just_pressed("ui_focus_next") and (not crouching or (crouching and not wall_up.is_colliding())):
+			if crouching:
+				stop_crouching = true
 			var fireball = FIREBALL.instance()
 			fireball.set_fireball_direction(sprite.flip_h)
 			get_parent().add_child(fireball)
