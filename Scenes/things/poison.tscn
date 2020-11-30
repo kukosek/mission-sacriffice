@@ -37,7 +37,6 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 6
 speed_scale = 2.0
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -58,7 +57,8 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 1
+frame = 3
+speed_scale = 1.142
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -79,6 +79,8 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
+frame = 5
+speed_scale = 1.46
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -99,6 +101,8 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
+frame = 6
+speed_scale = 1.842
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -119,7 +123,8 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 7
+frame = 3
+speed_scale = 1.26
 playing = true
 offset = Vector2( 0, 0.25 )
 

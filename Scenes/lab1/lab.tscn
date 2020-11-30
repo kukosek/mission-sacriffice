@@ -153,7 +153,6 @@ script = ExtResource( 35 )
 position = Vector2( 949.207, 481.271 )
 scale = Vector2( 14.2812, 14.4687 )
 frames = SubResource( 7 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trap1/Trap"]
@@ -175,7 +174,7 @@ script = ExtResource( 35 )
 position = Vector2( 949.207, 481.271 )
 scale = Vector2( 14.2812, 14.4687 )
 frames = SubResource( 7 )
-frame = 1
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trap1/Trap2"]
@@ -382,7 +381,6 @@ projectile_res = ExtResource( 24 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemáci/HandlingEnemy1/Enemy"]
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 9 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy1/Enemy"]
@@ -417,6 +415,7 @@ projectile_res = ExtResource( 24 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemáci/HandlingEnemy12/Enemy"]
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 9 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy12/Enemy"]
@@ -451,6 +450,7 @@ projectile_res = ExtResource( 24 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemáci/HandlingEnemy13/Enemy"]
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 9 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy13/Enemy"]
@@ -485,6 +485,7 @@ script = ExtResource( 8 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemáci/HandlingEnemy2/Enemy"]
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 9 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy2/Enemy"]
@@ -517,7 +518,6 @@ script = ExtResource( 8 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemáci/HandlingEnemy14/Enemy"]
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 9 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy14/Enemy"]
@@ -549,7 +549,6 @@ script = ExtResource( 8 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemáci/HandlingEnemy3/Enemy"]
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 9 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy3/Enemy"]
@@ -582,7 +581,6 @@ script = ExtResource( 8 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemáci/HandlingEnemy4/Enemy"]
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 9 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy4/Enemy"]
@@ -617,7 +615,6 @@ script = ExtResource( 8 )
 position = Vector2( 6.26953, -2.81665 )
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 9 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy5/Enemy"]
@@ -652,6 +649,7 @@ script = ExtResource( 8 )
 position = Vector2( 6.26953, -2.81665 )
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 9 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy6/Enemy"]
@@ -688,6 +686,7 @@ script = ExtResource( 8 )
 position = Vector2( 6.26953, -2.81665 )
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 9 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy7/Enemy"]
@@ -721,7 +720,6 @@ script = ExtResource( 8 )
 position = Vector2( 6.26953, -2.81665 )
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 9 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy8/Enemy"]
@@ -756,7 +754,6 @@ script = ExtResource( 8 )
 position = Vector2( 6.26953, -2.81665 )
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 9 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy9/Enemy"]
@@ -791,6 +788,7 @@ script = ExtResource( 8 )
 position = Vector2( 6.26953, -2.81665 )
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 9 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy10/Enemy"]
@@ -825,7 +823,6 @@ script = ExtResource( 8 )
 position = Vector2( 6.26953, -2.81665 )
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 9 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy11/Enemy"]
