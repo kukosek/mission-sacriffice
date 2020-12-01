@@ -14,7 +14,7 @@
 [ext_resource path="res://Scenes/moon1/moon-background.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/moon1/Sunlight.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/things/hanglight.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/BOSS/Spikes.gd" type="Script" id=15]
+[ext_resource path="res://Scenes/things/Trap1.gd" type="Script" id=15]
 [ext_resource path="res://Scenes/BOSS/sklo.png" type="Texture" id=16]
 [ext_resource path="res://Scenes/BOSS/controlpanel/aim_zeme/frame0003.png" type="Texture" id=17]
 [ext_resource path="res://Scenes/BOSS/controlpanel/aim_zeme/frame0001.png" type="Texture" id=18]
@@ -716,7 +716,7 @@ position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "middle"
-frame = 6
+frame = 1
 speed_scale = 2.0
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -735,7 +735,7 @@ position = Vector2( -31.5, -23.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "left 1"
-frame = 8
+frame = 5
 speed_scale = 1.554
 playing = true
 offset = Vector2( 14.25, -1 )
@@ -754,7 +754,7 @@ position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "middle"
-frame = 7
+frame = 6
 speed_scale = 2.287
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -773,7 +773,7 @@ position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "middle"
-frame = 5
+frame = 4
 speed_scale = 1.49
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -792,7 +792,7 @@ position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "right"
-frame = 2
+frame = 1
 speed_scale = 1.835
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -828,7 +828,7 @@ position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "left 1"
-frame = 6
+frame = 4
 speed_scale = 2.0
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -847,7 +847,7 @@ position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "middle"
-frame = 5
+frame = 7
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -865,6 +865,7 @@ position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "middle"
+frame = 2
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -882,7 +883,7 @@ position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "middle"
-frame = 3
+frame = 5
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -900,7 +901,7 @@ position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "right"
-frame = 5
+frame = 7
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -921,7 +922,7 @@ position = Vector2( -31.5, -23.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "left 1"
-frame = 7
+frame = 4
 speed_scale = 1.554
 playing = true
 offset = Vector2( 14.25, -1 )
@@ -940,6 +941,7 @@ position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "middle"
+frame = 7
 speed_scale = 2.287
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -958,7 +960,7 @@ position = Vector2( -3, -28 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "right"
-frame = 2
+frame = 1
 speed_scale = 1.49
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -1026,7 +1028,7 @@ position = Vector2( 107.848, 41.8232 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 17 )
 animation = "aim_earth"
-frame = 1
+frame = 15
 playing = true
 script = ExtResource( 61 )
 
@@ -1396,19 +1398,19 @@ stream = ExtResource( 121 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sfx/weird grav"]
 position = Vector2( -215, -450 )
 shape = SubResource( 42 )
-[connection signal="body_entered" from="poison/Spikes" to="poison/Spikes" method="_on_Spikes_body_entered"]
-[connection signal="body_entered" from="poison/Spikes2" to="poison/Spikes2" method="_on_Spikes_body_entered"]
-[connection signal="body_entered" from="poison/Spikes3" to="poison/Spikes3" method="_on_Spikes_body_entered"]
-[connection signal="body_entered" from="poison/Spikes4" to="poison/Spikes4" method="_on_Spikes_body_entered"]
-[connection signal="body_entered" from="poison/Spikes5" to="poison/Spikes5" method="_on_Spikes_body_entered"]
-[connection signal="body_entered" from="poison2/Spikes" to="poison2/Spikes" method="_on_Spikes_body_entered"]
-[connection signal="body_entered" from="poison2/Spikes2" to="poison2/Spikes2" method="_on_Spikes_body_entered"]
-[connection signal="body_entered" from="poison2/Spikes3" to="poison2/Spikes3" method="_on_Spikes_body_entered"]
-[connection signal="body_entered" from="poison2/Spikes4" to="poison2/Spikes4" method="_on_Spikes_body_entered"]
-[connection signal="body_entered" from="poison2/Spikes5" to="poison2/Spikes5" method="_on_Spikes_body_entered"]
-[connection signal="body_entered" from="poison3/Spikes2" to="poison3/Spikes2" method="_on_Spikes_body_entered"]
-[connection signal="body_entered" from="poison3/Spikes3" to="poison3/Spikes3" method="_on_Spikes_body_entered"]
-[connection signal="body_entered" from="poison3/Spikes4" to="poison3/Spikes4" method="_on_Spikes_body_entered"]
+[connection signal="body_entered" from="poison/Spikes" to="poison/Spikes" method="_on_Trap1_body_entered"]
+[connection signal="body_entered" from="poison/Spikes2" to="poison/Spikes" method="_on_Trap1_body_entered"]
+[connection signal="body_entered" from="poison/Spikes3" to="poison/Spikes" method="_on_Trap1_body_entered"]
+[connection signal="body_entered" from="poison/Spikes4" to="poison/Spikes" method="_on_Trap1_body_entered"]
+[connection signal="body_entered" from="poison/Spikes5" to="poison/Spikes" method="_on_Trap1_body_entered"]
+[connection signal="body_entered" from="poison2/Spikes" to="poison/Spikes" method="_on_Trap1_body_entered"]
+[connection signal="body_entered" from="poison2/Spikes2" to="poison/Spikes" method="_on_Trap1_body_entered"]
+[connection signal="body_entered" from="poison2/Spikes3" to="poison/Spikes" method="_on_Trap1_body_entered"]
+[connection signal="body_entered" from="poison2/Spikes4" to="poison/Spikes" method="_on_Trap1_body_entered"]
+[connection signal="body_entered" from="poison2/Spikes5" to="poison/Spikes" method="_on_Trap1_body_entered"]
+[connection signal="body_entered" from="poison3/Spikes2" to="poison/Spikes" method="_on_Trap1_body_entered"]
+[connection signal="body_entered" from="poison3/Spikes3" to="poison/Spikes" method="_on_Trap1_body_entered"]
+[connection signal="body_entered" from="poison3/Spikes4" to="poison/Spikes" method="_on_Trap1_body_entered"]
 [connection signal="finished" from="Destroyer/StartSFX" to="Destroyer" method="_on_StartSFX_finished"]
 [connection signal="finished" from="Destroyer/ControlPanel/CIAnice" to="Destroyer/ControlPanel" method="_on_CIAnice_finished"]
 

@@ -20,8 +20,9 @@ onready var sfx = AudioStreamPlayer2D.new()
 func _ready():
 	sfx.stream = load("res://Scenes/moon1/sfx/door_close.ogg")
 	add_child(sfx)
-	if pushed:
-		get_parent().notifyButtonStatesChanged()
+	if name in Global.boss_pushed_button_names:
+		pushed = true
+		play("pushed")
 func player_is_in_range():
 	var delta_pos = Vector2(abs(player.global_position.x - global_position.x), abs(player.global_position.y - global_position.y))
 	return delta_pos.x < range_x and delta_pos.y < range_y
@@ -35,8 +36,11 @@ func _input(event):
 					hint.text = ""
 					pushed = !pushed
 					if pushed:
+						if not name in Global.boss_pushed_button_names:
+							Global.boss_pushed_button_names.append(name)
 						play("pushed")
 					else:
+						Global.boss_pushed_button_names.clear(name)
 						play("default")
 					if get_parent().has_method("notifyButtonStatesChanged"):
 						get_parent().notifyButtonStatesChanged()

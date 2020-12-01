@@ -17,3 +17,5 @@ var dead_enemy_names = []
 
 var last_waypoint_pos = Vector2.ZERO
 var last_waypoint_remaining_time = 0.0
+
+var boss_pushed_button_names = []
