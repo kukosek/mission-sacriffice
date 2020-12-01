@@ -217,7 +217,7 @@ script = ExtResource( 35 )
 position = Vector2( 949.207, 481.271 )
 scale = Vector2( 14.2812, 14.4687 )
 frames = SubResource( 7 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trap1/Trap"]
@@ -239,7 +239,7 @@ script = ExtResource( 35 )
 position = Vector2( 949.207, 481.271 )
 scale = Vector2( 14.2812, 14.4687 )
 frames = SubResource( 7 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trap1/Trap3"]
@@ -261,7 +261,7 @@ script = ExtResource( 35 )
 position = Vector2( 949.207, 481.271 )
 scale = Vector2( 14.2812, 14.4687 )
 frames = SubResource( 7 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trap1/Trap2"]
@@ -283,14 +283,20 @@ position = Vector2( 2046, 1739 )
 
 [node name="Sprite" parent="Trap1/poison4/Spikes" index="1"]
 animation = "default"
-frame = 1
+frame = 0
+
+[node name="Sprite" parent="Trap1/poison4/Spikes2" index="1"]
+frame = 2
 
 [node name="Sprite" parent="Trap1/poison4/Spikes3" index="1"]
-frame = 6
+frame = 5
+
+[node name="Sprite" parent="Trap1/poison4/Spikes4" index="1"]
+frame = 3
 
 [node name="Sprite" parent="Trap1/poison4/Spikes5" index="1"]
 animation = "default"
-frame = 7
+frame = 4
 
 [node name="poison5" parent="Trap1" instance=ExtResource( 38 )]
 position = Vector2( 2365, 1739 )
@@ -298,54 +304,75 @@ scale = Vector2( 1.036, 1 )
 
 [node name="Sprite" parent="Trap1/poison5/Spikes" index="1"]
 animation = "default"
+frame = 1
+
+[node name="Sprite" parent="Trap1/poison5/Spikes2" index="1"]
 frame = 2
 
 [node name="Sprite" parent="Trap1/poison5/Spikes3" index="1"]
-frame = 6
+frame = 5
+
+[node name="Sprite" parent="Trap1/poison5/Spikes4" index="1"]
+frame = 3
 
 [node name="Sprite" parent="Trap1/poison5/Spikes5" index="1"]
-frame = 2
+frame = 7
 
 [node name="poison3" parent="Trap1" instance=ExtResource( 38 )]
 position = Vector2( 1728, 1739 )
 
 [node name="Sprite" parent="Trap1/poison3/Spikes" index="1"]
-frame = 7
+frame = 0
+
+[node name="Sprite" parent="Trap1/poison3/Spikes2" index="1"]
+frame = 2
 
 [node name="Sprite" parent="Trap1/poison3/Spikes3" index="1"]
-frame = 6
+frame = 5
+
+[node name="Sprite" parent="Trap1/poison3/Spikes4" index="1"]
+frame = 3
 
 [node name="Sprite" parent="Trap1/poison3/Spikes5" index="1"]
 animation = "default"
-frame = 5
+frame = 2
 
 [node name="poison12" parent="Trap1" instance=ExtResource( 38 )]
 position = Vector2( 8705.4, 1291.46 )
 
 [node name="Sprite" parent="Trap1/poison12/Spikes" index="1"]
-frame = 7
+frame = 0
+
+[node name="Sprite" parent="Trap1/poison12/Spikes2" index="1"]
+frame = 2
 
 [node name="Sprite" parent="Trap1/poison12/Spikes3" index="1"]
-frame = 6
+frame = 5
+
+[node name="Sprite" parent="Trap1/poison12/Spikes4" index="1"]
+frame = 3
 
 [node name="Sprite" parent="Trap1/poison12/Spikes5" index="1"]
-frame = 2
+frame = 7
 
 [node name="poison13" parent="Trap1" instance=ExtResource( 38 )]
 position = Vector2( 8381.24, 909.27 )
 
 [node name="Sprite" parent="Trap1/poison13/Spikes" index="1"]
-frame = 7
+frame = 0
+
+[node name="Sprite" parent="Trap1/poison13/Spikes2" index="1"]
+frame = 2
 
 [node name="Sprite" parent="Trap1/poison13/Spikes3" index="1"]
-frame = 6
+frame = 5
 
 [node name="Sprite" parent="Trap1/poison13/Spikes4" index="1"]
 animation = "right"
-frame = 5
+frame = 1
 
 [node name="Sprite" parent="Trap1/poison13/Spikes5" index="1"]
-frame = 2
+frame = 7
 
 [node name="poison16" parent="Trap1" instance=ExtResource( 38 )]
 position = Vector2( 8832.91, 399.571 )
@@ -365,129 +392,180 @@ position = Vector2( 10561, 781.677 )
 position = Vector2( 4289, 1740 )
 
 [node name="Sprite" parent="Trap1/káD/poison3/Spikes" index="1"]
-frame = 7
+frame = 0
+
+[node name="Sprite" parent="Trap1/káD/poison3/Spikes2" index="1"]
+frame = 2
 
 [node name="Sprite" parent="Trap1/káD/poison3/Spikes3" index="1"]
-frame = 6
+frame = 5
+
+[node name="Sprite" parent="Trap1/káD/poison3/Spikes4" index="1"]
+frame = 3
 
 [node name="Sprite" parent="Trap1/káD/poison3/Spikes5" index="1"]
 animation = "default"
-frame = 5
+frame = 2
 
 [node name="poison4" parent="Trap1/káD" instance=ExtResource( 38 )]
 position = Vector2( 4609, 1740 )
 
 [node name="Sprite" parent="Trap1/káD/poison4/Spikes" index="1"]
 animation = "default"
+frame = 1
+
+[node name="Sprite" parent="Trap1/káD/poison4/Spikes2" index="1"]
 frame = 2
 
 [node name="Sprite" parent="Trap1/káD/poison4/Spikes3" index="1"]
-frame = 6
+frame = 5
+
+[node name="Sprite" parent="Trap1/káD/poison4/Spikes4" index="1"]
+frame = 3
 
 [node name="Sprite" parent="Trap1/káD/poison4/Spikes5" index="1"]
 animation = "default"
-frame = 5
+frame = 2
 
 [node name="poison5" parent="Trap1/káD" instance=ExtResource( 38 )]
 position = Vector2( 4929, 1740 )
 
 [node name="Sprite" parent="Trap1/káD/poison5/Spikes" index="1"]
 animation = "default"
+frame = 1
+
+[node name="Sprite" parent="Trap1/káD/poison5/Spikes2" index="1"]
 frame = 2
 
 [node name="Sprite" parent="Trap1/káD/poison5/Spikes3" index="1"]
-frame = 6
+frame = 5
+
+[node name="Sprite" parent="Trap1/káD/poison5/Spikes4" index="1"]
+frame = 3
 
 [node name="Sprite" parent="Trap1/káD/poison5/Spikes5" index="1"]
 animation = "default"
-frame = 5
+frame = 2
 
 [node name="poison6" parent="Trap1/káD" instance=ExtResource( 38 )]
 position = Vector2( 5249, 1740 )
 
 [node name="Sprite" parent="Trap1/káD/poison6/Spikes" index="1"]
 animation = "default"
-frame = 1
+frame = 0
+
+[node name="Sprite" parent="Trap1/káD/poison6/Spikes2" index="1"]
+frame = 2
 
 [node name="Sprite" parent="Trap1/káD/poison6/Spikes3" index="1"]
-frame = 6
+frame = 5
+
+[node name="Sprite" parent="Trap1/káD/poison6/Spikes4" index="1"]
+frame = 3
 
 [node name="Sprite" parent="Trap1/káD/poison6/Spikes5" index="1"]
 animation = "default"
-frame = 7
+frame = 4
 
 [node name="poison7" parent="Trap1/káD" instance=ExtResource( 38 )]
 position = Vector2( 5569, 1740 )
 
 [node name="Sprite" parent="Trap1/káD/poison7/Spikes" index="1"]
 animation = "default"
+frame = 1
+
+[node name="Sprite" parent="Trap1/káD/poison7/Spikes2" index="1"]
 frame = 2
 
 [node name="Sprite" parent="Trap1/káD/poison7/Spikes3" index="1"]
-frame = 6
+frame = 5
+
+[node name="Sprite" parent="Trap1/káD/poison7/Spikes4" index="1"]
+frame = 3
 
 [node name="Sprite" parent="Trap1/káD/poison7/Spikes5" index="1"]
 animation = "default"
-frame = 7
+frame = 4
 
 [node name="poison8" parent="Trap1/káD" instance=ExtResource( 38 )]
 position = Vector2( 5889, 1740 )
 
 [node name="Sprite" parent="Trap1/káD/poison8/Spikes" index="1"]
 animation = "default"
+frame = 1
+
+[node name="Sprite" parent="Trap1/káD/poison8/Spikes2" index="1"]
 frame = 2
 
 [node name="Sprite" parent="Trap1/káD/poison8/Spikes3" index="1"]
-frame = 6
+frame = 5
+
+[node name="Sprite" parent="Trap1/káD/poison8/Spikes4" index="1"]
+frame = 3
 
 [node name="Sprite" parent="Trap1/káD/poison8/Spikes5" index="1"]
 animation = "default"
-frame = 2
+frame = 7
 
 [node name="poison9" parent="Trap1/káD" instance=ExtResource( 38 )]
 position = Vector2( 6210, 1740 )
 
 [node name="Sprite" parent="Trap1/káD/poison9/Spikes" index="1"]
 animation = "default"
+frame = 1
+
+[node name="Sprite" parent="Trap1/káD/poison9/Spikes2" index="1"]
 frame = 2
 
 [node name="Sprite" parent="Trap1/káD/poison9/Spikes3" index="1"]
-frame = 6
+frame = 5
+
+[node name="Sprite" parent="Trap1/káD/poison9/Spikes4" index="1"]
+frame = 3
 
 [node name="Sprite" parent="Trap1/káD/poison9/Spikes5" index="1"]
 animation = "default"
-frame = 5
+frame = 2
 
 [node name="poison10" parent="Trap1/káD" instance=ExtResource( 38 )]
 position = Vector2( 6526, 1740 )
 
 [node name="Sprite" parent="Trap1/káD/poison10/Spikes" index="1"]
 animation = "default"
+frame = 1
+
+[node name="Sprite" parent="Trap1/káD/poison10/Spikes2" index="1"]
 frame = 2
 
 [node name="Sprite" parent="Trap1/káD/poison10/Spikes3" index="1"]
-frame = 6
+frame = 5
+
+[node name="Sprite" parent="Trap1/káD/poison10/Spikes4" index="1"]
+frame = 3
 
 [node name="Sprite" parent="Trap1/káD/poison10/Spikes5" index="1"]
 animation = "default"
-frame = 7
+frame = 4
 
 [node name="poison11" parent="Trap1/káD" instance=ExtResource( 38 )]
 position = Vector2( 6845, 1740 )
 
 [node name="Sprite" parent="Trap1/káD/poison11/Spikes" index="1"]
 animation = "default"
-frame = 1
+frame = 0
+
+[node name="Sprite" parent="Trap1/káD/poison11/Spikes2" index="1"]
+frame = 2
 
 [node name="Sprite" parent="Trap1/káD/poison11/Spikes3" index="1"]
-frame = 6
+frame = 5
 
 [node name="Sprite" parent="Trap1/káD/poison11/Spikes4" index="1"]
 animation = "right"
-frame = 5
+frame = 1
 
 [node name="Sprite" parent="Trap1/káD/poison11/Spikes5" index="1"]
-frame = 2
+frame = 7
 
 [node name="káď6" type="Sprite" parent="."]
 position = Vector2( 10593.3, 97.5867 )
@@ -1320,7 +1398,7 @@ position = Vector2( 349, -96 )
 scale = Vector2( 4, 4 )
 z_index = 1018
 frames = SubResource( 22 )
-frame = 1
+frame = 8
 playing = true
 
 [node name="válec2" type="AnimatedSprite" parent="sprites"]
@@ -1328,6 +1406,7 @@ position = Vector2( 11, -734 )
 scale = Vector2( 4, 4 )
 z_index = 1018
 frames = SubResource( 22 )
+frame = 7
 playing = true
 
 [node name="válec3" type="AnimatedSprite" parent="sprites"]
@@ -1335,6 +1414,7 @@ position = Vector2( 3485, 418 )
 scale = Vector2( 4, 4 )
 z_index = 1018
 frames = SubResource( 22 )
+frame = 7
 playing = true
 
 [node name="válec4" type="AnimatedSprite" parent="sprites"]
@@ -1342,6 +1422,7 @@ position = Vector2( 4273, -413 )
 scale = Vector2( 4, 4 )
 z_index = 1018
 frames = SubResource( 22 )
+frame = 7
 playing = true
 
 [node name="válec5" type="AnimatedSprite" parent="sprites"]
@@ -1349,7 +1430,7 @@ position = Vector2( 9974, -479 )
 scale = Vector2( 4, 4 )
 z_index = 1018
 frames = SubResource( 22 )
-frame = 9
+frame = 6
 playing = true
 
 [node name="válec6" type="AnimatedSprite" parent="sprites"]
@@ -1357,7 +1438,7 @@ position = Vector2( 9114, -479 )
 scale = Vector2( 4, 4 )
 z_index = 1018
 frames = SubResource( 22 )
-frame = 9
+frame = 6
 playing = true
 
 [node name="válec7" type="AnimatedSprite" parent="sprites"]
@@ -1365,7 +1446,7 @@ position = Vector2( 9371, -1115 )
 scale = Vector2( 4, 4 )
 z_index = 1018
 frames = SubResource( 22 )
-frame = 9
+frame = 6
 playing = true
 
 [node name="glassskrin" type="Sprite" parent="sprites"]

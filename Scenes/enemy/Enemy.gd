@@ -70,7 +70,7 @@ onready var tween = Tween.new()
 
 export (PackedScene) onready var projectile_res = load("res://Scenes/enemy/Projectile.tscn")
 var gun_sound_player
-export (AudioStreamOGGVorbis) onready var pre_fire_sound = load("res://Scenes/enemy/enemy1/pre_gunshot1.ogg")
+export (AudioStreamOGGVorbis) onready var pre_fire_sound = load("res://Scenes/enemy/enemy1/pre_gunshot.ogg")
 var firing = false
 func pre_fire():
 	gun_sound_player.play()
