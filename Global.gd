@@ -14,3 +14,6 @@ var voice_areas_visited_names = []
 var coming_from_right = false
 
 var dead_enemy_names = []
+
+var last_waypoint_pos = Vector2.ZERO
+var last_waypoint_remaining_time = 0.0
