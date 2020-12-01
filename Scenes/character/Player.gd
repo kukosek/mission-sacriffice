@@ -155,7 +155,7 @@ func get_input():
 				sprite.play("swordswing")
 				sword_sfx.play()
 				sword_enemy_detector.damage_enemies()
-		if Input.is_action_just_pressed("ui_focus_next") and (not crouching or (crouching and not wall_up.is_colliding())):
+		if Input.is_action_just_pressed("ui_fireball") and (not crouching or (crouching and not wall_up.is_colliding())):
 			if fireball_cooldown_remaining <= 0:
 				fireball_cooldown_remaining = fireball_cooldown_time
 				if crouching:
