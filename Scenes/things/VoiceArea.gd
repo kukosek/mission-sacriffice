@@ -16,6 +16,7 @@ func _ready():
 #	pass
 
 func player_entered(body):
-	if not name in Global.voice_areas_visited_names:
-		player.play()
-		Global.voice_areas_visited_names.append(name)
+	if body.name == "Player":
+		if not name in Global.voice_areas_visited_names:
+			player.play()
+			Global.voice_areas_visited_names.append(name)
