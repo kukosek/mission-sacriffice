@@ -143,7 +143,7 @@ func get_input():
 			start_jump()
 			velocity.y = jump_speed
 			
-		var slash = Input.is_action_just_pressed("ui_down")
+		var slash = Input.is_action_just_pressed("ui_slash")
 		
 		
 		if slash and not slashing:
