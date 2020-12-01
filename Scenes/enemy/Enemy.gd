@@ -36,24 +36,27 @@ func damage(damage_hp):
 	if hp <= 0:
 		die()
 func _ready():
-	player_detection = load("res://Scenes/enemy/PlayerDetection.tscn").instance()
-	player_detection.enemy_vision = enemy_vision
-	add_child(player_detection)
-	gun_sound_player = AudioStreamPlayer.new()
-	gun_sound_player.stream = pre_fire_sound
-	add_child(gun_sound_player)
-	add_child(tween)
-	var follow_positions_group_node = get_parent().get_node_or_null("FollowPositions")
-	if follow_positions_group_node == null:
-		positions = null
-	else:
-		positions = follow_positions_group_node.get_children()
-		positions_count = len(positions)
-		if positions_count == 0:
+	if not get_parent().name in Global.dead_enemy_names:
+		player_detection = load("res://Scenes/enemy/PlayerDetection.tscn").instance()
+		player_detection.enemy_vision = enemy_vision
+		add_child(player_detection)
+		gun_sound_player = AudioStreamPlayer.new()
+		gun_sound_player.stream = pre_fire_sound
+		add_child(gun_sound_player)
+		add_child(tween)
+		var follow_positions_group_node = get_parent().get_node_or_null("FollowPositions")
+		if follow_positions_group_node == null:
 			positions = null
 		else:
-			set_veloc_by_target_point(positions[0].position)
-	sprite.connect("animation_finished", self, "_on_AnimatedSprite_animation_finished")
+			positions = follow_positions_group_node.get_children()
+			positions_count = len(positions)
+			if positions_count == 0:
+				positions = null
+			else:
+				set_veloc_by_target_point(positions[0].position)
+		sprite.connect("animation_finished", self, "_on_AnimatedSprite_animation_finished")
+	else:
+		die()
 func set_veloc_by_target_point(target_pos):
 	if target_pos.x - position.x >=0:
 		velocity.x = walk_speed
