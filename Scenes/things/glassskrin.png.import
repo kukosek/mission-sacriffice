@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/válec animovaný.png-9370d9eb8e1b1b76d0c7b3141d5abc6b.stex"
+path="res://.import/glassskrin.png-295e5d6eacdf787aedc50c892d85e089.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/lab1/válec animovaný.png"
-dest_files=[ "res://.import/válec animovaný.png-9370d9eb8e1b1b76d0c7b3141d5abc6b.stex" ]
+source_file="res://Scenes/things/glassskrin.png"
+dest_files=[ "res://.import/glassskrin.png-295e5d6eacdf787aedc50c892d85e089.stex" ]
 
 [params]
 
