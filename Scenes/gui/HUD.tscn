@@ -215,8 +215,37 @@ valign = 1
 margin_top = 18.0
 margin_right = 122.0
 margin_bottom = 32.0
+rect_min_size = Vector2( 60, 7 )
+size_flags_horizontal = 13
+size_flags_vertical = 13
 custom_fonts/font = ExtResource( 2 )
 text = "Thanks for playing!"
+align = 1
+valign = 1
+
+[node name="EastHappy" type="Label" parent="EndScreen/VBoxContainer"]
+visible = false
+margin_top = 36.0
+margin_right = 145.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 60, 7 )
+size_flags_horizontal = 13
+size_flags_vertical = 13
+custom_fonts/font = ExtResource( 2 )
+text = "The East is very happy!"
+align = 1
+valign = 1
+
+[node name="CiaHappy" type="Label" parent="EndScreen/VBoxContainer"]
+visible = false
+margin_top = 36.0
+margin_right = 157.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 60, 7 )
+size_flags_horizontal = 13
+size_flags_vertical = 13
+custom_fonts/font = ExtResource( 2 )
+text = "CIA will never forget you"
 align = 1
 valign = 1
 
@@ -224,6 +253,7 @@ valign = 1
 margin_top = 36.0
 margin_right = 122.0
 margin_bottom = 56.0
+alignment = 1
 
 [node name="Quit" type="Button" parent="EndScreen/VBoxContainer/HBoxContainer"]
 margin_right = 122.0
