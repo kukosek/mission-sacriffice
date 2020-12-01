@@ -7,8 +7,10 @@ onready var beam = get_node("beam")
 onready var siren = get_node("../lights/siren")
 onready var beam_light = $Light2D
 onready var siren_sfx = $SirenSFX
+onready var run_away_sfx = $RunAwaySFX
 
 func start_countdown():
+	run_away_sfx.play()
 	siren.visible = true
 	siren_sfx.play()
 	beam_light.visible = true

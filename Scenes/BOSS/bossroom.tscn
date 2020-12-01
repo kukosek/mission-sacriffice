@@ -1,4 +1,4 @@
-[gd_scene load_steps=165 format=2]
+[gd_scene load_steps=166 format=2]
 
 [ext_resource path="res://Scenes/BOSS/sprites23.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/BOSS/sprites16.png" type="Texture" id=2]
@@ -114,14 +114,15 @@
 [ext_resource path="res://Scenes/BOSS/danger/lava/right8.png" type="Texture" id=112]
 [ext_resource path="res://Scenes/things/siren.tres" type="Texture" id=113]
 [ext_resource path="res://Scenes/lab1/sfx/siren.ogg" type="AudioStream" id=114]
-[ext_resource path="res://Scenes/things/cia_voice/now find a starting button.ogg" type="AudioStream" id=115]
+[ext_resource path="res://Scenes/things/cia_voice/nowthisisatough choice.ogg" type="AudioStream" id=115]
 [ext_resource path="res://Scenes/things/cia_voice/run away this will explode.ogg" type="AudioStream" id=116]
 [ext_resource path="res://Scenes/things/cia_voice/its not working.ogg" type="AudioStream" id=117]
 [ext_resource path="res://Scenes/things/cia_voice/you cancoose    .ogg" type="AudioStream" id=118]
 [ext_resource path="res://Scenes/things/cia_voice/what.ogg" type="AudioStream" id=119]
 [ext_resource path="res://Scenes/things/VoiceArea.gd" type="Script" id=120]
 [ext_resource path="res://Scenes/things/cia_voice/weird gravitaion.ogg" type="AudioStream" id=121]
-[ext_resource path="res://Scenes/things/cia_voice/now find a button.ogg" type="AudioStream" id=122]
+[ext_resource path="res://Scenes/things/cia_voice/nice.ogg" type="AudioStream" id=122]
+[ext_resource path="res://Scenes/things/cia_voice/now find a starting button.ogg" type="AudioStream" id=123]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 9 )
@@ -133,14 +134,14 @@ animations = [ {
 "name": "right",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 56 ), ExtResource( 57 ), ExtResource( 60 ), ExtResource( 59 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 101 ), ExtResource( 102 ) ],
-"loop": true,
-"name": "middle",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 58 ), ExtResource( 54 ), ExtResource( 53 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 55 ), ExtResource( 100 ) ],
 "loop": true,
 "name": "left 1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 56 ), ExtResource( 57 ), ExtResource( 60 ), ExtResource( 59 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 101 ), ExtResource( 102 ) ],
+"loop": true,
+"name": "middle",
 "speed": 5.0
 } ]
 
@@ -673,7 +674,7 @@ extents = Vector2( 10, 46.0087 )
 extents = Vector2( 32.419, 60.4737 )
 
 [sub_resource type="RectangleShape2D" id=42]
-extents = Vector2( 99, 76 )
+extents = Vector2( 47.3104, 76 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -715,7 +716,7 @@ position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "middle"
-frame = 5
+frame = 6
 speed_scale = 2.0
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -734,7 +735,6 @@ position = Vector2( -31.5, -23.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "left 1"
-frame = 2
 speed_scale = 1.554
 playing = true
 offset = Vector2( 14.25, -1 )
@@ -753,7 +753,7 @@ position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "middle"
-frame = 3
+frame = 4
 speed_scale = 2.287
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -827,7 +827,7 @@ position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "left 1"
-frame = 1
+frame = 2
 speed_scale = 2.0
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -846,7 +846,7 @@ position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "middle"
-frame = 5
+frame = 1
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -864,6 +864,7 @@ position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "middle"
+frame = 4
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -881,7 +882,7 @@ position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "middle"
-frame = 3
+frame = 7
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -899,7 +900,7 @@ position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "right"
-frame = 5
+frame = 1
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -920,7 +921,7 @@ position = Vector2( -31.5, -23.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "left 1"
-frame = 1
+frame = 8
 speed_scale = 1.554
 playing = true
 offset = Vector2( 14.25, -1 )
@@ -939,7 +940,7 @@ position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "middle"
-frame = 4
+frame = 5
 speed_scale = 2.287
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -1007,14 +1008,14 @@ scale = Vector2( 0.25, 0.25 )
 script = ExtResource( 67 )
 
 [node name="Button1" type="AnimatedSprite" parent="Destroyer/ActivatorButtons"]
-position = Vector2( -2072, 150 )
+position = Vector2( -888, 79 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 16 )
 script = ExtResource( 10 )
 player_path = NodePath("../../../Player")
 
 [node name="Button2" type="AnimatedSprite" parent="Destroyer/ActivatorButtons"]
-position = Vector2( 284, -945 )
+position = Vector2( 308, 449 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 16 )
 script = ExtResource( 10 )
@@ -1026,7 +1027,7 @@ position = Vector2( 107.848, 41.8232 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 17 )
 animation = "aim_earth"
-frame = 4
+frame = 8
 playing = true
 script = ExtResource( 61 )
 
@@ -1034,6 +1035,19 @@ script = ExtResource( 61 )
 position = Vector2( -7.13525, 5.84884 )
 scale = Vector2( 0.166667, 0.166667 )
 stream = ExtResource( 62 )
+
+[node name="CIAwhat" type="AudioStreamPlayer2D" parent="Destroyer/ControlPanel"]
+stream = ExtResource( 119 )
+attenuation = 0.241484
+
+[node name="CIAnice" type="AudioStreamPlayer2D" parent="Destroyer/ControlPanel"]
+stream = ExtResource( 122 )
+attenuation = 0.0915054
+
+[node name="FindButton" type="AudioStreamPlayer2D" parent="Destroyer/ControlPanel"]
+stream = ExtResource( 123 )
+max_distance = 8000.0
+attenuation = 0.0281641
 
 [node name="GlassDoor" type="AnimatedSprite" parent="Destroyer"]
 position = Vector2( 172, -39 )
@@ -1062,6 +1076,16 @@ shadow_color = Color( 0.141176, 0.137255, 0.137255, 1 )
 [node name="SirenSFX" type="AudioStreamPlayer2D" parent="Destroyer"]
 stream = ExtResource( 114 )
 attenuation = 0.0717937
+
+[node name="NotWorkingSFX" type="AudioStreamPlayer2D" parent="Destroyer"]
+stream = ExtResource( 117 )
+max_distance = 6000.0
+attenuation = 0.0544094
+
+[node name="RunAwaySFX" type="AudioStreamPlayer2D" parent="Destroyer"]
+stream = ExtResource( 116 )
+max_distance = 5000.0
+attenuation = 0.0625
 
 [node name="lights" type="Node" parent="."]
 
@@ -1336,48 +1360,22 @@ shape = SubResource( 41 )
 
 [node name="sfx" type="Node2D" parent="."]
 
-[node name="now find a starting button" type="Area2D" parent="sfx"]
-script = ExtResource( 120 )
-stream = ExtResource( 115 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sfx/now find a starting button"]
-position = Vector2( -384, 21 )
-shape = SubResource( 42 )
-
-[node name="Area2D2" type="Area2D" parent="sfx"]
+[node name="choose" type="Area2D" parent="sfx"]
 position = Vector2( 994, 328 )
 script = ExtResource( 120 )
 stream = ExtResource( 118 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sfx/Area2D2"]
-position = Vector2( -366, 64 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sfx/choose"]
+position = Vector2( -428.996, 81.6389 )
 shape = SubResource( 42 )
 
-[node name="its not working" type="Area2D" parent="sfx"]
-position = Vector2( -1681, 38 )
+[node name="choose2" type="Area2D" parent="sfx"]
+position = Vector2( 994, 328 )
 script = ExtResource( 120 )
-stream = ExtResource( 117 )
+stream = ExtResource( 115 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sfx/its not working"]
-position = Vector2( -366, 64 )
-shape = SubResource( 42 )
-
-[node name="its not working2" type="Area2D" parent="sfx"]
-position = Vector2( 681, -987 )
-script = ExtResource( 120 )
-stream = ExtResource( 117 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sfx/its not working2"]
-position = Vector2( -366, 64 )
-shape = SubResource( 42 )
-
-[node name="run away" type="Area2D" parent="sfx"]
-position = Vector2( -503, -299 )
-script = ExtResource( 120 )
-stream = ExtResource( 116 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sfx/run away"]
-position = Vector2( -215, -450 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sfx/choose2"]
+position = Vector2( -146.429, 79.8628 )
 shape = SubResource( 42 )
 
 [node name="what" type="Area2D" parent="sfx"]
@@ -1386,15 +1384,6 @@ script = ExtResource( 120 )
 stream = ExtResource( 119 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sfx/what"]
-position = Vector2( -215, -450 )
-shape = SubResource( 42 )
-
-[node name="what2" type="Area2D" parent="sfx"]
-position = Vector2( -653, 179 )
-script = ExtResource( 120 )
-stream = ExtResource( 122 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sfx/what2"]
 position = Vector2( -215, -450 )
 shape = SubResource( 42 )
 
@@ -1420,6 +1409,7 @@ shape = SubResource( 42 )
 [connection signal="body_entered" from="poison3/Spikes3" to="poison3/Spikes3" method="_on_Spikes_body_entered"]
 [connection signal="body_entered" from="poison3/Spikes4" to="poison3/Spikes4" method="_on_Spikes_body_entered"]
 [connection signal="finished" from="Destroyer/StartSFX" to="Destroyer" method="_on_StartSFX_finished"]
+[connection signal="finished" from="Destroyer/ControlPanel/CIAnice" to="Destroyer/ControlPanel" method="_on_CIAnice_finished"]
 
 [editable path="lights/hanglight4"]
 

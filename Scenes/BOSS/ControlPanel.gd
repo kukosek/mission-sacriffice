@@ -6,6 +6,10 @@ onready var hint = get_node("../../Player/Player/HUD/Hint")
 onready var change_sfx = $ChangeSFX
 onready var glass_door = get_node("../GlassDoor")
 
+onready var what_sfx = $CIAwhat
+onready var nice_sfx = $CIAnice
+onready var find_sfx = $FindButton
+
 export (int) var range_x = 200
 export (int) var range_y = 100
 export (bool) var show_hint = true
@@ -32,11 +36,13 @@ func _input(event):
 					if not self_destroy:
 						glass_door.play("backwards")
 						play("aim_moon")
+						nice_sfx.play()
 						destroyer.play("self")
 						destroyer.playing = false
 						self_destroy = true
 					else:
 						glass_door.play("default")
+						what_sfx.play()
 						play("aim_earth")
 						destroyer.play("kill")
 						destroyer.playing = false
@@ -50,3 +56,7 @@ func _process(_delta):
 	elif showing_hint:
 		showing_hint = false
 		hint.text = ""
+
+
+func _on_CIAnice_finished():
+	find_sfx.play()
