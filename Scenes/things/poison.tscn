@@ -1,26 +1,90 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=42 format=2]
 
-[ext_resource path="res://Scenes/BOSS/danger/danger2.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/BOSS/danger/danger3.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/BOSS/danger/danger1.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/BOSS/danger/danger4.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/BOSS/danger/danger6.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/BOSS/danger/danger7.png" type="Texture" id=6]
-[ext_resource path="res://Scenes/BOSS/danger/danger8.png" type="Texture" id=7]
-[ext_resource path="res://Scenes/BOSS/danger/danger5.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/BOSS/danger/lava/danger10.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/BOSS/danger/lava/danger9.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/BOSS/danger/lava/danger15.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/BOSS/danger/lava/middle1.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/BOSS/danger/lava/middle2.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/BOSS/danger/lava/danger8.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/BOSS/danger/lava/middle4.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/BOSS/danger/lava/middle3.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/things/Trap1.gd" type="Script" id=9]
 [ext_resource path="res://Scenes/lab1/sfx/die_in_acid.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Scenes/BOSS/danger/lava/danger11.png" type="Texture" id=11]
+[ext_resource path="res://Scenes/BOSS/danger/lava/danger12.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/BOSS/danger/lava/danger13.png" type="Texture" id=13]
+[ext_resource path="res://Scenes/BOSS/danger/lava/danger14.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/BOSS/danger/lava/danger16.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/BOSS/danger/lava/middle7.png" type="Texture" id=16]
+[ext_resource path="res://Scenes/BOSS/danger/lava/middle8.png" type="Texture" id=17]
+[ext_resource path="res://Scenes/BOSS/danger/lava/right1.png" type="Texture" id=18]
+[ext_resource path="res://Scenes/BOSS/danger/lava/right2.png" type="Texture" id=19]
+[ext_resource path="res://Scenes/BOSS/danger/lava/middle5.png" type="Texture" id=20]
+[ext_resource path="res://Scenes/BOSS/danger/lava/middle6.png" type="Texture" id=21]
+[ext_resource path="res://Scenes/things/lightanim/siren/siren9.png" type="Texture" id=22]
+[ext_resource path="res://Scenes/things/lightanim/siren/siren3.png" type="Texture" id=23]
+[ext_resource path="res://Scenes/things/lightanim/siren/siren7.png" type="Texture" id=24]
+[ext_resource path="res://Scenes/things/lightanim/siren/siren10.png" type="Texture" id=25]
+[ext_resource path="res://Scenes/things/lightanim/siren/siren5.png" type="Texture" id=26]
+[ext_resource path="res://Scenes/things/lightanim/siren/siren1.png" type="Texture" id=27]
+[ext_resource path="res://Scenes/things/lightanim/siren/siren2.png" type="Texture" id=28]
+[ext_resource path="res://Scenes/things/lightanim/siren/siren11.png" type="Texture" id=29]
+[ext_resource path="res://Scenes/things/lightanim/siren/siren6.png" type="Texture" id=30]
+[ext_resource path="res://Scenes/things/lightanim/siren/siren8.png" type="Texture" id=31]
+[ext_resource path="res://Scenes/things/lightanim/siren/siren4.png" type="Texture" id=32]
+[ext_resource path="res://Scenes/BOSS/danger/lava/right4.png" type="Texture" id=33]
+[ext_resource path="res://Scenes/BOSS/danger/lava/right3.png" type="Texture" id=34]
+[ext_resource path="res://Scenes/BOSS/danger/lava/right5.png" type="Texture" id=35]
+[ext_resource path="res://Scenes/BOSS/danger/lava/right6.png" type="Texture" id=36]
+[ext_resource path="res://Scenes/BOSS/danger/lava/right7.png" type="Texture" id=37]
+[ext_resource path="res://Scenes/BOSS/danger/lava/right8.png" type="Texture" id=38]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.32423, 8.55695 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 3 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 16 ), ExtResource( 17 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="AnimatedTexture" id=3]
+flags = 4
+frames = 11
+fps = 11.0
+frame_0/texture = ExtResource( 27 )
+frame_1/texture = ExtResource( 28 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 23 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 32 )
+frame_3/delay_sec = 0.0
+frame_4/texture = ExtResource( 26 )
+frame_4/delay_sec = 0.0
+frame_5/texture = ExtResource( 30 )
+frame_5/delay_sec = 0.0
+frame_6/texture = ExtResource( 24 )
+frame_6/delay_sec = 0.0
+frame_7/texture = ExtResource( 31 )
+frame_7/delay_sec = 0.0
+frame_8/texture = ExtResource( 22 )
+frame_8/delay_sec = 0.0
+frame_9/texture = ExtResource( 25 )
+frame_9/delay_sec = 0.0
+frame_10/texture = ExtResource( 29 )
+frame_10/delay_sec = 0.0
 
 [node name="poison" type="Node2D"]
 
@@ -34,9 +98,11 @@ position = Vector2( -3, -28 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="Spikes"]
-position = Vector2( -3, -26.5 )
+position = Vector2( -2.5, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
+animation = "left"
+frame = 6
 speed_scale = 2.0
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -57,7 +123,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 3
+frame = 7
 speed_scale = 1.142
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -79,7 +145,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 5
+frame = 1
 speed_scale = 1.46
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -101,7 +167,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 6
+frame = 7
 speed_scale = 1.842
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -123,7 +189,8 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 3
+animation = "right"
+frame = 1
 speed_scale = 1.26
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -131,6 +198,11 @@ offset = Vector2( 0, 0.25 )
 [node name="AcidSound" type="AudioStreamPlayer2D" parent="Spikes5"]
 position = Vector2( -128, 0 )
 stream = ExtResource( 10 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 98.25, -1199 )
+scale = Vector2( 0.394375, 0.128889 )
+texture = SubResource( 3 )
 [connection signal="body_entered" from="Spikes" to="Spikes" method="_on_Trap1_body_entered"]
 [connection signal="body_entered" from="Spikes2" to="Spikes" method="_on_Trap1_body_entered"]
 [connection signal="body_entered" from="Spikes3" to="Spikes" method="_on_Trap1_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=137 format=2]
+[gd_scene load_steps=155 format=2]
 
 [ext_resource path="res://Scenes/BOSS/sprites23.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/BOSS/sprites16.png" type="Texture" id=2]
@@ -52,14 +52,14 @@
 [ext_resource path="res://Scenes/BOSS/controlpanel/aim_zeme/frame0014.png" type="Texture" id=50]
 [ext_resource path="res://Scenes/BOSS/controlpanel/aim_mesic/frame0015.png" type="Texture" id=51]
 [ext_resource path="res://Scenes/BOSS/controlpanel/aim_zeme/frame0011.png" type="Texture" id=52]
-[ext_resource path="res://Scenes/BOSS/danger/danger2.png" type="Texture" id=53]
-[ext_resource path="res://Scenes/BOSS/danger/danger3.png" type="Texture" id=54]
-[ext_resource path="res://Scenes/BOSS/danger/danger1.png" type="Texture" id=55]
-[ext_resource path="res://Scenes/BOSS/danger/danger4.png" type="Texture" id=56]
-[ext_resource path="res://Scenes/BOSS/danger/danger6.png" type="Texture" id=57]
-[ext_resource path="res://Scenes/BOSS/danger/danger7.png" type="Texture" id=58]
-[ext_resource path="res://Scenes/BOSS/danger/danger8.png" type="Texture" id=59]
-[ext_resource path="res://Scenes/BOSS/danger/danger5.png" type="Texture" id=60]
+[ext_resource path="res://Scenes/BOSS/danger/lava/danger10.png" type="Texture" id=53]
+[ext_resource path="res://Scenes/BOSS/danger/lava/danger9.png" type="Texture" id=54]
+[ext_resource path="res://Scenes/BOSS/danger/lava/danger15.png" type="Texture" id=55]
+[ext_resource path="res://Scenes/BOSS/danger/lava/middle1.png" type="Texture" id=56]
+[ext_resource path="res://Scenes/BOSS/danger/lava/middle2.png" type="Texture" id=57]
+[ext_resource path="res://Scenes/BOSS/danger/lava/danger8.png" type="Texture" id=58]
+[ext_resource path="res://Scenes/BOSS/danger/lava/middle4.png" type="Texture" id=59]
+[ext_resource path="res://Scenes/BOSS/danger/lava/middle3.png" type="Texture" id=60]
 [ext_resource path="res://Scenes/BOSS/ControlPanel.gd" type="Script" id=61]
 [ext_resource path="res://Scenes/BOSS/sfx/aim_change.ogg" type="AudioStream" id=62]
 [ext_resource path="res://Scenes/BOSS/sfx/weapon_init.ogg" type="AudioStream" id=63]
@@ -95,17 +95,71 @@
 [ext_resource path="res://Scenes/things/lightanim/siren/siren10.png" type="Texture" id=93]
 [ext_resource path="res://Scenes/things/lightanim/siren/siren8.png" type="Texture" id=94]
 [ext_resource path="res://Scenes/things/lightanim/siren/siren4.png" type="Texture" id=95]
+[ext_resource path="res://Scenes/BOSS/danger/lava/danger11.png" type="Texture" id=96]
+[ext_resource path="res://Scenes/BOSS/danger/lava/danger12.png" type="Texture" id=97]
+[ext_resource path="res://Scenes/BOSS/danger/lava/danger13.png" type="Texture" id=98]
+[ext_resource path="res://Scenes/BOSS/danger/lava/danger14.png" type="Texture" id=99]
+[ext_resource path="res://Scenes/BOSS/danger/lava/danger16.png" type="Texture" id=100]
+[ext_resource path="res://Scenes/BOSS/danger/lava/middle7.png" type="Texture" id=101]
+[ext_resource path="res://Scenes/BOSS/danger/lava/middle8.png" type="Texture" id=102]
+[ext_resource path="res://Scenes/BOSS/danger/lava/right1.png" type="Texture" id=103]
+[ext_resource path="res://Scenes/BOSS/danger/lava/right2.png" type="Texture" id=104]
+[ext_resource path="res://Scenes/BOSS/danger/lava/middle5.png" type="Texture" id=105]
+[ext_resource path="res://Scenes/BOSS/danger/lava/middle6.png" type="Texture" id=106]
+[ext_resource path="res://Scenes/BOSS/danger/lava/right4.png" type="Texture" id=107]
+[ext_resource path="res://Scenes/BOSS/danger/lava/right3.png" type="Texture" id=108]
+[ext_resource path="res://Scenes/BOSS/danger/lava/right5.png" type="Texture" id=109]
+[ext_resource path="res://Scenes/BOSS/danger/lava/right6.png" type="Texture" id=110]
+[ext_resource path="res://Scenes/BOSS/danger/lava/right7.png" type="Texture" id=111]
+[ext_resource path="res://Scenes/BOSS/danger/lava/right8.png" type="Texture" id=112]
+[ext_resource path="res://Scenes/things/siren.tres" type="Texture" id=113]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10, 8.5 )
+extents = Vector2( 8, 9 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 55 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 56 ), ExtResource( 60 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ) ],
+"frames": [ ExtResource( 103 ), ExtResource( 104 ), ExtResource( 108 ), ExtResource( 107 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 111 ), ExtResource( 112 ) ],
 "loop": true,
-"name": "default",
+"name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 58 ), ExtResource( 54 ), ExtResource( 53 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 55 ), ExtResource( 100 ) ],
+"loop": true,
+"name": "left 1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 56 ), ExtResource( 57 ), ExtResource( 60 ), ExtResource( 59 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 101 ), ExtResource( 102 ) ],
+"loop": true,
+"name": "middle",
 "speed": 5.0
 } ]
+
+[sub_resource type="AnimatedTexture" id=42]
+flags = 4
+frames = 11
+fps = 7.3
+frame_0/texture = ExtResource( 89 )
+frame_1/texture = ExtResource( 90 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 86 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 95 )
+frame_3/delay_sec = 0.0
+frame_4/texture = ExtResource( 88 )
+frame_4/delay_sec = 0.0
+frame_5/texture = ExtResource( 92 )
+frame_5/delay_sec = 0.0
+frame_6/texture = ExtResource( 85 )
+frame_6/delay_sec = 0.0
+frame_7/texture = ExtResource( 94 )
+frame_7/delay_sec = 0.0
+frame_8/texture = ExtResource( 87 )
+frame_8/delay_sec = 0.0
+frame_9/texture = ExtResource( 93 )
+frame_9/delay_sec = 0.0
+frame_10/texture = ExtResource( 91 )
+frame_10/delay_sec = 0.0
 
 [sub_resource type="TileSet" id=3]
 0/name = "glassholder.png 0"
@@ -592,32 +646,6 @@ frame_6/delay_sec = 0.0
 frame_7/texture = ExtResource( 83 )
 frame_7/delay_sec = 0.0
 
-[sub_resource type="AnimatedTexture" id=37]
-flags = 4
-frames = 11
-fps = 21.1
-frame_0/texture = ExtResource( 89 )
-frame_1/texture = ExtResource( 90 )
-frame_1/delay_sec = 0.0
-frame_2/texture = ExtResource( 86 )
-frame_2/delay_sec = 0.0
-frame_3/texture = ExtResource( 95 )
-frame_3/delay_sec = 0.0
-frame_4/texture = ExtResource( 88 )
-frame_4/delay_sec = 0.0
-frame_5/texture = ExtResource( 92 )
-frame_5/delay_sec = 0.0
-frame_6/texture = ExtResource( 85 )
-frame_6/delay_sec = 0.0
-frame_7/texture = ExtResource( 94 )
-frame_7/delay_sec = 0.0
-frame_8/texture = ExtResource( 87 )
-frame_8/delay_sec = 0.0
-frame_9/texture = ExtResource( 93 )
-frame_9/delay_sec = 0.0
-frame_10/texture = ExtResource( 91 )
-frame_10/delay_sec = 0.0
-
 [sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 64, 7 )
 
@@ -661,8 +689,27 @@ position = Vector2( -1.12244, 0 )
 
 [node name="poison" type="Node2D" parent="."]
 
+[node name="Spikes" type="Area2D" parent="poison"]
+position = Vector2( -27, -1143 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="poison/Spikes"]
+position = Vector2( 754.5, 531.5 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="poison/Spikes"]
+position = Vector2( -3, -26.5 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 2 )
+animation = "middle"
+frame = 6
+speed_scale = 2.0
+playing = true
+offset = Vector2( 0, 0.25 )
+
 [node name="Spikes2" type="Area2D" parent="poison"]
-position = Vector2( 37, -1143 )
+position = Vector2( 39, -1145 )
 scale = Vector2( 2, 2 )
 script = ExtResource( 15 )
 
@@ -674,6 +721,7 @@ shape = SubResource( 1 )
 position = Vector2( -31.5, -23.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
+animation = "left 1"
 frame = 1
 speed_scale = 1.554
 playing = true
@@ -692,6 +740,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
+animation = "middle"
 frame = 3
 speed_scale = 2.287
 playing = true
@@ -710,7 +759,8 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 7
+animation = "middle"
+frame = 1
 speed_scale = 1.49
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -728,69 +778,28 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 3
+animation = "right"
+frame = 2
 speed_scale = 1.835
 playing = true
 offset = Vector2( 0, 0.25 )
 
-[node name="poison3" type="Node2D" parent="."]
-position = Vector2( 512, 64 )
-
-[node name="Spikes2" type="Area2D" parent="poison3"]
-position = Vector2( 37, -1143 )
-scale = Vector2( 2, 2 )
-script = ExtResource( 15 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="poison3/Spikes2"]
-position = Vector2( -3, -28 )
-shape = SubResource( 1 )
-
-[node name="Sprite" type="AnimatedSprite" parent="poison3/Spikes2"]
-position = Vector2( -31.5, -23.5 )
-scale = Vector2( 2, 2 )
-frames = SubResource( 2 )
-frame = 5
-speed_scale = 1.554
-playing = true
-offset = Vector2( 14.25, -1 )
-
-[node name="Spikes3" type="Area2D" parent="poison3"]
-position = Vector2( 101, -1143 )
-scale = Vector2( 2, 2 )
-script = ExtResource( 15 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="poison3/Spikes3"]
-position = Vector2( -3, -28 )
-shape = SubResource( 1 )
-
-[node name="Sprite" type="AnimatedSprite" parent="poison3/Spikes3"]
-position = Vector2( -3, -26.5 )
-scale = Vector2( 2, 2 )
-frames = SubResource( 2 )
-speed_scale = 2.287
-playing = true
-offset = Vector2( 0, 0.25 )
-
-[node name="Spikes4" type="Area2D" parent="poison3"]
-position = Vector2( 165, -1143 )
-scale = Vector2( 2, 2 )
-script = ExtResource( 15 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="poison3/Spikes4"]
-position = Vector2( -3, -28 )
-shape = SubResource( 1 )
-
-[node name="Sprite" type="AnimatedSprite" parent="poison3/Spikes4"]
-position = Vector2( -3, -26.5 )
-scale = Vector2( 2, 2 )
-frames = SubResource( 2 )
-frame = 2
-speed_scale = 1.49
-playing = true
-offset = Vector2( 0, 0.25 )
+[node name="Light2D2" type="Light2D" parent="poison"]
+position = Vector2( 607, -1132 )
+scale = Vector2( 0.4, 0.142222 )
+texture = SubResource( 42 )
+color = Color( 0.886275, 0.25098, 0.129412, 1 )
+energy = 0.75
 
 [node name="poison2" type="Node2D" parent="."]
 position = Vector2( 1088, 450 )
+
+[node name="Light2D" type="Light2D" parent="poison2"]
+position = Vector2( 95.0001, -1195 )
+scale = Vector2( 0.4, 0.142222 )
+texture = SubResource( 42 )
+color = Color( 0.886275, 0.25098, 0.129412, 1 )
+energy = 0.75
 
 [node name="Spikes" type="Area2D" parent="poison2"]
 position = Vector2( -27, -1143 )
@@ -805,6 +814,8 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
+animation = "left 1"
+frame = 7
 speed_scale = 2.0
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -822,7 +833,8 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 3
+animation = "middle"
+frame = 2
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -839,7 +851,8 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 2
+animation = "middle"
+frame = 5
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -856,7 +869,7 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 1
+animation = "middle"
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -873,9 +886,76 @@ shape = SubResource( 1 )
 position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 1
+animation = "right"
+frame = 2
 playing = true
 offset = Vector2( 0, 0.25 )
+
+[node name="poison3" type="Node2D" parent="."]
+position = Vector2( 512, 64 )
+
+[node name="Spikes2" type="Area2D" parent="poison3"]
+position = Vector2( 38, -1145 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="poison3/Spikes2"]
+position = Vector2( -3, -28 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="poison3/Spikes2"]
+position = Vector2( -31.5, -23.5 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 2 )
+animation = "left 1"
+speed_scale = 1.554
+playing = true
+offset = Vector2( 14.25, -1 )
+
+[node name="Spikes3" type="Area2D" parent="poison3"]
+position = Vector2( 101, -1143 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="poison3/Spikes3"]
+position = Vector2( -3, -28 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="poison3/Spikes3"]
+position = Vector2( -3, -26.5 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 2 )
+animation = "middle"
+frame = 4
+speed_scale = 2.287
+playing = true
+offset = Vector2( 0, 0.25 )
+
+[node name="Spikes4" type="Area2D" parent="poison3"]
+position = Vector2( 164, -1140 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="poison3/Spikes4"]
+position = Vector2( -3, -28 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="poison3/Spikes4"]
+position = Vector2( -3, -28 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 2 )
+animation = "right"
+frame = 6
+speed_scale = 1.49
+playing = true
+offset = Vector2( 0, 0.25 )
+
+[node name="Light2D3" type="Light2D" parent="poison3"]
+position = Vector2( -384.5, -1257.5 )
+scale = Vector2( 0.31875, 0.148889 )
+texture = SubResource( 42 )
+color = Color( 0.886275, 0.25098, 0.129412, 1 )
+energy = 0.75
 
 [node name="TileMap2" type="TileMap" parent="."]
 position = Vector2( -1, -12 )
@@ -931,7 +1011,7 @@ position = Vector2( 107.848, 41.8232 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 16 )
 animation = "aim_earth"
-frame = 14
+frame = 4
 playing = true
 script = ExtResource( 61 )
 
@@ -1055,10 +1135,14 @@ range_z_max = 0
 shadow_color = Color( 0.141176, 0.137255, 0.137255, 1 )
 
 [node name="siren" type="Light2D" parent="lights"]
-position = Vector2( -335.027, -584.735 )
+visible = false
+position = Vector2( -352, -624 )
 scale = Vector2( 4.8443, 5.89904 )
-texture = SubResource( 37 )
+texture = ExtResource( 113 )
 color = Color( 0.780392, 0.160784, 0.160784, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Door" parent="." instance=ExtResource( 11 )]
 position = Vector2( -480, 404 )
@@ -1156,23 +1240,25 @@ one_way_collision = true
 [node name="kamerakopule" type="AnimatedSprite" parent="sprites"]
 position = Vector2( -742, -876 )
 frames = SubResource( 39 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="kamerakopule3" type="AnimatedSprite" parent="sprites"]
 position = Vector2( -352, -1516 )
 frames = SubResource( 39 )
+frame = 2
 playing = true
 
 [node name="kamerakopule4" type="AnimatedSprite" parent="sprites"]
 position = Vector2( -380, -44 )
 frames = SubResource( 39 )
+frame = 2
 playing = true
 
 [node name="kamerakopule2" type="AnimatedSprite" parent="sprites"]
 position = Vector2( -39, -1068 )
 frames = SubResource( 39 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Exploder" type="Node2D" parent="."]
@@ -1229,18 +1315,19 @@ frames = ExtResource( 74 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HandlingSuperEnemy/Enemy"]
 shape = SubResource( 41 )
+[connection signal="body_entered" from="poison/Spikes" to="poison/Spikes" method="_on_Spikes_body_entered"]
 [connection signal="body_entered" from="poison/Spikes2" to="poison/Spikes2" method="_on_Spikes_body_entered"]
 [connection signal="body_entered" from="poison/Spikes3" to="poison/Spikes3" method="_on_Spikes_body_entered"]
 [connection signal="body_entered" from="poison/Spikes4" to="poison/Spikes4" method="_on_Spikes_body_entered"]
 [connection signal="body_entered" from="poison/Spikes5" to="poison/Spikes5" method="_on_Spikes_body_entered"]
-[connection signal="body_entered" from="poison3/Spikes2" to="poison3/Spikes2" method="_on_Spikes_body_entered"]
-[connection signal="body_entered" from="poison3/Spikes3" to="poison3/Spikes3" method="_on_Spikes_body_entered"]
-[connection signal="body_entered" from="poison3/Spikes4" to="poison3/Spikes4" method="_on_Spikes_body_entered"]
 [connection signal="body_entered" from="poison2/Spikes" to="poison2/Spikes" method="_on_Spikes_body_entered"]
 [connection signal="body_entered" from="poison2/Spikes2" to="poison2/Spikes2" method="_on_Spikes_body_entered"]
 [connection signal="body_entered" from="poison2/Spikes3" to="poison2/Spikes3" method="_on_Spikes_body_entered"]
 [connection signal="body_entered" from="poison2/Spikes4" to="poison2/Spikes4" method="_on_Spikes_body_entered"]
 [connection signal="body_entered" from="poison2/Spikes5" to="poison2/Spikes5" method="_on_Spikes_body_entered"]
+[connection signal="body_entered" from="poison3/Spikes2" to="poison3/Spikes2" method="_on_Spikes_body_entered"]
+[connection signal="body_entered" from="poison3/Spikes3" to="poison3/Spikes3" method="_on_Spikes_body_entered"]
+[connection signal="body_entered" from="poison3/Spikes4" to="poison3/Spikes4" method="_on_Spikes_body_entered"]
 [connection signal="finished" from="Destroyer/StartSFX" to="Destroyer" method="_on_StartSFX_finished"]
 
 [editable path="lights/hanglight4"]
