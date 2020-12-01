@@ -10,7 +10,17 @@ export (float) var explosion_scale = 1
 export (NodePath) var player_path = null
 var player
 var end_screen
+var cia_destroy_earth_sfx
+var cia_destroy_lab_sfx
 func _ready():
+	cia_destroy_earth_sfx = AudioStreamPlayer2D.new()
+	cia_destroy_earth_sfx.stream = load("res://Scenes/things/cia_voice/earth_explode_cia.ogg")
+	cia_destroy_earth_sfx.attenuation = 0.09
+	add_child(cia_destroy_earth_sfx)
+	cia_destroy_lab_sfx = AudioStreamPlayer2D.new()
+	cia_destroy_lab_sfx.stream = load("res://Scenes/things/cia_voice/lab_destroy_cia.ogg")
+	cia_destroy_lab_sfx.attenuation = 0.09
+	add_child(cia_destroy_lab_sfx)
 	if player_path != null:
 		player = get_node(player_path).get_node("Player")
 	else:
@@ -35,7 +45,16 @@ func spawn_explosion():
 var next_explosion_remaining_counter = 0
 var show_lose_remaining_counter = 2.0
 var showed_lose = false
+var cia_voice_played = false
 func _process(delta):
+	if Global.counting_down:
+		if Global.explode_time_left < 10.0:
+			if not cia_voice_played:
+				cia_voice_played = true
+				if Global.lab_destroy:
+					cia_destroy_lab_sfx.play()
+				else:
+					cia_destroy_earth_sfx.play()
 	if exploding:
 		if next_explosion_remaining_counter <= 0:
 			spawn_explosion()

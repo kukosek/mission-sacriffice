@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/earth_explode_cia.ogg-7ed79620b44dd21608e9568580ab159c.oggstr"
+
+[deps]
+
+source_file="res://Scenes/things/cia_voice/earth_explode_cia.ogg"
+dest_files=[ "res://.import/earth_explode_cia.ogg-7ed79620b44dd21608e9568580ab159c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

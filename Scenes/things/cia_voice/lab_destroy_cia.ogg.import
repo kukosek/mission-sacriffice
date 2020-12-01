@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/lab_destroy_cia.ogg-47badcaf2eb1e39fc007434d1f5bce7b.oggstr"
+
+[deps]
+
+source_file="res://Scenes/things/cia_voice/lab_destroy_cia.ogg"
+dest_files=[ "res://.import/lab_destroy_cia.ogg-47badcaf2eb1e39fc007434d1f5bce7b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
