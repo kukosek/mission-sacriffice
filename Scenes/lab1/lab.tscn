@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=77 format=2]
 
 [ext_resource path="res://Scenes/moon1/moon.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/character/character.tscn" type="PackedScene" id=2]
@@ -64,6 +64,7 @@
 [ext_resource path="res://Scenes/lab1/sprites23.png" type="Texture" id=62]
 [ext_resource path="res://Scenes/things/led.tscn" type="PackedScene" id=63]
 [ext_resource path="res://Scenes/things/ZMS 2018-2022 Chmela.jpg" type="Texture" id=64]
+[ext_resource path="res://Scenes/things/sunlight.jpg" type="Texture" id=65]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -113,14 +114,14 @@ animations = [ {
 "name": "default",
 "speed": 1.0
 }, {
-"frames": [ ExtResource( 21 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 22 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 23 ) ],
-"loop": true,
-"name": "gunshot",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "walking",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 22 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "gunshot",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 29 ), ExtResource( 28 ), ExtResource( 26 ), ExtResource( 31 ), ExtResource( 25 ), ExtResource( 30 ), ExtResource( 13 ), ExtResource( 32 ), ExtResource( 27 ) ],
@@ -162,7 +163,6 @@ script = ExtResource( 35 )
 position = Vector2( 949.207, 481.271 )
 scale = Vector2( 14.2812, 14.4687 )
 frames = SubResource( 7 )
-frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trap1/Trap"]
@@ -184,7 +184,6 @@ script = ExtResource( 35 )
 position = Vector2( 949.207, 481.271 )
 scale = Vector2( 14.2812, 14.4687 )
 frames = SubResource( 7 )
-frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trap1/Trap3"]
@@ -206,7 +205,7 @@ script = ExtResource( 35 )
 position = Vector2( 949.207, 481.271 )
 scale = Vector2( 14.2812, 14.4687 )
 frames = SubResource( 7 )
-frame = 1
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trap1/Trap2"]
@@ -228,16 +227,16 @@ position = Vector2( 2046, 1739 )
 
 [node name="Sprite" parent="Trap1/poison4/Spikes" index="1"]
 animation = "default"
-frame = 2
+frame = 0
 
 [node name="Sprite" parent="Trap1/poison4/Spikes2" index="1"]
-frame = 4
+frame = 0
 
 [node name="Sprite" parent="Trap1/poison4/Spikes3" index="1"]
-frame = 7
+frame = 6
 
 [node name="Sprite" parent="Trap1/poison4/Spikes4" index="1"]
-frame = 4
+frame = 6
 
 [node name="Sprite" parent="Trap1/poison4/Spikes5" index="1"]
 animation = "default"
@@ -249,16 +248,16 @@ scale = Vector2( 1.036, 1 )
 
 [node name="Sprite" parent="Trap1/poison5/Spikes" index="1"]
 animation = "default"
-frame = 5
+frame = 3
 
 [node name="Sprite" parent="Trap1/poison5/Spikes2" index="1"]
-frame = 4
+frame = 0
 
 [node name="Sprite" parent="Trap1/poison5/Spikes3" index="1"]
-frame = 7
+frame = 6
 
 [node name="Sprite" parent="Trap1/poison5/Spikes4" index="1"]
-frame = 4
+frame = 6
 
 [node name="Sprite" parent="Trap1/poison5/Spikes5" index="1"]
 frame = 3
@@ -267,35 +266,34 @@ frame = 3
 position = Vector2( 1728, 1739 )
 
 [node name="Sprite" parent="Trap1/poison3/Spikes" index="1"]
-frame = 0
+frame = 1
 
 [node name="Sprite" parent="Trap1/poison3/Spikes2" index="1"]
-frame = 4
+frame = 0
 
 [node name="Sprite" parent="Trap1/poison3/Spikes3" index="1"]
-frame = 7
+frame = 6
 
 [node name="Sprite" parent="Trap1/poison3/Spikes4" index="1"]
-frame = 4
+frame = 6
 
 [node name="Sprite" parent="Trap1/poison3/Spikes5" index="1"]
 animation = "default"
-frame = 1
 
 [node name="poison12" parent="Trap1" instance=ExtResource( 38 )]
 position = Vector2( 8705.4, 1291.46 )
 
 [node name="Sprite" parent="Trap1/poison12/Spikes" index="1"]
-frame = 0
+frame = 1
 
 [node name="Sprite" parent="Trap1/poison12/Spikes2" index="1"]
-frame = 4
+frame = 0
 
 [node name="Sprite" parent="Trap1/poison12/Spikes3" index="1"]
-frame = 7
+frame = 6
 
 [node name="Sprite" parent="Trap1/poison12/Spikes4" index="1"]
-frame = 4
+frame = 6
 
 [node name="Sprite" parent="Trap1/poison12/Spikes5" index="1"]
 frame = 3
@@ -304,17 +302,17 @@ frame = 3
 position = Vector2( 8381.24, 909.27 )
 
 [node name="Sprite" parent="Trap1/poison13/Spikes" index="1"]
-frame = 0
+frame = 1
 
 [node name="Sprite" parent="Trap1/poison13/Spikes2" index="1"]
-frame = 4
+frame = 0
 
 [node name="Sprite" parent="Trap1/poison13/Spikes3" index="1"]
-frame = 7
+frame = 6
 
 [node name="Sprite" parent="Trap1/poison13/Spikes4" index="1"]
 animation = "right"
-frame = 0
+frame = 2
 
 [node name="Sprite" parent="Trap1/poison13/Spikes5" index="1"]
 frame = 3
@@ -337,36 +335,35 @@ position = Vector2( 10561, 781.677 )
 position = Vector2( 4289, 1740 )
 
 [node name="Sprite" parent="Trap1/káD/poison3/Spikes" index="1"]
-frame = 0
+frame = 1
 
 [node name="Sprite" parent="Trap1/káD/poison3/Spikes2" index="1"]
-frame = 4
+frame = 0
 
 [node name="Sprite" parent="Trap1/káD/poison3/Spikes3" index="1"]
-frame = 7
+frame = 6
 
 [node name="Sprite" parent="Trap1/káD/poison3/Spikes4" index="1"]
-frame = 4
+frame = 6
 
 [node name="Sprite" parent="Trap1/káD/poison3/Spikes5" index="1"]
 animation = "default"
-frame = 1
 
 [node name="poison4" parent="Trap1/káD" instance=ExtResource( 38 )]
 position = Vector2( 4609, 1740 )
 
 [node name="Sprite" parent="Trap1/káD/poison4/Spikes" index="1"]
 animation = "default"
-frame = 3
+frame = 1
 
 [node name="Sprite" parent="Trap1/káD/poison4/Spikes2" index="1"]
-frame = 4
+frame = 0
 
 [node name="Sprite" parent="Trap1/káD/poison4/Spikes3" index="1"]
-frame = 7
+frame = 6
 
 [node name="Sprite" parent="Trap1/káD/poison4/Spikes4" index="1"]
-frame = 4
+frame = 6
 
 [node name="Sprite" parent="Trap1/káD/poison4/Spikes5" index="1"]
 animation = "default"
@@ -377,36 +374,35 @@ position = Vector2( 4929, 1740 )
 
 [node name="Sprite" parent="Trap1/káD/poison5/Spikes" index="1"]
 animation = "default"
-frame = 3
+frame = 1
 
 [node name="Sprite" parent="Trap1/káD/poison5/Spikes2" index="1"]
-frame = 4
+frame = 0
 
 [node name="Sprite" parent="Trap1/káD/poison5/Spikes3" index="1"]
-frame = 7
+frame = 6
 
 [node name="Sprite" parent="Trap1/káD/poison5/Spikes4" index="1"]
-frame = 4
+frame = 6
 
 [node name="Sprite" parent="Trap1/káD/poison5/Spikes5" index="1"]
 animation = "default"
-frame = 1
 
 [node name="poison6" parent="Trap1/káD" instance=ExtResource( 38 )]
 position = Vector2( 5249, 1740 )
 
 [node name="Sprite" parent="Trap1/káD/poison6/Spikes" index="1"]
 animation = "default"
-frame = 2
+frame = 0
 
 [node name="Sprite" parent="Trap1/káD/poison6/Spikes2" index="1"]
-frame = 4
+frame = 0
 
 [node name="Sprite" parent="Trap1/káD/poison6/Spikes3" index="1"]
-frame = 7
+frame = 6
 
 [node name="Sprite" parent="Trap1/káD/poison6/Spikes4" index="1"]
-frame = 4
+frame = 6
 
 [node name="Sprite" parent="Trap1/káD/poison6/Spikes5" index="1"]
 animation = "default"
@@ -417,16 +413,16 @@ position = Vector2( 5569, 1740 )
 
 [node name="Sprite" parent="Trap1/káD/poison7/Spikes" index="1"]
 animation = "default"
-frame = 3
+frame = 1
 
 [node name="Sprite" parent="Trap1/káD/poison7/Spikes2" index="1"]
-frame = 4
+frame = 0
 
 [node name="Sprite" parent="Trap1/káD/poison7/Spikes3" index="1"]
-frame = 7
+frame = 6
 
 [node name="Sprite" parent="Trap1/káD/poison7/Spikes4" index="1"]
-frame = 4
+frame = 6
 
 [node name="Sprite" parent="Trap1/káD/poison7/Spikes5" index="1"]
 animation = "default"
@@ -437,16 +433,16 @@ position = Vector2( 5889, 1740 )
 
 [node name="Sprite" parent="Trap1/káD/poison8/Spikes" index="1"]
 animation = "default"
-frame = 3
+frame = 1
 
 [node name="Sprite" parent="Trap1/káD/poison8/Spikes2" index="1"]
-frame = 4
+frame = 0
 
 [node name="Sprite" parent="Trap1/káD/poison8/Spikes3" index="1"]
-frame = 7
+frame = 6
 
 [node name="Sprite" parent="Trap1/káD/poison8/Spikes4" index="1"]
-frame = 4
+frame = 6
 
 [node name="Sprite" parent="Trap1/káD/poison8/Spikes5" index="1"]
 animation = "default"
@@ -457,36 +453,35 @@ position = Vector2( 6210, 1740 )
 
 [node name="Sprite" parent="Trap1/káD/poison9/Spikes" index="1"]
 animation = "default"
-frame = 3
+frame = 1
 
 [node name="Sprite" parent="Trap1/káD/poison9/Spikes2" index="1"]
-frame = 4
+frame = 0
 
 [node name="Sprite" parent="Trap1/káD/poison9/Spikes3" index="1"]
-frame = 7
+frame = 6
 
 [node name="Sprite" parent="Trap1/káD/poison9/Spikes4" index="1"]
-frame = 4
+frame = 6
 
 [node name="Sprite" parent="Trap1/káD/poison9/Spikes5" index="1"]
 animation = "default"
-frame = 1
 
 [node name="poison10" parent="Trap1/káD" instance=ExtResource( 38 )]
 position = Vector2( 6526, 1740 )
 
 [node name="Sprite" parent="Trap1/káD/poison10/Spikes" index="1"]
 animation = "default"
-frame = 5
+frame = 3
 
 [node name="Sprite" parent="Trap1/káD/poison10/Spikes2" index="1"]
-frame = 4
+frame = 0
 
 [node name="Sprite" parent="Trap1/káD/poison10/Spikes3" index="1"]
-frame = 7
+frame = 6
 
 [node name="Sprite" parent="Trap1/káD/poison10/Spikes4" index="1"]
-frame = 4
+frame = 6
 
 [node name="Sprite" parent="Trap1/káD/poison10/Spikes5" index="1"]
 animation = "default"
@@ -497,17 +492,17 @@ position = Vector2( 6845, 1740 )
 
 [node name="Sprite" parent="Trap1/káD/poison11/Spikes" index="1"]
 animation = "default"
-frame = 4
+frame = 2
 
 [node name="Sprite" parent="Trap1/káD/poison11/Spikes2" index="1"]
-frame = 4
+frame = 0
 
 [node name="Sprite" parent="Trap1/káD/poison11/Spikes3" index="1"]
-frame = 7
+frame = 6
 
 [node name="Sprite" parent="Trap1/káD/poison11/Spikes4" index="1"]
 animation = "right"
-frame = 0
+frame = 2
 
 [node name="Sprite" parent="Trap1/káD/poison11/Spikes5" index="1"]
 frame = 3
@@ -1869,6 +1864,13 @@ texture = ExtResource( 58 )
 position = Vector2( 8816.8, -445.923 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 56 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 5132, 178 )
+scale = Vector2( 1, 1.07985 )
+texture = ExtResource( 65 )
+texture_scale = 19.38
+mode = 2
 [connection signal="body_entered" from="Trap1/Trap" to="Trap1/Trap" method="_on_Trap1_body_entered"]
 [connection signal="body_entered" from="Trap1/Trap3" to="Trap1/Trap3" method="_on_Trap1_body_entered"]
 [connection signal="body_entered" from="Trap1/Trap2" to="Trap1/Trap2" method="_on_Trap1_body_entered"]
