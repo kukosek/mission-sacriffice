@@ -76,7 +76,7 @@ func pre_fire():
 	gun_sound_player.play()
 	firing = true
 	sprite.play("gunshot")
-	tween.interpolate_callback(self, 1, "fire_projectile")
+	tween.interpolate_callback(self, 0.25, "fire_projectile")
 	tween.start()
 
 func fire_projectile():
