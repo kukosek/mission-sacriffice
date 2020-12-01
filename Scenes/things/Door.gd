@@ -43,6 +43,7 @@ func _input(event):
 	if event is InputEventKey:
 		if event.is_action_pressed("ui_use"):
 			if player_is_in_range():
+				Global.last_waypoint_pos = Vector2.ZERO
 				if show_hint:
 					hint.text = ""
 				toggleOpen()
