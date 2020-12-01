@@ -4,15 +4,21 @@ onready var control = $ControlPanel
 onready var earth_layer = get_node("../MoonBackground/ParallaxBackground3/ParallaxLayer")
 onready var lab_exploder = get_node("../Exploder")
 onready var beam = get_node("beam")
+onready var siren = get_node("../lights/siren")
+onready var beam_light = $Light2D
+onready var siren_sfx = $SirenSFX
 
 func start_countdown():
+	siren.visible = true
+	siren_sfx.play()
+	beam_light.visible = true
 	Global.landed = true
 	playing = true
 	Global.counting_down = true
 	Global.lab_destroy = control.self_destroy
 	if control.self_destroy:
 		$StartSFX.play()
-		
+	
 func _ready():
 	pass # Replace with function body.
 
