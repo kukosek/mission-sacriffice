@@ -37,6 +37,7 @@ onready var sprite = $AnimatedSprite
 onready var hearts = $HUD/MarginContainer/Hearts
 onready var death_screen = $HUD/DeathScreen
 onready var pause_screen = $HUD/PauseScreen
+onready var end_screen = $HUD/EndScreen
 
 var stop_crouching = false
 func _input(event):
@@ -316,5 +317,7 @@ func _on_AnimatedSprite_animation_finished():
 				stop_walking()
 				post_jumping = false
 	if sprite.animation == "death":
-		death_screen.show()
-		
+		if Global.exploding and Global.lab_destroy:
+			end_screen.win()
+		else:
+			death_screen.show()
