@@ -69,48 +69,48 @@
 [ext_resource path="res://Scenes/lab1/válec animovaný.png" type="Texture" id=67]
 [ext_resource path="res://Scenes/things/glassskrin.png" type="Texture" id=68]
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=22]
 flags = 4
 atlas = ExtResource( 33 )
 region = Rect2( 0, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=23]
 flags = 4
 atlas = ExtResource( 33 )
 region = Rect2( 32, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=24]
 flags = 4
 atlas = ExtResource( 33 )
 region = Rect2( 64, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=25]
 flags = 4
 atlas = ExtResource( 33 )
 region = Rect2( 96, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=26]
 flags = 4
 atlas = ExtResource( 33 )
 region = Rect2( 128, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=27]
 flags = 4
 atlas = ExtResource( 33 )
 region = Rect2( 160, 0, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=7]
+[sub_resource type="SpriteFrames" id=28]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
 "loop": true,
 "name": "default",
 "speed": 10.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=29]
 extents = Vector2( 228.997, 122.643 )
 
-[sub_resource type="SpriteFrames" id=9]
+[sub_resource type="SpriteFrames" id=30]
 animations = [ {
 "frames": [ ExtResource( 17 ), ExtResource( 18 ) ],
 "loop": true,
@@ -133,10 +133,10 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=31]
 extents = Vector2( 23.5234, 55.5175 )
 
-[sub_resource type="RectangleShape2D" id=23]
+[sub_resource type="RectangleShape2D" id=32]
 extents = Vector2( 46, 12 )
 
 [sub_resource type="AtlasTexture" id=12]
@@ -179,7 +179,7 @@ region = Rect2( 256, 0, 32, 48 )
 atlas = ExtResource( 67 )
 region = Rect2( 288, 0, 32, 48 )
 
-[sub_resource type="SpriteFrames" id=22]
+[sub_resource type="SpriteFrames" id=33]
 animations = [ {
 "frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
 "loop": true,
@@ -187,7 +187,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=34]
 extents = Vector2( 268, 120 )
 
 [node name="Node2D" type="Node2D"]
@@ -216,13 +216,13 @@ script = ExtResource( 35 )
 [node name="kyselina1" type="AnimatedSprite" parent="Trap1/Trap"]
 position = Vector2( 949.207, 481.271 )
 scale = Vector2( 14.2812, 14.4687 )
-frames = SubResource( 7 )
-frame = 5
+frames = SubResource( 28 )
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trap1/Trap"]
 position = Vector2( 948.974, 601.641 )
-shape = SubResource( 8 )
+shape = SubResource( 29 )
 
 [node name="AcidSound" type="AudioStreamPlayer2D" parent="Trap1/Trap"]
 position = Vector2( 928, 564 )
@@ -238,13 +238,13 @@ script = ExtResource( 35 )
 [node name="kyselina1" type="AnimatedSprite" parent="Trap1/Trap3"]
 position = Vector2( 949.207, 481.271 )
 scale = Vector2( 14.2812, 14.4687 )
-frames = SubResource( 7 )
-frame = 5
+frames = SubResource( 28 )
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trap1/Trap3"]
 position = Vector2( 948.974, 601.641 )
-shape = SubResource( 8 )
+shape = SubResource( 29 )
 
 [node name="AcidSound" type="AudioStreamPlayer2D" parent="Trap1/Trap3"]
 position = Vector2( 928, 564 )
@@ -260,13 +260,13 @@ script = ExtResource( 35 )
 [node name="kyselina1" type="AnimatedSprite" parent="Trap1/Trap2"]
 position = Vector2( 949.207, 481.271 )
 scale = Vector2( 14.2812, 14.4687 )
-frames = SubResource( 7 )
-frame = 4
+frames = SubResource( 28 )
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trap1/Trap2"]
 position = Vector2( 948.974, 601.641 )
-shape = SubResource( 8 )
+shape = SubResource( 29 )
 
 [node name="AcidSound" type="AudioStreamPlayer2D" parent="Trap1/Trap2"]
 position = Vector2( 928, 564 )
@@ -283,7 +283,7 @@ position = Vector2( 2046, 1739 )
 
 [node name="Sprite" parent="Trap1/poison4/Spikes" index="1"]
 animation = "default"
-frame = 7
+frame = 2
 
 [node name="Sprite" parent="Trap1/poison4/Spikes2" index="1"]
 frame = 1
@@ -292,11 +292,11 @@ frame = 1
 frame = 3
 
 [node name="Sprite" parent="Trap1/poison4/Spikes4" index="1"]
-frame = 3
+frame = 5
 
 [node name="Sprite" parent="Trap1/poison4/Spikes5" index="1"]
 animation = "default"
-frame = 4
+frame = 3
 
 [node name="poison5" parent="Trap1" instance=ExtResource( 38 )]
 position = Vector2( 2365, 1739 )
@@ -304,7 +304,7 @@ scale = Vector2( 1.036, 1 )
 
 [node name="Sprite" parent="Trap1/poison5/Spikes" index="1"]
 animation = "default"
-frame = 4
+frame = 1
 
 [node name="Sprite" parent="Trap1/poison5/Spikes2" index="1"]
 frame = 1
@@ -313,7 +313,7 @@ frame = 1
 frame = 3
 
 [node name="Sprite" parent="Trap1/poison5/Spikes4" index="1"]
-frame = 3
+frame = 5
 
 [node name="Sprite" parent="Trap1/poison5/Spikes5" index="1"]
 frame = 4
@@ -322,7 +322,7 @@ frame = 4
 position = Vector2( 1728, 1739 )
 
 [node name="Sprite" parent="Trap1/poison3/Spikes" index="1"]
-frame = 3
+frame = 2
 
 [node name="Sprite" parent="Trap1/poison3/Spikes2" index="1"]
 frame = 1
@@ -331,7 +331,7 @@ frame = 1
 frame = 3
 
 [node name="Sprite" parent="Trap1/poison3/Spikes4" index="1"]
-frame = 3
+frame = 5
 
 [node name="Sprite" parent="Trap1/poison3/Spikes5" index="1"]
 animation = "default"
@@ -340,7 +340,7 @@ animation = "default"
 position = Vector2( 8705.4, 1291.46 )
 
 [node name="Sprite" parent="Trap1/poison12/Spikes" index="1"]
-frame = 3
+frame = 2
 
 [node name="Sprite" parent="Trap1/poison12/Spikes2" index="1"]
 frame = 1
@@ -349,7 +349,7 @@ frame = 1
 frame = 3
 
 [node name="Sprite" parent="Trap1/poison12/Spikes4" index="1"]
-frame = 3
+frame = 5
 
 [node name="Sprite" parent="Trap1/poison12/Spikes5" index="1"]
 frame = 4
@@ -358,7 +358,7 @@ frame = 4
 position = Vector2( 8381.24, 909.27 )
 
 [node name="Sprite" parent="Trap1/poison13/Spikes" index="1"]
-frame = 3
+frame = 2
 
 [node name="Sprite" parent="Trap1/poison13/Spikes2" index="1"]
 frame = 1
@@ -368,6 +368,7 @@ frame = 3
 
 [node name="Sprite" parent="Trap1/poison13/Spikes4" index="1"]
 animation = "right"
+frame = 2
 
 [node name="Sprite" parent="Trap1/poison13/Spikes5" index="1"]
 frame = 4
@@ -390,7 +391,7 @@ position = Vector2( 10561, 781.677 )
 position = Vector2( 4289, 1740 )
 
 [node name="Sprite" parent="Trap1/káD/poison3/Spikes" index="1"]
-frame = 3
+frame = 2
 
 [node name="Sprite" parent="Trap1/káD/poison3/Spikes2" index="1"]
 frame = 1
@@ -399,7 +400,7 @@ frame = 1
 frame = 3
 
 [node name="Sprite" parent="Trap1/káD/poison3/Spikes4" index="1"]
-frame = 3
+frame = 5
 
 [node name="Sprite" parent="Trap1/káD/poison3/Spikes5" index="1"]
 animation = "default"
@@ -409,7 +410,7 @@ position = Vector2( 4609, 1740 )
 
 [node name="Sprite" parent="Trap1/káD/poison4/Spikes" index="1"]
 animation = "default"
-frame = 0
+frame = 3
 
 [node name="Sprite" parent="Trap1/káD/poison4/Spikes2" index="1"]
 frame = 1
@@ -418,7 +419,7 @@ frame = 1
 frame = 3
 
 [node name="Sprite" parent="Trap1/káD/poison4/Spikes4" index="1"]
-frame = 3
+frame = 5
 
 [node name="Sprite" parent="Trap1/káD/poison4/Spikes5" index="1"]
 animation = "default"
@@ -429,7 +430,7 @@ position = Vector2( 4929, 1740 )
 
 [node name="Sprite" parent="Trap1/káD/poison5/Spikes" index="1"]
 animation = "default"
-frame = 0
+frame = 3
 
 [node name="Sprite" parent="Trap1/káD/poison5/Spikes2" index="1"]
 frame = 1
@@ -438,7 +439,7 @@ frame = 1
 frame = 3
 
 [node name="Sprite" parent="Trap1/káD/poison5/Spikes4" index="1"]
-frame = 3
+frame = 5
 
 [node name="Sprite" parent="Trap1/káD/poison5/Spikes5" index="1"]
 animation = "default"
@@ -448,7 +449,7 @@ position = Vector2( 5249, 1740 )
 
 [node name="Sprite" parent="Trap1/káD/poison6/Spikes" index="1"]
 animation = "default"
-frame = 7
+frame = 2
 
 [node name="Sprite" parent="Trap1/káD/poison6/Spikes2" index="1"]
 frame = 1
@@ -457,18 +458,18 @@ frame = 1
 frame = 3
 
 [node name="Sprite" parent="Trap1/káD/poison6/Spikes4" index="1"]
-frame = 3
+frame = 5
 
 [node name="Sprite" parent="Trap1/káD/poison6/Spikes5" index="1"]
 animation = "default"
-frame = 4
+frame = 3
 
 [node name="poison7" parent="Trap1/káD" instance=ExtResource( 38 )]
 position = Vector2( 5569, 1740 )
 
 [node name="Sprite" parent="Trap1/káD/poison7/Spikes" index="1"]
 animation = "default"
-frame = 0
+frame = 3
 
 [node name="Sprite" parent="Trap1/káD/poison7/Spikes2" index="1"]
 frame = 1
@@ -477,18 +478,18 @@ frame = 1
 frame = 3
 
 [node name="Sprite" parent="Trap1/káD/poison7/Spikes4" index="1"]
-frame = 3
+frame = 5
 
 [node name="Sprite" parent="Trap1/káD/poison7/Spikes5" index="1"]
 animation = "default"
-frame = 4
+frame = 3
 
 [node name="poison8" parent="Trap1/káD" instance=ExtResource( 38 )]
 position = Vector2( 5889, 1740 )
 
 [node name="Sprite" parent="Trap1/káD/poison8/Spikes" index="1"]
 animation = "default"
-frame = 0
+frame = 3
 
 [node name="Sprite" parent="Trap1/káD/poison8/Spikes2" index="1"]
 frame = 1
@@ -497,7 +498,7 @@ frame = 1
 frame = 3
 
 [node name="Sprite" parent="Trap1/káD/poison8/Spikes4" index="1"]
-frame = 3
+frame = 5
 
 [node name="Sprite" parent="Trap1/káD/poison8/Spikes5" index="1"]
 animation = "default"
@@ -508,7 +509,7 @@ position = Vector2( 6210, 1740 )
 
 [node name="Sprite" parent="Trap1/káD/poison9/Spikes" index="1"]
 animation = "default"
-frame = 0
+frame = 3
 
 [node name="Sprite" parent="Trap1/káD/poison9/Spikes2" index="1"]
 frame = 1
@@ -517,7 +518,7 @@ frame = 1
 frame = 3
 
 [node name="Sprite" parent="Trap1/káD/poison9/Spikes4" index="1"]
-frame = 3
+frame = 5
 
 [node name="Sprite" parent="Trap1/káD/poison9/Spikes5" index="1"]
 animation = "default"
@@ -527,7 +528,7 @@ position = Vector2( 6526, 1740 )
 
 [node name="Sprite" parent="Trap1/káD/poison10/Spikes" index="1"]
 animation = "default"
-frame = 4
+frame = 1
 
 [node name="Sprite" parent="Trap1/káD/poison10/Spikes2" index="1"]
 frame = 1
@@ -536,18 +537,17 @@ frame = 1
 frame = 3
 
 [node name="Sprite" parent="Trap1/káD/poison10/Spikes4" index="1"]
-frame = 3
+frame = 5
 
 [node name="Sprite" parent="Trap1/káD/poison10/Spikes5" index="1"]
 animation = "default"
-frame = 4
+frame = 3
 
 [node name="poison11" parent="Trap1/káD" instance=ExtResource( 38 )]
 position = Vector2( 6845, 1740 )
 
 [node name="Sprite" parent="Trap1/káD/poison11/Spikes" index="1"]
 animation = "default"
-frame = 3
 
 [node name="Sprite" parent="Trap1/káD/poison11/Spikes2" index="1"]
 frame = 1
@@ -557,6 +557,7 @@ frame = 3
 
 [node name="Sprite" parent="Trap1/káD/poison11/Spikes4" index="1"]
 animation = "right"
+frame = 2
 
 [node name="Sprite" parent="Trap1/káD/poison11/Spikes5" index="1"]
 frame = 4
@@ -625,11 +626,11 @@ projectile_res = ExtResource( 24 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemáci/HandlingEnemy1/Enemy"]
 scale = Vector2( 3.5, 3.5 )
-frames = SubResource( 9 )
+frames = SubResource( 30 )
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy1/Enemy"]
-shape = SubResource( 10 )
+shape = SubResource( 31 )
 
 [node name="enemáci" type="Node2D" parent="enemáci/HandlingEnemy1"]
 
@@ -659,12 +660,12 @@ projectile_res = ExtResource( 24 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemáci/HandlingEnemy12/Enemy"]
 scale = Vector2( 3.5, 3.5 )
-frames = SubResource( 9 )
+frames = SubResource( 30 )
 frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy12/Enemy"]
-shape = SubResource( 10 )
+shape = SubResource( 31 )
 
 [node name="enemáci" type="Node2D" parent="enemáci/HandlingEnemy12"]
 
@@ -694,12 +695,12 @@ projectile_res = ExtResource( 24 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemáci/HandlingEnemy13/Enemy"]
 scale = Vector2( 3.5, 3.5 )
-frames = SubResource( 9 )
+frames = SubResource( 30 )
 frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy13/Enemy"]
-shape = SubResource( 10 )
+shape = SubResource( 31 )
 
 [node name="enemáci" type="Node2D" parent="enemáci/HandlingEnemy13"]
 
@@ -729,12 +730,12 @@ script = ExtResource( 8 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemáci/HandlingEnemy2/Enemy"]
 scale = Vector2( 3.5, 3.5 )
-frames = SubResource( 9 )
+frames = SubResource( 30 )
 frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy2/Enemy"]
-shape = SubResource( 10 )
+shape = SubResource( 31 )
 
 [node name="HandlingEnemy15" type="Node2D" parent="enemáci"]
 position = Vector2( 1437.95, 446.974 )
@@ -763,12 +764,12 @@ script = ExtResource( 8 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemáci/HandlingEnemy15/Enemy"]
 scale = Vector2( 3.5, 3.5 )
-frames = SubResource( 9 )
+frames = SubResource( 30 )
 frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy15/Enemy"]
-shape = SubResource( 10 )
+shape = SubResource( 31 )
 
 [node name="HandlingEnemy16" type="Node2D" parent="enemáci"]
 position = Vector2( 1544.3, 447.768 )
@@ -797,11 +798,11 @@ script = ExtResource( 8 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemáci/HandlingEnemy16/Enemy"]
 scale = Vector2( 3.5, 3.5 )
-frames = SubResource( 9 )
+frames = SubResource( 30 )
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy16/Enemy"]
-shape = SubResource( 10 )
+shape = SubResource( 31 )
 
 [node name="HandlingEnemy14" type="Node2D" parent="enemáci"]
 position = Vector2( 46, -131 )
@@ -829,11 +830,11 @@ script = ExtResource( 8 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemáci/HandlingEnemy14/Enemy"]
 scale = Vector2( 3.5, 3.5 )
-frames = SubResource( 9 )
+frames = SubResource( 30 )
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy14/Enemy"]
-shape = SubResource( 10 )
+shape = SubResource( 31 )
 
 [node name="HandlingEnemy3" type="Node2D" parent="enemáci"]
 
@@ -860,11 +861,11 @@ script = ExtResource( 8 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemáci/HandlingEnemy3/Enemy"]
 scale = Vector2( 3.5, 3.5 )
-frames = SubResource( 9 )
+frames = SubResource( 30 )
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy3/Enemy"]
-shape = SubResource( 10 )
+shape = SubResource( 31 )
 
 [node name="HandlingEnemy4" type="Node2D" parent="enemáci"]
 position = Vector2( -162, 6 )
@@ -892,12 +893,12 @@ script = ExtResource( 8 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemáci/HandlingEnemy4/Enemy"]
 scale = Vector2( 3.5, 3.5 )
-frames = SubResource( 9 )
+frames = SubResource( 30 )
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy4/Enemy"]
 position = Vector2( -2.24512, 2.24493 )
-shape = SubResource( 10 )
+shape = SubResource( 31 )
 
 [node name="HandlingEnemy5" type="Node2D" parent="enemáci"]
 position = Vector2( 288, -60 )
@@ -926,12 +927,12 @@ script = ExtResource( 8 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemáci/HandlingEnemy5/Enemy"]
 position = Vector2( 6.26953, -2.81665 )
 scale = Vector2( 3.5, 3.5 )
-frames = SubResource( 9 )
+frames = SubResource( 30 )
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy5/Enemy"]
 position = Vector2( 2.33301, 2.86779 )
-shape = SubResource( 10 )
+shape = SubResource( 31 )
 
 [node name="HandlingEnemy6" type="Node2D" parent="enemáci"]
 position = Vector2( -1732, -324 )
@@ -960,13 +961,13 @@ script = ExtResource( 8 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemáci/HandlingEnemy6/Enemy"]
 position = Vector2( 6.26953, -2.81665 )
 scale = Vector2( 3.5, 3.5 )
-frames = SubResource( 9 )
+frames = SubResource( 30 )
 frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy6/Enemy"]
 position = Vector2( 2.33301, 2.86779 )
-shape = SubResource( 10 )
+shape = SubResource( 31 )
 
 [node name="Node" type="Node" parent="enemáci/HandlingEnemy6"]
 
@@ -997,13 +998,13 @@ script = ExtResource( 8 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemáci/HandlingEnemy7/Enemy"]
 position = Vector2( 6.26953, -2.81665 )
 scale = Vector2( 3.5, 3.5 )
-frames = SubResource( 9 )
+frames = SubResource( 30 )
 frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy7/Enemy"]
 position = Vector2( 2.75, 0.0889814 )
-shape = SubResource( 10 )
+shape = SubResource( 31 )
 
 [node name="HandlingEnemy8" type="Node2D" parent="enemáci"]
 
@@ -1031,12 +1032,12 @@ script = ExtResource( 8 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemáci/HandlingEnemy8/Enemy"]
 position = Vector2( 6.26953, -2.81665 )
 scale = Vector2( 3.5, 3.5 )
-frames = SubResource( 9 )
+frames = SubResource( 30 )
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy8/Enemy"]
 position = Vector2( 2.33301, 2.86779 )
-shape = SubResource( 10 )
+shape = SubResource( 31 )
 
 [node name="HandlingEnemy9" type="Node2D" parent="enemáci"]
 position = Vector2( 956, -768 )
@@ -1065,12 +1066,12 @@ script = ExtResource( 8 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemáci/HandlingEnemy9/Enemy"]
 position = Vector2( 6.26953, -2.81665 )
 scale = Vector2( 3.5, 3.5 )
-frames = SubResource( 9 )
+frames = SubResource( 30 )
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy9/Enemy"]
 position = Vector2( 2.33301, 2.86779 )
-shape = SubResource( 10 )
+shape = SubResource( 31 )
 
 [node name="HandlingEnemy10" type="Node2D" parent="enemáci"]
 position = Vector2( -1089, -396 )
@@ -1099,13 +1100,13 @@ script = ExtResource( 8 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemáci/HandlingEnemy10/Enemy"]
 position = Vector2( 6.26953, -2.81665 )
 scale = Vector2( 3.5, 3.5 )
-frames = SubResource( 9 )
+frames = SubResource( 30 )
 frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy10/Enemy"]
 position = Vector2( 2.33301, 2.86779 )
-shape = SubResource( 10 )
+shape = SubResource( 31 )
 
 [node name="HandlingEnemy11" type="Node2D" parent="enemáci"]
 position = Vector2( -572, -386 )
@@ -1134,12 +1135,12 @@ script = ExtResource( 8 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemáci/HandlingEnemy11/Enemy"]
 position = Vector2( 6.26953, -2.81665 )
 scale = Vector2( 3.5, 3.5 )
-frames = SubResource( 9 )
+frames = SubResource( 30 )
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemáci/HandlingEnemy11/Enemy"]
 position = Vector2( 2.33301, 2.86779 )
-shape = SubResource( 10 )
+shape = SubResource( 31 )
 
 [node name="Exploder" type="Node2D" parent="."]
 script = ExtResource( 41 )
@@ -1161,7 +1162,7 @@ z_index = -4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sprites/colisionsprites/StaticBody2D"]
 position = Vector2( 1541, 453 )
-shape = SubResource( 23 )
+shape = SubResource( 32 )
 one_way_collision = true
 
 [node name="káď" type="Sprite" parent="sprites"]
@@ -1292,7 +1293,7 @@ scale = Vector2( 3, 3 )
 texture = ExtResource( 56 )
 
 [node name="Krabice velká8" type="Sprite" parent="sprites"]
-position = Vector2( 9351.83, 441.562 )
+position = Vector2( 9350, 449 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 56 )
 
@@ -1307,7 +1308,7 @@ scale = Vector2( 4, 4 )
 texture = ExtResource( 60 )
 
 [node name="stůl s počítačama" type="Sprite" parent="sprites"]
-position = Vector2( 9587, -444 )
+position = Vector2( 10028, -828 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 61 )
 
@@ -1385,56 +1386,56 @@ texture = ExtResource( 56 )
 position = Vector2( 349, -96 )
 scale = Vector2( 4, 4 )
 z_index = 1018
-frames = SubResource( 22 )
-frame = 8
+frames = SubResource( 33 )
+frame = 5
 playing = true
 
 [node name="válec2" type="AnimatedSprite" parent="sprites"]
 position = Vector2( 11, -734 )
 scale = Vector2( 4, 4 )
 z_index = 1018
-frames = SubResource( 22 )
-frame = 8
+frames = SubResource( 33 )
+frame = 4
 playing = true
 
 [node name="válec3" type="AnimatedSprite" parent="sprites"]
 position = Vector2( 3485, 418 )
 scale = Vector2( 4, 4 )
 z_index = 1018
-frames = SubResource( 22 )
-frame = 8
+frames = SubResource( 33 )
+frame = 4
 playing = true
 
 [node name="válec4" type="AnimatedSprite" parent="sprites"]
 position = Vector2( 4273, -413 )
 scale = Vector2( 4, 4 )
 z_index = 1018
-frames = SubResource( 22 )
-frame = 7
+frames = SubResource( 33 )
+frame = 4
 playing = true
 
 [node name="válec5" type="AnimatedSprite" parent="sprites"]
 position = Vector2( 9974, -479 )
 scale = Vector2( 4, 4 )
 z_index = 1018
-frames = SubResource( 22 )
-frame = 6
+frames = SubResource( 33 )
+frame = 3
 playing = true
 
 [node name="válec6" type="AnimatedSprite" parent="sprites"]
 position = Vector2( 9114, -479 )
 scale = Vector2( 4, 4 )
 z_index = 1018
-frames = SubResource( 22 )
-frame = 6
+frames = SubResource( 33 )
+frame = 3
 playing = true
 
 [node name="válec7" type="AnimatedSprite" parent="sprites"]
 position = Vector2( 9371, -1115 )
 scale = Vector2( 4, 4 )
 z_index = 1018
-frames = SubResource( 22 )
-frame = 6
+frames = SubResource( 33 )
+frame = 3
 playing = true
 
 [node name="glassskrin" type="Sprite" parent="sprites"]
@@ -1660,6 +1661,10 @@ texture = ExtResource( 64 )
 [node name="hanglight" parent="sprites/svetla" instance=ExtResource( 37 )]
 position = Vector2( 643, 512 )
 
+[node name="hanglightrope" parent="sprites/svetla/hanglight" index="1"]
+position = Vector2( 384, -296.5 )
+scale = Vector2( 4, 8.28125 )
+
 [node name="hanglight2" parent="sprites/svetla" instance=ExtResource( 37 )]
 position = Vector2( 1190, -758 )
 
@@ -1671,6 +1676,12 @@ position = Vector2( 1465, -84 )
 
 [node name="hanglight14" parent="sprites/svetla" instance=ExtResource( 37 )]
 position = Vector2( 1590.93, 510.162 )
+
+[node name="hanglightrope" parent="sprites/svetla/hanglight14" index="1"]
+position = Vector2( 384.07, -270.162 )
+
+[node name="Light2D" parent="sprites/svetla/hanglight14" index="3"]
+position = Vector2( 389.07, 39.838 )
 
 [node name="hanglight16" parent="sprites/svetla" instance=ExtResource( 37 )]
 position = Vector2( 1395.03, 572.363 )
@@ -1684,14 +1695,26 @@ position = Vector2( 2020.23, 574.26 )
 [node name="hanglight19" parent="sprites/svetla" instance=ExtResource( 37 )]
 position = Vector2( 2658.16, 537.539 )
 
+[node name="hanglightrope" parent="sprites/svetla/hanglight19" index="1"]
+position = Vector2( 384, -310.27 )
+scale = Vector2( 4, 9.14184 )
+
 [node name="hanglight15" parent="sprites/svetla" instance=ExtResource( 37 )]
 position = Vector2( 3564, -333 )
 
 [node name="hanglight4" parent="sprites/svetla" instance=ExtResource( 37 )]
 position = Vector2( 5497, -651 )
 
+[node name="hanglightrope" parent="sprites/svetla/hanglight4" index="1"]
+position = Vector2( 384, -338 )
+scale = Vector2( 4, 10.875 )
+
 [node name="hanglight10" parent="sprites/svetla" instance=ExtResource( 37 )]
 position = Vector2( 6560, 218 )
+
+[node name="hanglightrope" parent="sprites/svetla/hanglight10" index="1"]
+position = Vector2( 384, -456 )
+scale = Vector2( 4, 18.25 )
 
 [node name="hanglight21" parent="sprites/svetla" instance=ExtResource( 37 )]
 position = Vector2( 7592.21, 412.927 )
@@ -1709,11 +1732,23 @@ texture = ExtResource( 56 )
 [node name="hanglight11" parent="sprites/svetla" instance=ExtResource( 37 )]
 position = Vector2( 8646, -95 )
 
+[node name="hanglightrope" parent="sprites/svetla/hanglight11" index="1"]
+position = Vector2( 384, -214 )
+scale = Vector2( 4, 3.125 )
+
 [node name="hanglight22" parent="sprites/svetla" instance=ExtResource( 37 )]
 position = Vector2( 10274.4, -399.278 )
 
+[node name="hanglightrope" parent="sprites/svetla/hanglight22" index="1"]
+position = Vector2( 384, -366.861 )
+scale = Vector2( 4, 12.6788 )
+
 [node name="hanglight23" parent="sprites/svetla" instance=ExtResource( 37 )]
 position = Vector2( 10530.5, -79.6265 )
+
+[node name="hanglightrope" parent="sprites/svetla/hanglight23" index="1"]
+position = Vector2( 384, -520.687 )
+scale = Vector2( 4, 22.2929 )
 
 [node name="hanglight3" parent="sprites/svetla" instance=ExtResource( 37 )]
 position = Vector2( 453, -800 )
@@ -1723,16 +1758,24 @@ z_index = -7
 position = Vector2( 5230, -763 )
 z_index = -2
 
+[node name="hanglightrope" parent="sprites/svetla/hanglight5" index="1"]
+position = Vector2( 384, -444.5 )
+scale = Vector2( 4, 17.5313 )
+
 [node name="hanglight6" parent="sprites/svetla" instance=ExtResource( 37 )]
 position = Vector2( 4915, -810 )
 z_index = -2
+
+[node name="hanglightrope" parent="sprites/svetla/hanglight6" index="1"]
+position = Vector2( 384, -240.5 )
+scale = Vector2( 4, 4.78125 )
 
 [node name="hanglight7" parent="sprites/svetla" instance=ExtResource( 37 )]
 position = Vector2( 5984, -992 )
 z_index = -2
 
 [node name="hanglight8" parent="sprites/svetla" instance=ExtResource( 37 )]
-position = Vector2( 7867, -1054 )
+position = Vector2( 7870, -1054 )
 z_index = -2
 
 [node name="hanglight9" parent="sprites/svetla" instance=ExtResource( 37 )]
@@ -1758,7 +1801,7 @@ position = Vector2( -156.419, -80.6349 )
 position = Vector2( 10479.6, -1364.13 )
 
 [node name="sunlighz" type="Sprite" parent="."]
-position = Vector2( 5316.5, 66.9999 )
+position = Vector2( 5319, 67 )
 scale = Vector2( 20.6702, 20.9962 )
 texture = ExtResource( 65 )
 
@@ -1787,7 +1830,7 @@ stream = ExtResource( 50 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SFX/Area2D"]
 position = Vector2( 92.3787, -59.973 )
-shape = SubResource( 11 )
+shape = SubResource( 34 )
 
 [node name="Area2D2" type="Area2D" parent="SFX"]
 position = Vector2( 2641, -8 )
@@ -1796,7 +1839,7 @@ stream = ExtResource( 47 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SFX/Area2D2"]
 position = Vector2( 68, -57 )
-shape = SubResource( 11 )
+shape = SubResource( 34 )
 
 [node name="Area2D3" type="Area2D" parent="SFX"]
 position = Vector2( 980, 395 )
@@ -1805,7 +1848,7 @@ stream = ExtResource( 48 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SFX/Area2D3"]
 position = Vector2( 68, -57 )
-shape = SubResource( 11 )
+shape = SubResource( 34 )
 
 [node name="Area2D4" type="Area2D" parent="SFX"]
 position = Vector2( 3344, -20 )
@@ -1814,7 +1857,7 @@ stream = ExtResource( 49 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SFX/Area2D4"]
 position = Vector2( 80, 107 )
-shape = SubResource( 11 )
+shape = SubResource( 34 )
 
 [node name="Area2D5" type="Area2D" parent="SFX"]
 position = Vector2( 7667, 94 )
@@ -1823,7 +1866,7 @@ stream = ExtResource( 46 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SFX/Area2D5"]
 position = Vector2( 75, 107 )
-shape = SubResource( 11 )
+shape = SubResource( 34 )
 
 [node name="Area2D8" type="Area2D" parent="SFX"]
 position = Vector2( 10736, 28 )
@@ -1832,7 +1875,7 @@ stream = ExtResource( 47 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SFX/Area2D8"]
 position = Vector2( 75, 107 )
-shape = SubResource( 11 )
+shape = SubResource( 34 )
 
 [node name="Area2D9" type="Area2D" parent="SFX"]
 position = Vector2( 10221, -338 )
@@ -1841,7 +1884,7 @@ stream = ExtResource( 55 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SFX/Area2D9"]
 position = Vector2( 161, 87 )
-shape = SubResource( 11 )
+shape = SubResource( 34 )
 
 [node name="Area2D12" type="Area2D" parent="SFX"]
 position = Vector2( 2929, 352 )
@@ -1850,7 +1893,7 @@ stream = ExtResource( 51 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SFX/Area2D12"]
 position = Vector2( 161, 87 )
-shape = SubResource( 11 )
+shape = SubResource( 34 )
 
 [node name="Area2D10" type="Area2D" parent="SFX"]
 position = Vector2( 8657, -776 )
@@ -1859,7 +1902,7 @@ stream = ExtResource( 52 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SFX/Area2D10"]
 position = Vector2( 75, 107 )
-shape = SubResource( 11 )
+shape = SubResource( 34 )
 
 [node name="Area2D11" type="Area2D" parent="SFX"]
 position = Vector2( 10299, -1231 )
@@ -1868,7 +1911,7 @@ stream = ExtResource( 54 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SFX/Area2D11"]
 position = Vector2( 75, 107 )
-shape = SubResource( 11 )
+shape = SubResource( 34 )
 
 [node name="Area2D6" type="Area2D" parent="SFX"]
 position = Vector2( 6697, -188 )
@@ -1877,7 +1920,7 @@ stream = ExtResource( 53 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SFX/Area2D6"]
 position = Vector2( 75, 107 )
-shape = SubResource( 11 )
+shape = SubResource( 34 )
 
 [node name="Area2D7" type="Area2D" parent="SFX"]
 position = Vector2( 5035, -491 )
@@ -1886,7 +1929,7 @@ stream = ExtResource( 51 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SFX/Area2D7"]
 position = Vector2( 75, 107 )
-shape = SubResource( 11 )
+shape = SubResource( 34 )
 
 [node name="fd" type="Area2D" parent="SFX"]
 position = Vector2( 5919, -1038 )
@@ -1895,7 +1938,7 @@ stream = ExtResource( 50 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SFX/fd"]
 position = Vector2( -124, -216 )
-shape = SubResource( 11 )
+shape = SubResource( 34 )
 
 [node name="Waypoint" parent="." instance=ExtResource( 66 )]
 position = Vector2( 5873, -1289 )
@@ -2030,6 +2073,42 @@ position = Vector2( 329.645, 719.093 )
 [editable path="Trap1/káD/poison10"]
 
 [editable path="Trap1/káD/poison11"]
+
+[editable path="sprites/svetla/hanglight"]
+
+[editable path="sprites/svetla/hanglight2"]
+
+[editable path="sprites/svetla/hanglight12"]
+
+[editable path="sprites/svetla/hanglight13"]
+
+[editable path="sprites/svetla/hanglight14"]
+
+[editable path="sprites/svetla/hanglight16"]
+
+[editable path="sprites/svetla/hanglight17"]
+
+[editable path="sprites/svetla/hanglight18"]
+
+[editable path="sprites/svetla/hanglight19"]
+
+[editable path="sprites/svetla/hanglight15"]
+
+[editable path="sprites/svetla/hanglight4"]
+
+[editable path="sprites/svetla/hanglight10"]
+
+[editable path="sprites/svetla/hanglight11"]
+
+[editable path="sprites/svetla/hanglight22"]
+
+[editable path="sprites/svetla/hanglight23"]
+
+[editable path="sprites/svetla/hanglight5"]
+
+[editable path="sprites/svetla/hanglight6"]
+
+[editable path="sprites/svetla/hanglight8"]
 
 [editable path="Door"]
 
