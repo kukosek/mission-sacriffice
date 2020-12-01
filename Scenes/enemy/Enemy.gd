@@ -15,8 +15,15 @@ export (int) var damage = 1
 export (int) var hp = 3
 
 var dead = false
+
+var damage_blinking = false
+var damage_blink_time = 0.1
+var damage_blink_remaining = 0.0
 func damage(damage_hp):
 	if hp > 0:
+		damage_blinking = true
+		sprite.modulate.r = 0.0
+		damage_blink_remaining = damage_blink_time
 		hp -= damage_hp
 	if hp <= 0:
 		dead = true
@@ -78,6 +85,12 @@ func fire_projectile():
 
 var standing_timer = 0
 func _physics_process(delta):
+	if damage_blinking:
+		if damage_blink_remaining > 0:
+			damage_blink_remaining -= delta
+		else:
+			damage_blinking = false
+			sprite.modulate.r = 1.0
 	if not dead:
 		if player_detection.detected:
 			if player_detection.right:
