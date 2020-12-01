@@ -20,6 +20,8 @@ var last_waypoint_remaining_time
 
 var boss_pushed_button_names
 
+
+
 func _ready():
 	defaults()
 

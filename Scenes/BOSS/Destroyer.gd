@@ -30,6 +30,7 @@ func _process(delta):
 		if Global.explode_time_left > 0:
 			Global.explode_time_left -= delta
 		else:
+			Global.exploding = true
 			if not control.self_destroy:
 				beam.visible = true
 				earth_layer.exploding = true
