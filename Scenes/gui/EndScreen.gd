@@ -7,14 +7,18 @@ func toggle_pause():
 
 onready var darkening_sprite = $DarkeningSprite
 onready var label = $VBoxContainer/Label
+onready var cia_happy = $VBoxContainer/CiaHappy
+onready var east_happy = $VBoxContainer/EastHappy
 
 func win():
 	label.text = "You win!"
 	visible = true
+	cia_happy.visible = true
 
 func lose():
 	label.text = "You lose!"
 	visible = true
+	east_happy.visible = true
 
 var last_screen_size = Vector2.ZERO
 func _process(_delta):

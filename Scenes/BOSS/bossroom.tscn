@@ -134,14 +134,14 @@ animations = [ {
 "name": "right",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 58 ), ExtResource( 54 ), ExtResource( 53 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 55 ), ExtResource( 100 ) ],
-"loop": true,
-"name": "left 1",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 56 ), ExtResource( 57 ), ExtResource( 60 ), ExtResource( 59 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 101 ), ExtResource( 102 ) ],
 "loop": true,
 "name": "middle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 58 ), ExtResource( 54 ), ExtResource( 53 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 55 ), ExtResource( 100 ) ],
+"loop": true,
+"name": "left 1",
 "speed": 5.0
 } ]
 
@@ -716,7 +716,7 @@ position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "middle"
-frame = 3
+frame = 6
 speed_scale = 2.0
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -735,7 +735,7 @@ position = Vector2( -31.5, -23.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "left 1"
-frame = 5
+frame = 4
 speed_scale = 1.554
 playing = true
 offset = Vector2( 14.25, -1 )
@@ -754,7 +754,7 @@ position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "middle"
-frame = 4
+frame = 1
 speed_scale = 2.287
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -773,7 +773,7 @@ position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "middle"
-frame = 5
+frame = 2
 speed_scale = 1.49
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -792,7 +792,7 @@ position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "right"
-frame = 4
+frame = 7
 speed_scale = 1.835
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -847,7 +847,7 @@ position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "middle"
-frame = 4
+frame = 1
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -865,7 +865,7 @@ position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "middle"
-frame = 7
+frame = 4
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -883,7 +883,7 @@ position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "middle"
-frame = 2
+frame = 7
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -901,7 +901,7 @@ position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "right"
-frame = 4
+frame = 1
 playing = true
 offset = Vector2( 0, 0.25 )
 
@@ -922,7 +922,7 @@ position = Vector2( -31.5, -23.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "left 1"
-frame = 4
+frame = 3
 speed_scale = 1.554
 playing = true
 offset = Vector2( 14.25, -1 )
@@ -941,7 +941,7 @@ position = Vector2( -3, -26.5 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "middle"
-frame = 5
+frame = 2
 speed_scale = 2.287
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -960,7 +960,7 @@ position = Vector2( -3, -28 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "right"
-frame = 2
+frame = 7
 speed_scale = 1.49
 playing = true
 offset = Vector2( 0, 0.25 )
@@ -1028,7 +1028,7 @@ position = Vector2( 107.848, 41.8232 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 17 )
 animation = "aim_earth"
-frame = 15
+frame = 14
 playing = true
 script = ExtResource( 61 )
 
@@ -1285,25 +1285,25 @@ one_way_collision = true
 [node name="kamerakopule" type="AnimatedSprite" parent="sprites"]
 position = Vector2( -742, -876 )
 frames = SubResource( 39 )
-frame = 4
+frame = 2
 playing = true
 
 [node name="kamerakopule3" type="AnimatedSprite" parent="sprites"]
 position = Vector2( -352, -1516 )
 frames = SubResource( 39 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="kamerakopule4" type="AnimatedSprite" parent="sprites"]
 position = Vector2( -380, -44 )
 frames = SubResource( 39 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="kamerakopule2" type="AnimatedSprite" parent="sprites"]
 position = Vector2( -39, -1068 )
 frames = SubResource( 39 )
-frame = 4
+frame = 2
 playing = true
 
 [node name="Exploder" type="Node2D" parent="."]
