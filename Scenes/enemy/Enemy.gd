@@ -19,6 +19,14 @@ var dead = false
 var damage_blinking = false
 var damage_blink_time = 0.1
 var damage_blink_remaining = 0.0
+
+func die():
+	dead = true
+	sprite.play("death")
+	set_collision_layer_bit(3, false)
+	set_collision_mask_bit(3, false)
+	if not get_parent().name in Global.dead_enemy_names:
+		Global.dead_enemy_names.append(get_parent().name)
 func damage(damage_hp):
 	if hp > 0:
 		damage_blinking = true
@@ -26,10 +34,7 @@ func damage(damage_hp):
 		damage_blink_remaining = damage_blink_time
 		hp -= damage_hp
 	if hp <= 0:
-		dead = true
-		sprite.play("death")
-		set_collision_layer_bit(3, false)
-		set_collision_mask_bit(3, false)
+		die()
 func _ready():
 	player_detection = load("res://Scenes/enemy/PlayerDetection.tscn").instance()
 	player_detection.enemy_vision = enemy_vision
