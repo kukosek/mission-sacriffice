@@ -167,6 +167,11 @@ func get_input():
 		
 		
 		if wallsliding:
+			if abs(velocity.y) > 0:
+				sprite.playing = true
+			else:
+				sprite.playing = false
+
 			if jump and can_jump_from_wall:
 				can_jump_from_wall = false
 				jumping_sliding = true
