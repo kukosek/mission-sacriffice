@@ -10,7 +10,6 @@ export (bool) var show_hint = true
 export (NodePath) var player_path = "../Player"
 export (bool) var allow_unpush = false
 
-onready var sprite = $AnimatedSprite
 onready var player = get_node(player_path).get_node("Player")
 
 onready var hint = get_node(player_path).get_node("Player/HUD/Hint")
