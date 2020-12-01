@@ -19,7 +19,7 @@ margin_right = 132.0
 margin_bottom = 64.0
 rect_scale = Vector2( 4, 4 )
 custom_fonts/font = ExtResource( 1 )
-text = "Moon project"
+text = "Mission: Sacrifice"
 __meta__ = {
 "_edit_use_anchors_": false
 }
