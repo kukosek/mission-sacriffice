@@ -20,12 +20,14 @@ var last_waypoint_remaining_time
 
 var boss_pushed_button_names
 
-
+var start_time
 
 func _ready():
 	defaults()
 
 func defaults():
+	start_time = OS.get_unix_time()
+	
 	hp = 3
 	landed = false
 
