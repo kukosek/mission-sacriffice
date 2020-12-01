@@ -2,9 +2,7 @@ extends Camera2D
 
 
 
-var target_zoom #At runtime, You can set this variable to a Vector2 value and the camera will smoothly zoom to it
-func _ready():
-	target_zoom = zoom
+var target_zoom = Vector2(1.0, 1.0) #At runtime, You can set this variable to a Vector2 value and the camera will smoothly zoom to it
 
 export (int) var zoom_speed = 10 #How fast the smooth zooming will be
 
@@ -15,6 +13,9 @@ var last_screen_size = Vector2()
 var forced_offset = 0 #You can set this to a value and the camera will keep the offset regardless of screen size.
 #If you wish the offset to be automatic, call the function reset_offset()
 #	and the forced_offset variable will be set to null.
+
+func _ready():
+	zoom = target_zoom
 
 #Called everytime when screen size changes if forced offset is not set
 func reset_offset(screen_size = null):
@@ -35,9 +36,7 @@ func _process(delta):
 	if last_screen_size.x != 0 and last_zoom.x != 0:
 		var previous_screen = round(last_screen_no_z.x*last_zoom.x)
 		var current_screen = round(screen_size_no_z.x * target_zoom.x)
-		#print(previous_screen, " ", current_screen)
 		if last_screen_no_z != screen_size_no_z:
-			print(float(current_screen) / float(previous_screen))
 			target_zoom /=  stepify(float(current_screen) / float(previous_screen), 0.1)
 	if last_zoom != target_zoom:
 		last_zoom = target_zoom

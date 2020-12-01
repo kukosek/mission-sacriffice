@@ -31,6 +31,7 @@ func _ready():
 		player.position.y = 900
 func _physics_process(delta):
 	if not Global.landed:
+		camera.target_zoom = Vector2(2.0, 2.0)
 		velocity = move_and_slide(velocity, Vector2(0, -1))
 		if position.y > -350 and velocity.y > 0:
 			if velocity.y > 200 and position.y < 5000:
