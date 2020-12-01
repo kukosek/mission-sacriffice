@@ -7,7 +7,8 @@ func _ready():
 	target_zoom = zoom
 
 export (int) var zoom_speed = 10 #How fast the smooth zooming will be
-	
+
+export (float) var max_zoom = 1.7
 
 var last_screen_size = Vector2()
 
@@ -22,13 +23,26 @@ func reset_offset(screen_size = null):
 		screen_size = get_viewport_rect().size * zoom
 	offset.y = -screen_size.y/5
 
+var last_screen_no_z 
+var last_zoom = Vector2.ZERO
 func _process(delta):
 	#Detecting screen size changes to reset the offset if needed
 	var screen_size = get_viewport_rect().size * zoom
 	if screen_size != last_screen_size and forced_offset == null:
 		reset_offset(screen_size)
+
+	var screen_size_no_z = get_viewport_rect().size
+	if last_screen_size.x != 0 and last_zoom.x != 0:
+		var previous_screen = round(last_screen_no_z.x*last_zoom.x)
+		var current_screen = round(screen_size_no_z.x * target_zoom.x)
+		#print(previous_screen, " ", current_screen)
+		if last_screen_no_z != screen_size_no_z:
+			print(float(current_screen) / float(previous_screen))
+			target_zoom /=  stepify(float(current_screen) / float(previous_screen), 0.1)
+	if last_zoom != target_zoom:
+		last_zoom = target_zoom
 	last_screen_size = screen_size
-	
+	last_screen_no_z = screen_size_no_z
 	#Handling smoothly zooming every frame to the target_zoom
 	if target_zoom != null:
 		var smooth_zoom = zoom.x
@@ -50,7 +64,7 @@ func _input(event):
 			match event.button_index:
 				BUTTON_WHEEL_DOWN:
 					#Uncomment the comment bellow me to put a limit
-					if enable_scroll_zoom:# and (zoom+zoom_addition).x < 1.45: 
+					if enable_scroll_zoom and (last_screen_size.x/500)*(zoom+zoom_addition).x < max_zoom: 
 						target_zoom += zoom_addition
 						
 				BUTTON_WHEEL_UP:
